@@ -1,7 +1,7 @@
 # Проверял 29.04.2026 на версии 1.7.30
 
 ## Видео по теме
-1. []()
+1. [Quick Tip - Bounce flares](https://www.youtube.com/shorts/5fse6YmN2tQ)
 2. []()
 3. []()
 
