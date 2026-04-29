@@ -5,18 +5,68 @@
 2. GameCode - Projectiles - Show shell trajectory переведён в true
 3.
 
-### Тест 1
+### Flare Launcher - White
 1. Появляюсь американским солдатом
 2. Беру в руки - "Flare Launcher - White"
-    - {47665331979536BC}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_White.et - пока летит на точку подрыва
-    - {4C0308FA410EFC44}Prefabs/Weapons/Ammo/FlareEffect_40mm_M127A1_White.et - сам световой снаряд
+    - `{47665331979536BC}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_White.et` - пока летит на точку подрыва
+    - `{4C0308FA410EFC44}Prefabs/Weapons/Ammo/FlareEffect_40mm_M127A1_White.et` - сам световой снаряд
 3.
+
+### 40mm M583A1 White Flare - над головой
+1. US Grenadier
+2. Беру в руки - "M16A2"
+3. Переключаюсь на подствол
+4. Целюсь ровно вверх над собой
+    - `{98DB57ECEDC81CC2}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M583A1_White.et` - пока летит на точку подрыва
+    - `{63E63BC95B61EC34}Prefabs/Weapons/Ammo/FlareEffect_40mm_M583A1_White.et` - сам световой снаряд
+
+### 40mm M583A1 White Flare - 45 degrees
+1. US Grenadier
+2. Беру в руки - "M16A2"
+3. Переключаюсь на подствол
+4. Целюсь под углом в 45 градусов
+
+
+### 40mm M661 Green Flare - 45 degrees
+1. US Grenadier
+2. Беру в руки - "M16A2"
+3. Переключаюсь на подствол
+4. Целюсь под углом в 45 градусов
+    - `{0AF10C206CF1A283}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M661_Green.et` - пока летит на точку подрыва
+    - `{0C6C681A37E22821}Prefabs/Weapons/Ammo/FlareEffect_40mm_M661_Green.et` - сам световой снаряд
+
 
 
 
 ## Константы
-1. "Flare Launcher - White"
+1. "Flare Launcher - White" (M127A1)
+    - Угол - 17,73 градуса
     - Age - Время полёта заряда до момента свечения - 1,97 сек.
+    - Дальность отлёта от позиции игрока - 142,62 м
     - Время свечения - 30 секунд
-    - Дальность отлёта от позиции игрока - ххх м
-2.
+2. "Flare Launcher - Red"
+    - Угол -  градуса
+    - Age - Время полёта заряда до момента свечения -  сек.
+    - Дальность отлёта от позиции игрока -  м
+    - Время свечения -  секунд
+3. "Flare Launcher - Green"
+    - Угол - хх градуса
+    - Age - Время полёта заряда до момента свечения - хх сек.
+    - Дальность отлёта от позиции игрока - хх м
+    - Время свечения - хх секунд
+4. "40mm M583A1 White Flare" - для подствола. US
+    - Pitch - Угол - 82,16 градуса
+    - Age - Время полёта заряда до момента свечения - 1,47 сек.
+    - Distance - Дальность отлёта от позиции игрока - 102,26 м
+    - Время свечения - 40 секунд
+5. "40mm M661 Green Flare" - для подствола. US
+    - Pitch - Угол - около 18 градусов
+    - Age - Время полёта заряда до момента свечения - 1,47 сек.
+    - Distance - Дальность отлёта от позиции игрока - 109,97 м
+    - Время свечения - 60 секунд
+6. "40mm M662 Red3 Flare" - для подствола. US
+    - Pitch - Угол - хх градуса
+    - Age - Время полёта заряда до момента свечения - хх сек.
+    - Distance - Дальность отлёта от позиции игрока - хх м
+    - Время свечения - хх секунд
+7.
