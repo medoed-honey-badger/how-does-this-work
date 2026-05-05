@@ -1,0 +1,8 @@
+GameProject {
+ ID "Conflict"
+ GUID "694B16013B7A1D8F"
+ TITLE "Conflict"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
