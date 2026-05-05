@@ -1,0 +1,8 @@
+GameProject {
+ ID "ConflictEveronOriginal"
+ GUID "659EDBD427587807"
+ TITLE "Conflict_Everon_Original"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
