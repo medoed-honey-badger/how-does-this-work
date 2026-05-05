@@ -23,62 +23,11 @@ PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/Per
 }
 SCR_GameModeCampaign GameMode_CampaignHQC : "{2AFDAA8D7947F559}Prefabs/MP/Modes/Conflict/GameMode_CampaignHQC.et" {
  components {
-  SCR_CacheManagerComponent "{691E6E472CBA6978}" {
-   m_iAmount 5
-   m_sTerrainConfig "{76667585C0BF7F25}Configs/Campaign/CampaignCachePool/CampaignCachePool_Eden.conf"
-  }
   SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
    m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
    m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5D349E3023E18896}" {
     m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5D349E305DB53338}" {
      m_iMaxNumberOfObjectives 5
-    }
-   }
-  }
-  SCR_RandomSpawnManagerComponent "{691E6E47C8A2B7AE}" {
-   m_aBlacklistZones {
-    SCR_SpawnPointBlacklistZone "{691E6E2337C8D348}" {
-     m_vCenter 1204.171 47.638 11514
-     m_fRadius 800
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E2337E55F8D}" {
-     m_vCenter 3060.406 44.05 1889.8
-     m_fRadius 800
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23370F8EA0}" {
-     m_vCenter 11340 0 10462.585
-     m_fRadius 2500
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23371043C2}" {
-     m_vCenter 11264.955 0 1261.25
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E233735D70A}" {
-     m_vCenter 11522.717 0 2880.703
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23375B8B5E}" {
-     m_vCenter 10147.887 0 4794.428
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23377B62A5}" {
-     m_vCenter 10185.891 0 4137.79
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23309F6C35}" {
-     m_vCenter 9280.748 0 5819.825
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E2330A28684}" {
-     m_vCenter 8584.868 0 5637.197
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E2330C26052}" {
-     m_vCenter 6098.045 0 10992.912
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23300286DA}" {
-     m_vCenter 5561.303 0 11850.024
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E23303B73E7}" {
-     m_vCenter 5561.303 0 12133.544
-    }
-    SCR_SpawnPointBlacklistZone "{691E6E2330798771}" {
-     m_vCenter 4165.225 0 11119.21
-     m_fRadius 600
     }
    }
   }
@@ -112,19 +61,7 @@ SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/
   SCR_CampaignFaction "{50B30C3ADB052C80}" {
   }
   SCR_CampaignFaction "{56F0C3A6336375DC}" {
-   m_bIsPlayable 1
-   m_aEntityCatalogs {
-    SCR_EntityCatalogMultiList "{5C68C44CB0CFC935}" {
-     m_aMultiLists {
-      SCR_EntityCatalogMultiListEntry "{5C68AD58703CABF4}" {
-       m_aEntities {
-        SCR_EntityCatalogInventoryItem "{658A8B1F625B7107}" {
-        }
-       }
-      }
-     }
-    }
-   }
+   m_bIsPlayable 0
   }
  }
 }
@@ -1323,8 +1260,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_LeBosc {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Dock_LeBosc"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Dock_LeBosc-UC"
+    m_sBaseName "#AR-MapLocation_Dock_LeBosc"
    }
   }
   coords 7941.069 12.806 1469.954
@@ -1406,13 +1342,16 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_Lancre {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Dock_Lancre"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Dock_Lancre-UC"
+    m_sBaseName "#AR-MapLocation_Dock_Lancre"
    }
   }
   coords 11658.809 7.841 2176.577
   angles 0 99.231 0
   {
+   GenericEntity : "{16148BF23770F1D3}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_02.et" {
+    coords 217.072 -0.012 140.327
+    angles 0 162.541 0
+   }
    GenericEntity : "{9273AB931008C271}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_FIA.et" {
     components {
      SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
@@ -1549,8 +1488,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_GoatBay {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_GoatBay"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_GoatBay-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_GoatBay"
    }
   }
   coords 5803.098 2.962 3533.062
@@ -1753,8 +1691,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_HalcyonStrait {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Wharf_HalcyonStrait"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Wharf_HalcyonStrait-UC"
+    m_sBaseName "#AR-MapLocation_Wharf_HalcyonStrait"
    }
   }
   coords 3271.834 2.395 3547.009
@@ -1862,8 +1799,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_SpaniardsBay {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Pier_SpaniardsBay"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_SpaniardsBay-UC"
+    m_sBaseName "#AR-MapLocation_Pier_SpaniardsBay"
    }
   }
   coords 3375.76 1.094 7211.186
@@ -1957,8 +1893,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_Gravette {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Gravette"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Gravette-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_Gravette"
    }
   }
   coords 3817.628 5.025 7733.588
@@ -2067,8 +2002,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_Kermovan {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Pier_Kermovan"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Kermovan-UC"
+    m_sBaseName "#AR-MapLocation_Pier_Kermovan"
    }
   }
   coords 6277.402 2.146 9643.742
@@ -2312,13 +2246,15 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
      }
     }
    }
+   GenericEntity : "{B547CF929FCC6BB7}Prefabs/Props/Military/Sandbags/Sandbag_01_end_high_burlap.et" {
+    coords 0 0 0
+   }
   }
  }
  SP_T3H_Laruns {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Pier_Laruns"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Laruns-UC"
+    m_sBaseName "#AR-MapLocation_Pier_Laruns"
    }
   }
   coords 7782.555 2.344 5875.389
@@ -2412,13 +2348,15 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_Thollevast {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Wharf_Thollevast"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Wharf_Thollevast-UC"
+    m_sBaseName "#AR-MapLocation_Wharf_Thollevast"
    }
   }
   coords 3145.991 3.885 2141.905
   angles -5.323 -0.417 4.486
   {
+   GenericEntity {
+    coords -2 0.75 -5.813
+   }
    GenericEntity {
     ID "62388D8F13AD0811"
     components {
@@ -2509,8 +2447,7 @@ $grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T3H_Perelle {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Pier_Perelle"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Perelle-UC"
+    m_sBaseName "#AR-MapLocation_Pier_Perelle"
    }
   }
   coords 9328.079 3.74 5065.999
@@ -4825,68 +4762,6 @@ $grp GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSma
   }
  }
  {
-  coords 4327.016 1.173 9547.003
-  angles 0 117.353 0
-  {
-   GenericEntity {
-    ID "5CCCBEDC9EB800A3"
-    coords 0.858 -0.013 0.56
-    angles -1.216 46.342 2.22
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB800B1"
-    coords 0.927 -0.023 0.166
-    angles 1.673 -20.66 1.097
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB8008E"
-    coords 0.816 -0.029 -0.29
-    angles 1.351 -101.478 -1.477
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB800BC"
-    coords 0.285 -0.007 0.076
-    angles 1.988 -60.496 -0.229
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB8034B"
-    coords -3.179 0.1 -1.641
-    {
-     DecalEntity {
-      ID "56E0B29E17039037"
-      coords 0 0.11 0
-      angles -90 0 0
-     }
-    }
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB803CC"
-    coords -4.334 0.287 0.348
-    angles 2.599 151.458 -2.719
-   }
-   GenericEntity {
-    ID "5CCCBEDC9EB803F4"
-    coords -2.822 0.397 1.193
-    angles -1.697 150.55 -4.13
-   }
-   StaticModelEntity {
-    ID "5CCCBEDC9EB80042"
-    coords 2.568 -0.049 -0.298
-    angles 0 0.88 0
-   }
-   StaticModelEntity {
-    ID "5CCCBEDC9EB80325"
-    coords -2.898 0.285 2.201
-    angles 0 -129.908 0
-   }
-   StaticModelEntity {
-    ID "5CCCBEDC9EB80334"
-    coords -1.484 0.422 3.082
-    angles 0 -97.844 0
-   }
-  }
- }
- {
   coords 3427.788 172.627 5784.349
   angles 0 -108.732 0
  }
@@ -5266,10 +5141,6 @@ $grp GenericEntity : "{16148BF23770F1D3}Prefabs/Compositions/Slotted/SlotFlatSma
   angles 0 42.461 0
  }
  {
-  coords 11762.497 7.829 1939.805
-  angles 0 -98.228 0
- }
- {
   coords 3578.892 171.565 5763.738
   angles 0 156.313 0
   {
@@ -5548,11 +5419,6 @@ GenericEntity : "{172DD50ACF177B9E}Prefabs/Props/Military/Furniture/ChairMilitar
  angles 0 0 0
 }
 GenericEntity SP_A_EveronAirport : "{1739B43A3702BB84}Prefabs/Systems/MilitaryBase/ConflictSourceBase_Airfield.et" {
- components {
-  SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseNameUpper "#AR-Campaign_Arland_MapLocation_Airport-UC"
-  }
- }
  coords 4943.125 28.594 11793.299
  {
   GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
@@ -5944,47 +5810,33 @@ $grp GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSma
     m_bOrientChildrenToTerrain 0
    }
   }
-  coords 1054.877 2.821 6058.437
-  angles -0.009 -142.721 0.675
+  coords 1058.127 2.877 6054.715
+  angles -0.008 35.835 -0.675
   {
    GenericEntity {
     ID "5D1ED92353BB9FF4"
-    coords 0.72 -0.106 -2.237
-    angles 0 -1.764 0
+    coords 3.51 -0.106 -2.945
+    angles 0 0.819 0
    }
    GenericEntity {
     ID "5D1ED92353BB9F82"
-    coords 0.513 0.004 1.841
+    coords 3.196 -0.131 1.629
     angles 0 -90 0
    }
    GenericEntity {
     ID "5D1ED92353BB9F95"
-    coords 0.614 -0.012 0.345
+    coords 3.296 -0.103 0.133
     angles 0 -88.159 0
    }
    GenericEntity {
     ID "5D1ED92353BB9FE3"
-    coords 0.674 -0.029 -1.573
+    coords 3.357 -0.104 -1.785
     angles 0 176.173 0
    }
    GenericEntity {
     ID "5D1ED92353BB9E3E"
-    coords -6.087 -0.119 -6.339
+    coords 5.03 -0.129 0.146
     angles 0 4.513 0
-   }
-   GenericEntity {
-    ID "5D1ED92353BB9E28"
-    coords 0.21 -0.044 -3.815
-    angles 0 -3.43 0
-   }
-   GenericEntity {
-    ID "5D1ED92353BB9FD2"
-    coords 0.229 -0.044 -4.991
-    angles 0 -0.492 0
-   }
-   GenericEntity {
-    ID "5D1ED92353BB9F49"
-    coords -4.464 0.01 0.549
    }
   }
  }
@@ -6277,6 +6129,50 @@ $grp GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSma
  {
   coords 7890.57 256.625 4006.571
   angles 0 -51.694 0
+ }
+}
+GenericEntity : "{2390B74D062A2D13}Prefabs/Compositions/Locations/Eden/Base_ChotainMilitary_FIA_01.et" {
+ coords 7447.122 7.894 6704.909
+ {
+  GenericEntity {
+   ID "5E6ACA2FA4C6BE5C"
+   {
+    GenericEntity {
+     ID "5E3A731E87593012"
+     Flags 0x100003 0
+    }
+    GenericEntity {
+     ID "5E3A731E87593014"
+     Flags 0x100003 0
+    }
+    GenericEntity {
+     ID "5E3A731E87593015"
+     Flags 0x100003 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "5E6ACA2FA4C6BEA5"
+   Flags 0x100403 0
+   {
+    GenericEntity {
+     ID "5E68EB2C6044E7F4"
+     Flags 0x100403 0
+     {
+      GenericEntity {
+       ID "5D36C61EF5BF6C53"
+       Flags 0x100403 0
+      }
+     }
+    }
+   }
+  }
+  $grp GenericEntity {
+   {
+   }
+   {
+   }
+  }
  }
 }
 $grp GenericEntity : "{24B7F96197053B39}Prefabs/Compositions/Slotted/SlotRoadSmall/Barricade_S_US_01.et" {
@@ -7053,7 +6949,6 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
    }
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
     m_sBaseName "#AR-Campaign_MapLocation_Levie_Base"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Levie_Base-UC"
    }
   }
   coords 7500.099 165.496 4302.559
@@ -7100,8 +6995,7 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
    }
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
     m_iRadius 200
-    m_sBaseName "#AR-Campaign_MapLocation_TransformerStation"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_TransformerStation-UC"
+    m_sBaseName "#AR-MapLocation_TransformerStation"
    }
   }
   coords 5610.476 90.375 5892.061
@@ -7153,8 +7047,7 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
     m_iRadius 200
     m_bSeizedByMajority 1
-    m_sBaseName "#AR-Campaign_MapLocation_Montignac"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Montignac-UC"
+    m_sBaseName "#AR-MapLocation_Montignac"
    }
   }
   coords 4825.609 166.812 7094.843
@@ -7191,7 +7084,6 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
   components {
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
     m_sBaseName "#AR-Campaign_MapLocation_CalvaryHill"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_CalvaryHill-UC"
    }
   }
   coords 3505.951 181.91 5817.967
@@ -7221,8 +7113,7 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
  CP_PowerPlant {
   components {
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_PowerPlant"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_PowerPlant-UC"
+    m_sBaseName "#AR-MapLocation_PowerPlant"
    }
   }
   coords 5784.08 7.385 9767.163
@@ -7252,8 +7143,7 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
  CP_Regina {
   components {
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Regina"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Regina-UC"
+    m_sBaseName "#AR-MapLocation_Regina"
    }
   }
   coords 7193.323 137.782 2274.595
@@ -7278,6 +7168,256 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
      }
     }
    }
+   GenericEntity {
+    components {
+     FactionAffiliationComponent "{649A5C196805B8A0}" {
+      "faction affiliation" "USSR"
+     }
+     RigidBody "{649A5C196805B80D}" {
+      ResponseIndex "NoCollision"
+      Geometries {
+       PhysicsBoxGeometry UserAction {
+        LayerPreset "Interaction"
+        Extents 12 0.5 5
+       }
+      }
+      Static 1
+     }
+     SCR_CampaignBuildingCompositionComponent "{649A5C196805B845}" {
+      m_AudioSourceConfigurationSpawn SCR_AudioSourceConfiguration "{649A5C196805B84A}" {
+       m_sSoundProject "{F76981ECA6DC2674}Sounds/Editor/BaseBuilding/Editor_BaseBuilding.acp"
+       m_sSoundEventName "SOUND_BUILD_MG_NEST_01"
+      }
+      m_AudioSourceConfigurationDespawn SCR_AudioSourceConfiguration "{649A5C196805B842}" {
+       m_sSoundProject "{F76981ECA6DC2674}Sounds/Editor/BaseBuilding/Editor_BaseBuilding.acp"
+       m_sSoundEventName "SOUND_DESTROY_GENERIC"
+       m_eFlags 5
+      }
+     }
+     SCR_SlotCompositionComponent "{649A5C196805B872}" {
+      m_bOrientChildrenToTerrain 0
+     }
+     ActionsManagerComponent "{649A5C196805BFD3}" {
+      ActionContexts {
+       UserActionContext "{649A5C196805BF88}" {
+        ContextName "Disassembly"
+        Position PointInfo "{649A5C196805BF9E}" {
+         Offset 0 0.5 0
+        }
+        Radius 5
+        "Display UI At Reference Point" 1
+       }
+      }
+      additionalActions {
+       SCR_CampaignBuildingDisassemblyUserAction "{649A5C196805BFD9}" {
+        ParentContextList {
+         "Disassembly"
+        }
+        UIInfo UIInfo "{649A5C196805BFBC}" {
+         Name "#AR-FreeRoamBuilding_Action_Disassembly"
+        }
+        VisibilityRange 10
+        Duration 20
+       }
+      }
+     }
+     RplComponent "{649A5C196805BFC3}" {
+     }
+     Hierarchy "{649A5C196805BFF9}" {
+     }
+    }
+    Flags 0x403 0
+    coords -20.593 2.317 -30.669
+    angles 0 -169.212 0
+    {
+     $grp GenericEntity : "{013297BA01640EB9}Prefabs/Props/Garbage/Military/Ammo/GarbageAmmunition_USSR_02.et" {
+      {
+       components {
+        Hierarchy "{5CCCBEF31914138A}" {
+         Enabled 1
+        }
+       }
+       coords 0.858 -0.13 0.561
+       angles 3.707 46.441 0.803
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF31918E6FC}" {
+         Enabled 1
+        }
+       }
+       coords 0.927 -0.148 0.167
+       angles 2.176 -20.81 -3.107
+      }
+     }
+     $grp GenericEntity : "{036A2332E131AE05}Prefabs/Props/Military/AmmoBoxes/AmmoBox_762x54_440rnd.et" {
+      {
+       components {
+        Hierarchy "{5CCCBEF3191CA7B7}" {
+         Enabled 1
+        }
+       }
+       coords -0.824 -0.343 0.59
+       angles 1.757 169.516 6.248
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF3191F6750}" {
+         Enabled 1
+        }
+       }
+       coords -1.082 -0.371 0.438
+       angles -4.951 -125.249 4.201
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF319631D12}" {
+         Enabled 1
+        }
+       }
+       coords -0.648 -0.325 0.72
+       angles -2.91 -21.387 -5.803
+      }
+     }
+     GenericEntity : "{1EC801E208CB16C6}Prefabs/Vegetation/Cuttings/Rubus_idaeus_small_01.et" {
+      coords -1.445 0.191 2.335
+      angles 10.447 24.794 4.788
+     }
+     GenericEntity : "{25861AD07CEE719B}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_MG_USSR_01_PKM.et" {
+      coords 0 0 2
+      angles 0 0 0
+      {
+       GenericEntity {
+        ID "570CFD743B9A8A19"
+        coords 1.05 0 -0.354
+       }
+       GenericEntity {
+        ID "570CFD7463457953"
+        coords -4.275 -0.667 -3.443
+        angles 0 -69.721 0
+       }
+      }
+     }
+     $grp GenericEntity : "{4A09EF1D855AF2C4}Prefabs/Vegetation/Cuttings/Rosa_canina_small_01.et" {
+      {
+       coords -0.777 -0.451 3.363
+       angles 44.065 -7.671 0
+      }
+      {
+       coords 0.903 0 3.006
+       angles 60 34.258 0
+      }
+     }
+     StaticModelEntity : "{55A3DA68E58453A1}Prefabs/Structures/Military/Fortifications/DirtCover_01/DirtCover_01_long_v2.et" {
+      components {
+       Hierarchy "{5CCCBEF3196B98C1}" {
+        Enabled 1
+       }
+      }
+      coords -2.838 -0.384 0.216
+      angles 0 -41.122 0
+     }
+     $grp GenericEntity : "{6D66A35ABDA08197}Prefabs/Props/Garbage/Military/Ammo/GarbageAmmunition_USSR_01.et" {
+      {
+       components {
+        Hierarchy "{5CCCBEF3196E64E6}" {
+         Enabled 1
+        }
+       }
+       coords 0.816 -0.184 -0.29
+       angles -2.714 -101.275 -3.549
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF3197224ED}" {
+         Enabled 1
+        }
+       }
+       coords 0.285 -0.212 0.077
+       angles -5.903 -60.21 -2.7
+      }
+     }
+     $grp GenericEntity : "{74843BB0BF08A845}Prefabs/Vegetation/Cuttings/Corylus_avellana_small_01.et" {
+      {
+       coords 1.776 -0.292 2.685
+       angles 20.741 -149.042 7.088
+      }
+      {
+       coords -4.459 -0.381 -0.104
+       angles 44.251 -41.122 0
+      }
+     }
+     GenericEntity : "{B47E3FC5BE1D443A}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_05.et" {
+      coords -3.683 0.1 -0.008
+     }
+     GenericEntity : "{B547CF929FCC6BB7}Prefabs/Props/Military/Sandbags/Sandbag_01_end_high_burlap.et" {
+      components {
+       Hierarchy "{5CCCBEF31976DC75}" {
+        Enabled 1
+       }
+      }
+      coords 1.749 -0.146 0.189
+      angles 0 97.526 2.953
+     }
+     GenericEntity : "{C11CE4B95EA336C3}Prefabs/Vegetation/Cuttings/Sambucus_Nigra_medium_01.et" {
+      coords -4.479 -0.665 1.345
+      angles 19.23 -70.37 0
+     }
+     $grp GenericEntity : "{CC5453CCC311603B}Prefabs/Props/Military/Sandbags/Sandbag_01_end_burlap.et" {
+      {
+       components {
+        Hierarchy "{5CCCBEF3197D678F}" {
+         Enabled 1
+        }
+       }
+       coords -3.581 -0.384 -0.444
+       angles 0 138.878 0
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF31945E05A}" {
+         Enabled 1
+        }
+       }
+       coords -2.676 -0.384 0.346
+       angles 0 -41.122 0
+      }
+     }
+     $grp StaticModelEntity : "{EF39F5715EF2323E}Prefabs/Structures/Walls/BarbedWire/BarbedTape_01/BarbedTape_01_Short.et" {
+      {
+       components {
+        Hierarchy "{5CCCBEF319502C6C}" {
+         Enabled 1
+        }
+       }
+       coords -3.175 0 -0.001
+       angles 0 44.617 0
+      }
+      {
+       components {
+        Hierarchy "{5CCCBEF3194C5D0F}" {
+         Enabled 1
+        }
+       }
+       coords -2.121 0 2.45
+       angles 0 60.203 0
+      }
+     }
+     GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+      components {
+       Hierarchy "{5CD2B822439FB557}" {
+        Enabled 1
+       }
+      }
+      coords -2.563 0 -0.94
+      angles 0 -92.857 0
+     }
+     GenericEntity : "{FE0B2F136F4E44F5}Prefabs/Vegetation/Cuttings/Betula_pendula_medium_01.et" {
+      coords -2.254 0 1.434
+      angles 0 -131.981 0
+     }
+    }
+   }
    SCR_CampaignSpawnPointGroup {
     ID "621EB97024DABAFF"
     angles 1.887 -3.215 1.686
@@ -7290,8 +7430,7 @@ $grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictCon
     m_bCapturingRequiresPlayer 1
    }
    SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Saules"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Saules-UC"
+    m_sBaseName "#AR-MapLocation_Saules"
    }
   }
   coords 2843.544 7.877 2238.298
@@ -7338,16 +7477,6 @@ $grp GenericEntity : "{2F0CCC459889B8EE}PrefabsEditable/EffectsModules/Mine/Effe
   }
   coords 3474.755 170.473 5892.63
   angles 0 -12.389 0
-  {
-   GenericEntity {
-    ID "616C96D8967A1736"
-    components {
-     SCR_EffectsModuleAreaMeshComponent "{616C96D8B05B3D1F}" {
-      m_fWidth 30
-     }
-    }
-   }
-  }
  }
  {
   components {
@@ -7400,17 +7529,6 @@ $grp GenericEntity : "{34EB1F16E01716A4}PrefabsEditable/EffectsModules/Mine/Effe
   }
   coords 3538.658 170.834 5726.267
   angles 0 85.239 0
-  {
-   GenericEntity {
-    ID "616C96D8967A1736"
-    components {
-     SCR_EffectsModuleAreaMeshComponent "{616C96D8B05B3D1F}" {
-      m_fWidth 25
-      m_fLenght 100
-     }
-    }
-   }
-  }
  }
  {
   components {
@@ -7426,16 +7544,6 @@ $grp GenericEntity : "{34EB1F16E01716A4}PrefabsEditable/EffectsModules/Mine/Effe
   }
   coords 7647.018 183.013 4439.183
   angles 0 42.789 0
-  {
-   GenericEntity {
-    ID "616C96D8967A1736"
-    components {
-     SCR_EffectsModuleAreaMeshComponent "{616C96D8B05B3D1F}" {
-      m_fWidth 125
-     }
-    }
-   }
-  }
  }
  {
   coords 5494.742 88.141 5909.987
@@ -8454,6 +8562,32 @@ $grp GenericEntity : "{53D74CD446A87F13}Prefabs/Compositions/Misc/FreeRoamBuildi
   coords 3451.254 176.912 5819.841
   angles 0 -49.828 0
  }
+ {
+  coords 5820.882 19.75 9790.609
+ }
+ {
+  coords 5817.636 19.723 9790.608
+ }
+ {
+  coords 5815.576 19.708 9789.522
+  angles 0 -88.088 0
+ }
+ {
+  coords 5821.871 19.772 9788.057
+  angles 0 -88.088 0
+ }
+ {
+  coords 5821.764 19.765 9784.864
+  angles 0 -88.088 0
+ }
+ {
+  coords 5819.478 19.733 9783.228
+  angles 0 1.838 0
+ }
+ {
+  coords 5816.239 19.692 9783.331
+  angles 0 1.838 0
+ }
 }
 GenericEntity : "{53DBA01024B6DAE3}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_MortarPlacement_S_FIA_01.et" {
  coords 2837.444 8.269 2265.37
@@ -9050,10 +9184,6 @@ $grp GenericEntity : "{644AEC5C537E03F0}Prefabs/Systems/AmbientVehicles/AmbientV
   angles 0 -88.484 0
  }
 }
-SCR_CampaignSpawnPointGroup : "{666BC730F10EE097}Prefabs/MP/Campaign/CampaignSpawnpoint_FIA.et" {
- coords 6355.525 159.345 6506.846
- m_bRandomizedSpawn 1
-}
 GenericEntity : "{6676FBB212B337D6}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatMedium/E_VehicleMaintenance_M_Conflict_USSR_01.et" {
  components {
   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
@@ -9644,10 +9774,6 @@ $grp GenericEntity : "{7492BAA88AFCEDCE}Prefabs/Compositions/Slotted/SlotFlatSma
     angles 0 -33.572 0
    }
   }
- }
- {
-  coords 3783.463 10.656 8495.088
-  angles 0 47.963 0
  }
  {
   coords 3538.009 174.839 5872.021
@@ -10730,95 +10856,6 @@ $grp GenericEntity : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMed
   angles 0 -165.384 0
  }
  {
-  coords 9886.7 2.717 1536.309
-  angles 0 -58.087 0
-  {
-   GenericEntity {
-    ID "5CC6B4BB10618CA2"
-    coords 2.894 -0.006 -5.092
-    angles 0 -180 0
-    {
-     GenericEntity {
-      ID "5CB0D996E74F360C"
-      coords 1.088 0.008 0.03
-      angles 0 -1.74 0
-     }
-     GenericEntity {
-      ID "5CB0D996E74F360B"
-      coords 0.001 0.612 0
-     }
-    }
-   }
-   GenericEntity {
-    ID "5CC6B4BB10618E84"
-    coords 0.754 0.01 -5.205
-    angles 24.645 -96.697 -2.803
-   }
-   GenericEntity {
-    ID "5CC6B4BB10618EB8"
-    coords 4.251 0.177 -3.298
-    angles 18.128 70.493 0
-   }
-   GenericEntity {
-    ID "5CC6B4BB10618FEE"
-    coords 2.352 0.039 -3.947
-    angles 0 148.557 0
-    {
-     GameEntity {
-      ID "5CB0D993388817DF"
-      coords -0.273 0.006 0.002
-      angles 0 -145.508 0
-     }
-     GenericEntity {
-      ID "5CB0D993388817E2"
-      coords 0.088 0.003 -0.265
-     }
-    }
-   }
-   GenericEntity {
-    ID "5CC6B4B980DA08EA"
-    coords 2.598 0.022 -3.726
-    angles 0 -21.06 0
-    {
-     DecalEntity {
-      ID "56E0B29E17039037"
-      coords 0 0 0
-      angles -90 0 0
-     }
-    }
-   }
-   GenericEntity {
-    ID "5CC6B4BB6C3C365C"
-    coords 1.298 0.017 -4.292
-    angles 0 -98.976 0
-   }
-   GenericEntity {
-    ID "5CC6B4BB6C3C363A"
-    coords 1.305 -0.013 -6.522
-    angles 0 -126.924 0
-   }
-   StaticModelEntity {
-    ID "5CC6B4BB10618F59"
-    coords 3.597 0.033 -3.484
-    angles 0 69.336 0
-   }
-   StaticModelEntity {
-    ID "5CC6B4BB10618F68"
-    coords -4.721 0.124 5.643
-    angles -1.401 41.019 4.244
-   }
-   StaticModelEntity {
-    ID "5CC6B4BB10618F70"
-    coords 4.936 0.14 4.802
-    angles -7.161 -119.683 0
-   }
-   StaticModelEntity {
-    ID "5CC6B4BB10618FCD"
-    coords 4.539 0.1 3.708
-   }
-  }
- }
- {
   coords 4793.444 163.875 7250.111
   {
    GenericEntity {
@@ -11544,10 +11581,6 @@ $grp GenericEntity : "{83A10E8547281E58}Prefabs/Compositions/Slotted/SlotRoadSma
   angles 0 57.055 0
  }
  {
-  coords 3768.488 2.707 8528.198
-  angles 0 -57.536 0
- }
- {
   coords 4803.087 164.617 7255.494
   angles 0 -25.262 0
  }
@@ -11873,13 +11906,101 @@ $grp GenericEntity : "{8BEE4B0606893CDF}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T1H_StPierre {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_StPierre"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_StPierre-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_StPierre"
    }
   }
   coords 9963.828 2.838 1523.414
   angles 0 -7.886 0
   {
+   GenericEntity : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_USSR_01.et" {
+    coords -74.629 -0.121 23.355
+    angles 0 -50.201 0
+    {
+     GenericEntity {
+      ID "5CC6B4BB10618CA2"
+      coords 2.894 -0.006 -5.092
+      angles 0 -180 0
+      {
+       GenericEntity {
+        ID "5CB0D996E74F360C"
+        coords 1.088 0.008 0.03
+        angles 0 -1.74 0
+       }
+       GenericEntity {
+        ID "5CB0D996E74F360B"
+        coords 0.001 0.612 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CC6B4BB10618E84"
+      coords 0.754 0.01 -5.205
+      angles 24.645 -96.697 -2.803
+     }
+     GenericEntity {
+      ID "5CC6B4BB10618EB8"
+      coords 4.251 0.177 -3.298
+      angles 18.128 70.493 0
+     }
+     GenericEntity {
+      ID "5CC6B4BB10618FEE"
+      coords 2.352 0.039 -3.947
+      angles 0 148.557 0
+      {
+       GameEntity {
+        ID "5CB0D993388817DF"
+        coords -0.273 0.006 0.002
+        angles 0 -145.508 0
+       }
+       GenericEntity {
+        ID "5CB0D993388817E2"
+        coords 0.088 0.003 -0.265
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CC6B4B980DA08EA"
+      coords 2.598 0.022 -3.726
+      angles 0 -21.06 0
+      {
+       DecalEntity {
+        ID "56E0B29E17039037"
+        coords 0 0 0
+        angles -90 0 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CC6B4BB6C3C365C"
+      coords 1.298 0.017 -4.292
+      angles 0 -98.976 0
+     }
+     GenericEntity {
+      ID "5CC6B4BB6C3C363A"
+      coords 1.305 -0.013 -6.522
+      angles 0 -126.924 0
+     }
+     StaticModelEntity {
+      ID "5CC6B4BB10618F59"
+      coords 3.597 0.033 -3.484
+      angles 0 69.336 0
+     }
+     StaticModelEntity {
+      ID "5CC6B4BB10618F68"
+      coords -4.721 0.124 5.643
+      angles -1.401 41.019 4.244
+     }
+     StaticModelEntity {
+      ID "5CC6B4BB10618F70"
+      coords 4.936 0.14 4.802
+      angles -7.161 -119.683 0
+     }
+     StaticModelEntity {
+      ID "5CC6B4BB10618FCD"
+      coords 4.539 0.1 3.708
+     }
+    }
+   }
    $grp GenericEntity : "{9273AB931008C271}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_FIA.et" {
     {
      components {
@@ -11984,8 +12105,7 @@ $grp GenericEntity : "{8BEE4B0606893CDF}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T1H_StPhillipe {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_StPhillipe"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_StPhillipe-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_StPhillipe"
    }
   }
   coords 4394.426 1.6 11068.056
@@ -12258,6 +12378,20 @@ $grp GenericEntity : "{8E1DF47DD56E69E6}Prefabs/Compositions/Slotted/SlotFlatSma
  {
   coords 6871.241 41.384 4429.408
   angles 0 -149.444 0
+ }
+}
+$grp GenericEntity : "{8E49E48C2BD0BFE3}Prefabs/Compositions/Slotted/SlotFlatSmall/AmmoStorage_S_FIA_01.et" {
+ {
+  coords 3504.814 181.756 5835.805
+  angles 0 176.126 0
+ }
+ {
+  coords 4881.429 168.289 6928.17
+  angles 0 -39.001 0
+ }
+ {
+  coords 7247.168 137.876 2359.692
+  angles 0.011 179.669 1.789
  }
 }
 GenericEntity : "{908CD23C9EF20E3B}Prefabs/Compositions/Locations/Eden/SupplyCache_Chotain_FIA_01.et" {
@@ -16413,37 +16547,6 @@ $grp GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSma
   angles 0 91.837 0
  }
  {
-  coords 3765.441 2.654 8522.318
-  angles 0 68.204 0
-  {
-   GenericEntity {
-    ID "5CC6B48B9C8C2BA0"
-    coords -3.616 -0.142 1.153
-    angles 0 -165.47 0
-   }
-   GenericEntity {
-    ID "5CC6B48B9C8C2A7C"
-    coords 0.655 -0.356 -9.416
-    angles 0 -96.241 66.211
-   }
-   StaticModelEntity {
-    ID "5CC6B48B9C8C2BDB"
-    coords -3.768 -0.115 1.593
-    angles 0 -69.67 0
-   }
-   StaticModelEntity {
-    ID "5CC6B48B9C8C2A48"
-    coords -2.345 -0.061 2.065
-    angles 0 42.427 0
-   }
-   StaticModelEntity {
-    ID "5CC6B48B9C8C2B00"
-    coords 0.761 -0.686 -9.816
-    angles 0 103.572 5.057
-   }
-  }
- }
- {
   components {
    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
     m_bOrientChildrenToTerrain 0
@@ -19743,47 +19846,6 @@ $grp GenericEntity : "{B04F2A9C5356C02D}Prefabs/Compositions/Slotted/SlotFlatSma
   angles 0 49.08 0
  }
  {
-  coords 4344.968 1.94 9503.256
-  angles 0 81.253 0
-  {
-   GenericEntity {
-    ID "5D1ED9174DD933FE"
-    coords 1.887 0.289 -0.333
-    angles 3.582 -2.689 -0.168
-   }
-   GenericEntity {
-    ID "5D1ED9174DD9321F"
-    coords 0.732 0.023 2.085
-    angles 0 -1.46 0
-   }
-   GenericEntity {
-    ID "5D1ED9174DD93228"
-    coords 4.365 -0.034 2.076
-    angles 0 1.601 0
-   }
-   GenericEntity {
-    ID "5D1ED9174DD9323D"
-    coords 2.992 0.018 2.085
-    angles 0 178.52 0
-   }
-   GenericEntity {
-    ID "5D1ED9174DD9326C"
-    coords -1.273 0.026 2.085
-    angles 0 -179.115 0
-   }
-   GenericEntity {
-    ID "5D1ED9174DD93279"
-    coords -2.509 0.264 2.096
-    angles 0 178.575 0
-   }
-   GenericEntity {
-    ID "5D1ED9174DD93293"
-    coords -4.392 0.275 2.097
-    angles 0 178.575 0
-   }
-  }
- }
- {
   coords 9038.502 124.559 2762.438
   angles 0 -75.732 0
  }
@@ -19804,6 +19866,20 @@ $grp GenericEntity : "{B13C3ED783D3D194}Prefabs/Structures/Military/CamoNets/FIA
  {
   coords 3785.519 115.412 4964.106
   angles 0 99.837 0
+ }
+}
+$grp GenericEntity : "{B2BE9F96CF7399CC}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatLarge/E_Helipad_L_USSR_01.et" {
+ {
+  coords 7574.992 166.156 4247.598
+  angles 0 -76.097 0
+ }
+ {
+  coords 2879.709 6.652 2137.527
+  angles 0 -5.098 0
+ }
+ {
+  coords 2822.18 6.523 2121.08
+  angles 0 -13.221 0
  }
 }
 $grp GenericEntity : "{B31A14BC1A0E7776}Prefabs/Props/Military/Sandbags/Sandbag_01_round_burlap.et" {
@@ -20526,32 +20602,6 @@ $grp GenericEntity : "{BE16EE8FAA315FE2}Prefabs/Props/Military/Sandbags/Sandbag_
   }
   coords 5797.533 16.498 9791.227
   angles 0 -177.898 0
- }
- {
-  coords 5817.636 19.723 9790.608
- }
- {
-  coords 5815.576 19.708 9789.522
-  angles 0 -88.088 0
- }
- {
-  coords 5820.882 19.75 9790.609
- }
- {
-  coords 5821.871 19.772 9788.057
-  angles 0 -88.088 0
- }
- {
-  coords 5821.764 19.765 9784.864
-  angles 0 -88.088 0
- }
- {
-  coords 5819.478 19.733 9783.228
-  angles 0 1.838 0
- }
- {
-  coords 5816.239 19.692 9783.331
-  angles 0 1.838 0
  }
  {
   coords 7064.325 150.491 2338.397
@@ -21417,6 +21467,24 @@ $grp GenericEntity : "{CD67070EFAFC28C7}Prefabs/Props/Military/Sandbags/Sandbag_
   angles 0 70.774 0
  }
 }
+$grp GenericEntity : "{CDE540ACD9415078}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_AmmoStorage_S_FIA_01.et" {
+ {
+  coords 7491.97 164.601 4354.487
+  angles 0 -163.79 0
+ }
+ {
+  coords 7582.746 166.77 4188.896
+  angles 0 -74.784 0
+ }
+ {
+  coords 5867.161 4.428 9798.146
+  angles 0 -179.124 0
+ }
+ {
+  coords 5530.361 89.25 5927.531
+  angles 0 87.62 0
+ }
+}
 GenericEntity : "{CE05A668A373BB44}Prefabs/Compositions/Locations/Eden/SupplyCache_StPhilippe_FIA_01.et" {
  coords 4502.756 14.702 10771.987
  {
@@ -21912,187 +21980,516 @@ $grp GenericEntity : "{D4A604DD154470CD}Prefabs/Systems/AmbientVehicles/AmbientV
   angles 0 122.344 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 9054.544 117.975 2688.393
   angles 7.063 -0.666 -5.397
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6915.454 58.779 4499.209
   angles 7.06 67.415 -3.885
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4761.982 54.076 5817.023
   angles 1.687 -161.386 3.397
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4963.855 25.228 9980.959
   angles 3.265 -65.889 1.46
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4831.316 118.532 8152.565
   angles -3.686 74.757 0.077
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6474.506 162.062 6477.981
   angles 0 74.097 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 3036.828 113.926 5184.011
   angles 0 -40.446 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7094.897 157.68 2075.87
   angles 0 60.488 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4401.421 2.743 11047.482
   angles 0 159.315 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 10135.22 2.489 1541.396
   angles -0.243 105.744 0.862
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7456.896 7.875 6715.484
   angles 0 -132.979 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 1065.735 2.781 6050.259
   angles 0.11 36.397 -0.136
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4936.062 2.156 3903.763
   angles 0 16.572 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4905.063 28.594 11962.939
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7429.868 163.064 4313.774
   angles -0.555 18.997 -1.138
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 3472.78 179.875 5805.254
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 3910.547 15.219 8416.948
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6829.408 82.826 8199.928
   angles -7.042 41.062 -1.405
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 9464.003 208.138 2962.383
   angles -3.08 50.927 -0.955
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6629.614 5.221 3141.217
   angles -4.331 -35.138 -4.587
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5369.944 25.736 8354.39
   angles -0.152 109.415 -7.602
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4454.893 58.633 6221.48
   angles -0.895 0 0
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5265.114 34.814 10691.025
   angles 1.285 44.114 1.246
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 8787.454 198.051 3926.864
   angles 2.517 50.895 0.26
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 8206.497 223.125 2188.942
   angles 2.9 54.145 -2.094
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4518.395 64.132 4974.381
   angles -0.903 67.275 -4.465
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 3275.388 118.192 4455.146
   angles 1.383 -39.752 -8.081
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6566.715 84.372 5170.404
   angles 3.013 -54.599 -1.15
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 3752.451 58.794 7020.698
   angles -7.123 0.112 -0.902
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6971.539 120.672 6060.935
   angles 7.123 -0.112 -0.902
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 8910.895 96.312 2735.259
   angles 2.226 -167.307 2.334
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5988.456 218.097 7173.021
   angles -1.774 -0.166 5.358
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5124.285 54.056 5458.051
   angles -2.71 35.085 -0.81
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4033.886 32.562 7876.108
   angles 0.236 -34.275 -1.244
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 6434.069 7.813 9643.378
   angles 9.035 15.062 0.59
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7422.615 113.629 5326.617
   angles 0.934 -158.691 -7.283
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 2465.685 102.735 5443.956
   angles 2.744 -99.74 -10.337
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7508.814 134.102 4793.763
   angles 11.368 -152.375 4.908
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 4491.708 20.008 9767.969
   angles -3.235 -133.655 3.082
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5093.168 176.892 6988.288
   angles 0.895 0.014 0.895
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5545.938 89.563 5901.062
   angles 0.754 42.654 0.74
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7241.809 136.754 2204.952
   angles -1.799 52.564 -0.877
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5033.653 43.993 8971.769
   angles 3.457 -178.122 3.685
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 9115.877 76.614 2281.866
   angles 7.116 0.197 2.687
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 2916.18 77.651 6458.024
   angles 1.893 61.611 9.071
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 5845.197 235.007 7255.72
   angles 7.353 125.508 9.507
  }
  {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
   coords 7681.231 340.875 3087.47
   angles 0 134.824 0
  }
@@ -25262,8 +25659,7 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T2H_Morton {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Morton"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Morton-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_Morton"
    }
   }
   coords 4947.417 2.606 3870.595
@@ -25314,8 +25710,7 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T2H_Lamentin {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Lamentin"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Lamentin-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_Lamentin"
    }
   }
   coords 1052.508 3.504 6049.772
@@ -25356,8 +25751,7 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
  SP_T2H_MilitaryHospital {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Hospital"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Hospital-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_Hospital"
    }
   }
   coords 3737.438 1.247 8529.84
@@ -25375,6 +25769,14 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
    GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
     coords 10.835 0.065 13.844
     angles 0 -91.506 0
+   }
+   GenericEntity : "{7492BAA88AFCEDCE}Prefabs/Compositions/Slotted/SlotFlatSmall/Bunker_S_USSR_01.et" {
+    coords 30.395 9.409 -49.011
+    angles 0 69.102 0
+   }
+   GenericEntity : "{83A10E8547281E58}Prefabs/Compositions/Slotted/SlotRoadSmall/Barricade_S_USSR_01.et" {
+    coords 28.368 1.46 -12.729
+    angles 0 -36.397 0
    }
    $grp GenericEntity : "{9273AB931008C271}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_FIA.et" {
     {
@@ -25398,18 +25800,110 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
      angles 0 21.139 0
     }
    }
+   GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+    coords 23.406 1.407 -17.114
+    angles 0 89.343 0
+    {
+     GenericEntity {
+      ID "5CC6B48B9C8C2BA0"
+      coords -3.616 -0.142 1.153
+      angles 0 -165.47 0
+     }
+     GenericEntity {
+      ID "5CC6B48B9C8C2A7C"
+      coords 0.655 -0.356 -9.416
+      angles 0 -96.241 66.211
+     }
+     StaticModelEntity {
+      ID "5CC6B48B9C8C2BDB"
+      coords -3.768 -0.115 1.593
+      angles 0 -69.67 0
+     }
+     StaticModelEntity {
+      ID "5CC6B48B9C8C2A48"
+      coords -2.345 -0.061 2.065
+      angles 0 42.427 0
+     }
+     StaticModelEntity {
+      ID "5CC6B48B9C8C2B00"
+      coords 0.761 -0.686 -9.816
+      angles 0 103.572 5.057
+     }
+    }
+   }
   }
  }
  SP_T2H_Meaux {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Meaux"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Meaux-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_Meaux"
    }
   }
   coords 4316.276 1.125 9516.908
   angles 0 -11.537 0
   {
+   GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et" {
+    coords 16.542 0.048 27.339
+    angles 0 128.89 0
+    {
+     GenericEntity {
+      ID "5CCCBEDC9EB800A3"
+      coords 0.858 -0.013 0.56
+      angles -1.216 46.342 2.22
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB800B1"
+      coords 0.927 -0.023 0.166
+      angles 1.673 -20.66 1.097
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB8008E"
+      coords 0.816 -0.029 -0.29
+      angles 1.351 -101.478 -1.477
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB800BC"
+      coords 0.285 -0.007 0.076
+      angles 1.988 -60.496 -0.229
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB8034B"
+      coords -3.179 0.1 -1.641
+      {
+       DecalEntity {
+        ID "56E0B29E17039037"
+        coords 0 0.11 0
+        angles -90 0 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB803CC"
+      coords -4.334 0.287 0.348
+      angles 2.599 151.458 -2.719
+     }
+     GenericEntity {
+      ID "5CCCBEDC9EB803F4"
+      coords -2.822 0.397 1.193
+      angles -1.697 150.55 -4.13
+     }
+     StaticModelEntity {
+      ID "5CCCBEDC9EB80042"
+      coords 2.568 -0.049 -0.298
+      angles 0 0.88 0
+     }
+     StaticModelEntity {
+      ID "5CCCBEDC9EB80325"
+      coords -2.898 0.285 2.201
+      angles 0 -129.908 0
+     }
+     StaticModelEntity {
+      ID "5CCCBEDC9EB80334"
+      coords -1.484 0.422 3.082
+      angles 0 -97.844 0
+     }
+    }
+   }
    $grp GenericEntity : "{9273AB931008C271}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_FIA.et" {
     {
      components {
@@ -25444,13 +25938,53 @@ $grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSou
      angles 0 11.537 0
     }
    }
+   GenericEntity : "{B04F2A9C5356C02D}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_FIA_01.et" {
+    coords 25.382 0.815 -19.115
+    angles 0 92.79 0
+    {
+     GenericEntity {
+      ID "5D1ED9174DD933FE"
+      coords 1.887 0.289 -0.333
+      angles 3.582 -2.689 -0.168
+     }
+     GenericEntity {
+      ID "5D1ED9174DD9321F"
+      coords 0.732 0.023 2.085
+      angles 0 -1.46 0
+     }
+     GenericEntity {
+      ID "5D1ED9174DD93228"
+      coords 4.365 -0.034 2.076
+      angles 0 1.601 0
+     }
+     GenericEntity {
+      ID "5D1ED9174DD9323D"
+      coords 2.992 0.018 2.085
+      angles 0 178.52 0
+     }
+     GenericEntity {
+      ID "5D1ED9174DD9326C"
+      coords -1.273 0.026 2.085
+      angles 0 -179.115 0
+     }
+     GenericEntity {
+      ID "5D1ED9174DD93279"
+      coords -2.509 0.264 2.096
+      angles 0 178.575 0
+     }
+     GenericEntity {
+      ID "5D1ED9174DD93293"
+      coords -4.392 0.275 2.097
+      angles 0 178.575 0
+     }
+    }
+   }
   }
  }
  SP_T2H_FishermansBay {
   components {
    SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
-    m_sBaseName "#AR-Campaign_MapLocation_Harbour_FishermansBay"
-    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_FishermansBay-UC"
+    m_sBaseName "#AR-MapLocation_Harbour_FishermansBay"
    }
   }
   coords 7531.006 2.441 6689.541
@@ -25874,8 +26408,8 @@ $grp GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSma
     m_bOrientChildrenToTerrain 0
    }
   }
-  coords 1013.766 2.857 6049.547
-  angles 0 -174.751 0
+  coords 1047.79 2.857 6047.054
+  angles 0 -6.102 0
  }
  {
   coords 5022.725 15.375 3946.365
