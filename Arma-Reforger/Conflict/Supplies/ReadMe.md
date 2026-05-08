@@ -19,4 +19,5 @@
 
 ## Полезные ссылки
 1. Обсуждение в Discord - [Logistics Overhaul](https://discord.com/channels/105462288051380224/1162201046974738472)
-2. 
+2. Мой тред в канале reforger_experimental по этой теме - [New supply system](https://discord.com/channels/105462288051380224/1163460024035725382/1163460029156950076)
+3. 
