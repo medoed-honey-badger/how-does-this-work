@@ -1,0 +1,58 @@
+GenericEntity : "{0F7EEA8F88BC7323}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Supplies_USSR_01.et" {
+ coords 116.416 1 127.551
+}
+GenericEntity : "{1AB925786957ADC1}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Ammo_US_01.et" {
+ coords 122.494 1 122.388
+}
+GenericEntity : "{26162445B326AE64}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Vehicle_USSR_01.et" {
+ coords 112.678 1 126.885
+}
+GenericEntity : "{38464762C5D374D2}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_01_Campaign.et" {
+ coords 131.357 1 128.48
+ angles 0 -87.766 0
+}
+GenericEntity : "{3D6789AF892A071C}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Ammo_USSR_01.et" {
+ coords 121.39 1 122.377
+}
+GenericEntity : "{417538EECB175326}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Fuel_FIA_01.et" {
+ coords 123.454 1 125.817
+}
+GenericEntity : "{4F051BF6CA4F2BAA}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_ConstructionMat_US_01.et" {
+ coords 116.711 1 122.828
+}
+GenericEntity : "{56E21E3119E019E8}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Supplies_FIA_01.et" {
+ coords 118.322 1 127.643
+}
+GenericEntity : "{5895C296CB9A906D}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Vehicle_FIA_01.et" {
+ coords 114.282 1 127.045
+}
+GenericEntity : "{605DCA664B550FDA}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Vehicle_US_01.et" {
+ coords 113.43 1 126.77
+}
+GenericEntity : "{6EA66BA67694B56A}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Hospital_FIA_01.et" {
+ coords 117.636 1 125.146
+}
+GenericEntity : "{704709DB1B6B8FA6}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Fuel_USSR_01.et" {
+ coords 121.662 1 125.526
+}
+GenericEntity : "{732A386A51B7A6AC}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Hospital_USSR_01.et" {
+ coords 113.925 1 124.989
+}
+GenericEntity : "{77BBA2866AE3E861}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Supplies_US_01.et" {
+ coords 117.378 1 127.409
+}
+GenericEntity : "{9AD515FDBB3CAF76}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Fuel_US_01.et" {
+ coords 122.636 1 125.63
+}
+GenericEntity : "{9FF105295D26844A}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Hospital_US_01.et" {
+ coords 115.919 1 125.203
+}
+GenericEntity : "{AD6380DCCC840917}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_ConstructionMat_USSR_01.et" {
+ coords 115.812 1 122.757
+}
+GenericEntity : "{D07A2B1B18848567}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_ConstructionMat_FIA_01.et" {
+ coords 117.969 1 123.258
+}
+GenericEntity : "{DBBF58FCDD2790EB}PrefabsEditable/Auto/Structures/Signs/Military/Supplies/E_Sign_SupplyStorage_Ammo_FIA_01.et" {
+ coords 123.515 1 122.876
+}
