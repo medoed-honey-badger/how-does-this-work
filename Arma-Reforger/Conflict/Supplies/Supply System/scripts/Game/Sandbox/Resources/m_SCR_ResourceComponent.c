@@ -10,7 +10,12 @@ modded class SCR_ResourceComponent : ScriptComponent
 	override static SCR_ResourceComponent FindResourceComponent(IEntity entity, bool ignoreChildIfHasStorage = false)
 	{
 		// Мой код
-		Print("SCR_ResourceComponent::SCR_ResourceComponent DEBUG");
+		//Print("MyCode::SCR_ResourceComponent DEBUG");
+		
+		// Мой код - разберёмся, а для кого мы вообще вызываем эту функцию - и для таблички, и для коробок с припасами?
+		
+		if (entity)
+			Print("MyCode::entity = " + entity);
 		
 		//~ Function is used in many places. Not all can guarantee that entity is not null
 		if (!entity)
