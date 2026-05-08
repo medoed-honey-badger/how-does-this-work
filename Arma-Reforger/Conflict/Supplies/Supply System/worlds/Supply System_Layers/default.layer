@@ -2,12 +2,12 @@ GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Si
  components {
   SCR_ResourceComponent "{5E3298BE225F0743}" {
    m_bEnableDebugVisualization 1
-   m_eDebugVisualizationFlags 5
+   m_eDebugVisualizationFlags CONSUMER
   }
   Hierarchy "{5E331960ECC46AF5}" {
   }
  }
- coords 122.767 1.031 132.068
+ coords 122.758 1.032 132.084
  angles 0.133 -2.838 0.83
 }
 GenericEntity : "{38464762C5D374D2}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_01_Campaign.et" {
@@ -28,6 +28,14 @@ GenericEntity : "{38464762C5D374D2}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_
     }
    }
   }
+  GenericEntity {
+   ID "5E330D6FDCD30C24"
+   components {
+    SCR_ResourceComponent "{5E3298BE225F0743}" {
+     m_eDebugVisualizationFlags 5
+    }
+   }
+  }
  }
 }
 GenericEntity : "{3FD3F403025BBDF5}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_storage.et" {
@@ -45,6 +53,6 @@ GenericEntity : "{3FD3F403025BBDF5}Prefabs/Props/Military/SupplyBox/SupplyStack/
    m_eDebugVisualizationFlags CONTAINER
   }
  }
- coords 122.635 0.999 128.727
+ coords 123.076 0.999 129.672
  angles 0 1.214 0
 }

@@ -1,6 +1,6 @@
 modded class SCR_ResourceGrid : AABGridMap
 {
-	static const int MAX_FRAME_BUDGET = 20;
+	/*static const int MAX_FRAME_BUDGET = 20;
 	
 	protected ref array<SCR_ResourceComponent> m_aFlaggedItems = {};
 	protected ref set<SCR_ResourceContainer> m_aQueriedContainers = new set<SCR_ResourceContainer>();
@@ -198,5 +198,5 @@ modded class SCR_ResourceGrid : AABGridMap
 		
 		interactor.OnResourceGridUpdated(this);
 		m_aQueriedContainers.Clear();
-	}
+	}*/
 }
