@@ -14,8 +14,8 @@ modded class SCR_ResourceComponent : ScriptComponent
 		
 		// Мой код - разберёмся, а для кого мы вообще вызываем эту функцию - и для таблички, и для коробок с припасами?
 		
-		if (entity)
-			Print("MyCode::entity = " + entity);
+		//if (entity)
+			//Print("MyCode::entity = " + entity);
 		
 		//~ Function is used in many places. Not all can guarantee that entity is not null
 		if (!entity)
@@ -23,6 +23,10 @@ modded class SCR_ResourceComponent : ScriptComponent
 		
 		//~ Get resource component
 		SCR_ResourceComponent resourceComponent = SCR_ResourceComponent.Cast(entity.FindComponent(SCR_ResourceComponent));
+		
+		// Мой код
+		Print("MyCode::resourceComponent = " + resourceComponent);
+		
 		if (resourceComponent)
 			return resourceComponent;
 		
