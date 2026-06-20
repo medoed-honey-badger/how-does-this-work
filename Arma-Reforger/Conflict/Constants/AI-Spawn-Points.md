@@ -1,24 +1,37 @@
 # Точки появления ботов и их показатели
 
-| # | Location | Group type | Group Count | Probability of presence, % | Coords | Sum |
-| :-- | ----------- |----------- |----------- |----------- |----------- |----------- |
-| 1 | Airport | Fire Team | 5 | 66 | 4953.892 28.38 11979.468 | |
-| 2 | Airport | Sniper Team | | 33 | 4918.985 44.314 11787.571 | |
-| 3 | Airport | Fire Team | 5 | 65 | 0.948 -0.178 70.098 | |
-| 4 | Airport | Fire Team | 5 | 75 | -1.505 0.539 -110.659 | |
-| 5 | Airport | Fire Team | 5 | 90 | 0 0 0 | |
-| 6 | Airport | MG Team | | 85 | -3.195 7.697 38.932 | |
-| 7 | Airport | Rifle Squad |  | 95 | -17.685 0 11.49 | |
-| 8 | Airport | Sniper Team | | 85 | -17.498 15.428 -2.189 | |
-| 9 | | | | | | |
-| 10 | | | | | | |
-| 11 | | | | | | |
-| 12 | | | | | | |
-| 13 | | | | | | |
-| 14 | | | | | | |
-| 15 | | | | | | |
-| 16 | | | | | | |
-| 17 | | | | | | |
+## Airport
+
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 | Fire Team | 5 | 66 | 4953.892 28.38 11979.468 |
+| 2 | Sniper Team | 2 | 33 | 4918.985 44.314 11787.571 |
+| 3 | Fire Team | 5 | 65 | 0.948 -0.178 70.098 |
+| 4 | Fire Team | 5 | 75 | -1.505 0.539 -110.659 |
+| 5 | Fire Team | 5 | 90 | 0 0 0 |
+| 6 | MG Team | 2 | 85 | -3.195 7.697 38.932 |
+| 7 | Rifle Squad | 7 | 95 | -17.685 0 11.49 |
+| 8 | Sniper Team | 2 | 85 | -17.498 15.428 -2.189 |
+
+Итого: **33**. Если все активируются
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
+
+## Location_Name
 
 
 ## Константы по составу группы
