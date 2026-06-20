@@ -32,14 +32,17 @@
 
 
 ## Константы по составу группы
-| Тип группы | Состав | Кол-во |
-| --------------- | ----------- |----------- |
-| TEAM_SENTRY | | |
-| TEAM_MG | | |
-| TEAM_AT | | |
-| FIRETEAM | | |
-| SQUAD_RIFLE | | |
-| TEAM_SNIPER | | |
-| TEAM_MG_ELITE | | |
-| PARTISAN_SNIPER | | |
-| PARTISAN_TEAM | | |
+1. Доп. инфа находится в `SCR_CampaignFactionManager -> Unsorted -> Factions -> Нужная фракция -> Entity Catalogs -> Group -> Multi Lists -> Not Spawned -> Entities -> Нужная группа -> Entitie Data List -> AmbientPatrolsData -> Group Type`
+2. *Probability of presence* срабатывает **только** если выбран случайный вариант в настройке точки появления
+
+|    Тип группы   |         Prefab          | Состав | Probability of presence, % | Кол-во |
+| --------------- | ----------------------- | ----------- | ----------- | ----------- |
+| TEAM_SENTRY | | | | |
+| TEAM_MG | | | | |
+| TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | Group_FIA_Team_AT | 50 | |
+| FIRETEAM | Group_FIA_FireTeam_NotSpawned.et | Group_FIA_FireTeam\n1. Character_FIA_SL\n2. Character_FIA_Medic\n3. Character_FIA_Rifleman\n4. Character_FIA_Rifleman\n5. Character_FIA_LAT | 30 | |
+| SQUAD_RIFLE | | | | |
+| TEAM_SNIPER | | | | |
+| TEAM_MG_ELITE | | | | |
+| PARTISAN_SNIPER | | | | |
+| PARTISAN_TEAM | | | | |
