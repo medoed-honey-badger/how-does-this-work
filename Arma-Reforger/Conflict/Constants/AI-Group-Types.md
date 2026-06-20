@@ -1,5 +1,8 @@
 # Константы по составу группы
 
+TO DO - в составе группы написать вооружение. Например, чтобы понимать, сколько у них РПГ
+
+
 1. Доп. инфа находится в `SCR_CampaignFactionManager -> Unsorted -> Factions -> Нужная фракция -> Entity Catalogs -> Group -> Multi Lists -> Not Spawned -> Entities -> Нужная группа -> Entitie Data List -> AmbientPatrolsData -> Group Type`
 2. *Probability of presence* срабатывает **только** если выбран случайный вариант в настройке точки появления
 
