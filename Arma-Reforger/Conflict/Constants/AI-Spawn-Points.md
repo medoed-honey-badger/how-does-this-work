@@ -1,5 +1,8 @@
 # Точки появления ботов и их показатели
 
+[!NOTE]
+В итого указано маскимальное число, если все активируются
+
 ## Airport
 
 | # | Group type | Group Count | Probability of presence, % | Coords |
@@ -13,23 +16,119 @@
 | 7 | Rifle Squad | 7 | 95 | -17.685 0 11.49 |
 | 8 | Sniper Team | 2 | 85 | -17.498 15.428 -2.189 |
 
-Итого: **33**. Если все активируются
+Итого: **33**
+
+## Calvary_Hill
+
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 | AT Team | 4 | 75 | 3532.095 180.703 5834.645 |
+| 2 | Fire Team | 5 | 85 | 3580.456 173.227 5823.977 |
+| 3 | Fire Team | 5 | 95 | 3495.847 178.38 5774.984 |
+| 4 | MG Team | 2 | 75 | 3469.563 176.437 5773.016 |
+| 5 | Sentry Team | 2 | 75 | 3441.682 175.144 5838.972 |
+| 5 | Sentry Team | 2 | 75 | 3429.11 173.421 5784.316 |
+| 5 | Sentry Team | 2 | 75 | 3577.574 172.181 5768.84 |
+| 5 | Sentry Team | 2 | 85 | 3459.744 172.391 5736.595 |
+| 5 | Sentry Team | 2 | 75 |  |
+| 5 | Sentry Team | 2 | 75 |  |
 
 ## Location_Name
 
-## Location_Name
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
 
 ## Location_Name
 
-## Location_Name
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
 
 ## Location_Name
 
-## Location_Name
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
 
 ## Location_Name
 
-## Location_Name
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
 
 ## Location_Name
 
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
+
+## Location_Name
+
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
+
+## Location_Name
+
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
+
+## Location_Name
+
+| # | Group type | Group Count | Probability of presence, % | Coords |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+Итого: 
+
+
+
+Итого по всем:
