@@ -31,12 +31,12 @@
 
 |    Тип группы   |         Prefab          | Состав | Probability of presence, % | Кол-во |
 | --------------- | ----------------------- | ----------- | ----------- | ----------- |
-| TEAM_SENTRY | Group_FIA_ReconTeam_NotSpawned.et | *Group_FIA_ReconTeam*<br>1.  | 100 | |
-| TEAM_MG | Group_FIA_MachineGunTeam_NotSpawned.et | *Group_FIA_MachineGunTeam*<br>1.  | 50 | |
-| TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | *Group_FIA_Team_AT*<br>1.  | 50 | |
+| TEAM_SENTRY | Group_FIA_ReconTeam_NotSpawned.et | *Group_FIA_ReconTeam*<br>1. Character_FIA_Scout<br>2. Character_FIA_RTO | 100 | 2 |
+| TEAM_MG | Group_FIA_MachineGunTeam_NotSpawned.et | *Group_FIA_MachineGunTeam*<br>1. Character_FIA_MG<br>2. Character_FIA_AMG | 50 | 2 |
+| TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | *Group_FIA_Team_AT*<br>1. Character_FIA_Rifleman<br>2. Character_FIA_AT<br>3. Character_FIA_AT<br>4. Character_FIA_AAT | 50 | 4 |
 | FIRETEAM | Group_FIA_FireTeam_NotSpawned.et | *Group_FIA_FireTeam*<br>1. Character_FIA_SL<br>2. Character_FIA_Medic<br>3. Character_FIA_Rifleman<br>4. Character_FIA_Rifleman<br>5. Character_FIA_LAT | 30 | 5 |
 | SQUAD_RIFLE | Group_FIA_RifleSquad_NotSpawned.et | *Group_FIA_RifleSquad*<br>1. Character_FIA_SL<br>2. Character_FIA_MG<br>3. Character_FIA_AMG<br>4. Character_FIA_LAT<br>5. Character_FIA_RTO<br>6. Character_FIA_Rifleman<br>7. Character_FIA_LAT | 15 | 7 |
-| TEAM_SNIPER | Group_FIA_SniperTeam_NotSpawned.et | *Group_FIA_ReconTeam*<br>1. Character_FIA_Sharpshooter<br>2. Character_FIA_Scout | 50 | |
+| TEAM_SNIPER | Group_FIA_SniperTeam_NotSpawned.et | *Group_FIA_ReconTeam*<br>1. Character_FIA_Sharpshooter<br>2. Character_FIA_Scout | 50 | 2 |
 | TEAM_MG_ELITE | Group_FIA_MachineGunTeam_Elite_NotSpawned.et | *Group_FIA_MachineGunTeam*<br>1. Character_FIA_AMG<br>2. Character_FIA_MG_Elite | 50 | 2 |
 | PARTISAN_SNIPER | Group_FIA_LoneWolfSniper_NotSpawned.et | *Group_FIA_ReconTeam*<br>1. Character_FIA_Rebel_Sharpshooter| 30 | 1 |
 | PARTISAN_TEAM | Group_FIA_PartisanTeam_NotSpawned.et | *Group_FIA_FireTeam*<br>1. Character_FIA_AC_Partisan<br>2. Character_FIA_AC_Partisan_Grenadier<br>3. Character_FIA_AC_Medic<br>4. Character_FIA_AC_Scout<br>5. Character_FIA_AC_Partisan| 30 | 5 |
