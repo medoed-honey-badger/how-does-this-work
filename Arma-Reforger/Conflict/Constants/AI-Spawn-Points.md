@@ -1,0 +1,43 @@
+# Точки появления ботов и их показатели
+
+|| # || Location || Group type || Group Count || Probability of presence || Coords || Sum ||
+| 1 | Airport | Fire Team | | | | |
+| 2 | | | | | | |
+| 3 | | | | | | |
+| 4 | | | | | | |
+| 5 | | | | | | |
+| 6 | | | | | | |
+| 7 | | | | | | |
+| 8 | | | | | | |
+| 9 | | | | | | |
+| 10 | | | | | | |
+| 11 | | | | | | |
+| 12 | | | | | | |
+| 13 | | | | | | |
+| 14 | | | | | | |
+| 15 | | | | | | |
+| 16 | | | | | | |
+| 17 | | | | | | |
+
+
+
+
+
+
+
+
+
+
+
+
+## Константы по составу группы
+|| Тип группы || Состав || Кол-во ||
+| TEAM_SENTRY
+| TEAM_MG | | |
+| TEAM_AT | | |
+| FIRETEAM | | |
+| SQUAD_RIFLE | | |
+| TEAM_SNIPER | | |
+| TEAM_MG_ELITE | | |
+| PARTISAN_SNIPER | | |
+| PARTISAN_TEAM | | |
