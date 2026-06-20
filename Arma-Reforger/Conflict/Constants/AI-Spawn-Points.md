@@ -1,6 +1,7 @@
 # Точки появления ботов и их показатели
 
-|| # || Location || Group type || Group Count || Probability of presence || Coords || Sum ||
+| # | Location | Group type | Group Count | Probability of presence | Coords | Sum |
+| ----------- | ----------- |----------- |----------- |----------- |----------- |----------- |
 | 1 | Airport | Fire Team | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
