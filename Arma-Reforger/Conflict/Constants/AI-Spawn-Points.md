@@ -39,8 +39,8 @@
 | --------------- | ----------------------- | ----------- | ----------- | ----------- |
 | TEAM_SENTRY | | | | |
 | TEAM_MG | | | | |
-| TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | Group_FIA_Team_AT | 50 | |
-| FIRETEAM | Group_FIA_FireTeam_NotSpawned.et | Group_FIA_FireTeam\n1. Character_FIA_SL\n2. Character_FIA_Medic\n3. Character_FIA_Rifleman\n4. Character_FIA_Rifleman\n5. Character_FIA_LAT | 30 | |
+| TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | *Group_FIA_Team_AT* | 50 | |
+| FIRETEAM | Group_FIA_FireTeam_NotSpawned.et | *Group_FIA_FireTeam* \n1. Character_FIA_SL\n2. Character_FIA_Medic\n3. Character_FIA_Rifleman\n4. Character_FIA_Rifleman\n5. Character_FIA_LAT | 30 | |
 | SQUAD_RIFLE | | | | |
 | TEAM_SNIPER | | | | |
 | TEAM_MG_ELITE | | | | |
