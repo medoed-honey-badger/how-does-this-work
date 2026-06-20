@@ -30,7 +30,7 @@
 ### FIA
 
 |    Тип группы   |         Prefab          | Состав | Probability of presence, % | Кол-во |
-| --------------- | ----------------------- | ----------- | ----------- | ----------- |
+| --------------- | ----------------------- | ----------- | :-----------: | -----------: |
 | TEAM_SENTRY | Group_FIA_ReconTeam_NotSpawned.et | *Group_FIA_ReconTeam*<br>1. Character_FIA_Scout<br>2. Character_FIA_RTO | 100 | 2 |
 | TEAM_MG | Group_FIA_MachineGunTeam_NotSpawned.et | *Group_FIA_MachineGunTeam*<br>1. Character_FIA_MG<br>2. Character_FIA_AMG | 50 | 2 |
 | TEAM_AT | Group_FIA_Team_AT_NotSpawned.et | *Group_FIA_Team_AT*<br>1. Character_FIA_Rifleman<br>2. Character_FIA_AT<br>3. Character_FIA_AT<br>4. Character_FIA_AAT | 50 | 4 |
