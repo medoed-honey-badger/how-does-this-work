@@ -33,7 +33,7 @@
 
 ## Константы по составу группы
 | Тип группы | Состав | Кол-во |
-| TEAM_SENTRY
+| TEAM_SENTRY | | |
 | TEAM_MG | | |
 | TEAM_AT | | |
 | FIRETEAM | | |
