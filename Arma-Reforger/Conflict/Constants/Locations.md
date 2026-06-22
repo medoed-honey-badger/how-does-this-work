@@ -4,6 +4,6 @@
 
 | # | Location | AIs | Supplies |
 | :-- |----------- |--: |:----: |
-| Control points ||
+|| Control points ||
 | 1 |  |  |  |
 | 2 |  |  |  |
