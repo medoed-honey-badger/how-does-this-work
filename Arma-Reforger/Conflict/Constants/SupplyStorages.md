@@ -29,76 +29,55 @@ TO DO
 
 | US | USSR | FIA |
 | -- | -- | -- |
-| 2675  | Same | 2275 (Без заводя тяжёлой техники, больших палаток и вертолётной площадки) |
+| 2675  | Same | 2275 (Без завода тяжёлой техники, больших палаток и вертолётной площадки) |
 
 ## Стоимость остальных композиций
-### Сколько вмещает / сколько стоит
+
+Пропуски отображают, как их видят игроки в меню строительства
+
 | # | Type | US | USSR | FIA |
 | :-- | ----------- |----------- |----------- |----------- |
-| x |  |  |  |  |
-| x |  |  |  |  |
-| x |  |  |  |  |
-| x |  |  |  |  |
-| x |  |  |  |  |
-
-*US*
-
-*Structures*
-
-Radio Relay Station 250
-Ammunition Supply Point 325
-Light Vehicle Maintenance Point 150
-Fuel Supply Depot 50
-Living Quarters 250
-
-Field Hospital 250
-Heavy Vehicle Maintenance Point 300
-Helipad 750
-Floodlight 125
-Supply Depot 175
-
-Living Quarters 475
-
-*Fortifications*
-
-Bunker 100
-Defensive Position 100
-Defensive Position 140
-Defensive Position 40
-Defensive Position 60
-
-Machine-Gun Nest 85
-Machine-Gun Nest 250
-Roadblock 100
-Roadblock 40
-Roadblock 20
-
-Checkpoint 350
-Checkpoint 225
-Checkpoint 75
-M252 mortar emplacement 400
-AA HMG Emplacement 200
-
-MG M60 Emplacement 80
-MG M2HB Emplacement 150
-Guard Tower 240
-
-*Other*
-
-Dragon's Tooth 10
-Razor Wire Barrier 10
-Small Plastic Sandbag Wall 20
-Medium Plastic Sandbag Wall 35
-Small Plastic Sandbag Wall 15
-
-Medium Plastic Sandbag Wall 30
-Large Plastic Sandbag Wall 50
-Plastic Large Sandbag Wall 55
-Small Camouflage Net 50
-Medium Camouflage Net 60
-
-Large Camouflage Net 80
-
+| 1 | Radio Relay Station | 250 |  |  |
+| 2 | Fuel Supply Depot | 50 |  |  |
+| 3 | Floodlight | 125 |  |  |
+||||||
+||||||
+| 1 | Bunker | 100 |  |  |
+| 2 | Defensive Position | 100 |  |  |
+| 3 | Defensive Position | 140 |  |  |
+| 4 | Defensive Position | 40 |  |  |
+| 5 | Defensive Position | 60 |  |  |
+||||||
+| 6 | Machine-Gun Nest | 85 |  |  |
+| 7 | Machine-Gun Nest | 250 |  |  |
+| 8 | Roadblock | 100 |  |  |
+| 9 | Roadblock | 40 |  |  |
+| 10 | Roadblock | 20 |  |  |
+||||||
+| 11 | Checkpoint | 350 |  |  |
+| 12 | Checkpoint | 225 |  |  |
+| 13 | Checkpoint | 75 |  |  |
+| 14 | M252 mortar emplacement | 400 | - |  |
+| 15 | AA HMG Emplacement | 200 |  |  |
+||||||
+| 16 | MG M60 Emplacement | 80 | - |  |
+| 17 | MG M2HB Emplacement | 150 | - |  |
+| 18 | Guard Tower | 240 |  |  |
+||||||
+||||||
+| 1 | Dragon's Tooth | 10 |  |  |
+| 2 | Razor Wire Barrier | 10 |  |  |
+| 3 | Small Plastic Sandbag Wall | 20 |  |  |
+| 4 | Medium Plastic Sandbag Wall | 35 |  |  |
+| 5 | Small Plastic Sandbag Wall | 15 |  |  |
+||||||
+| 6 | Medium Plastic Sandbag Wall | 30 |  |  |
+| 7 | Large Plastic Sandbag Wall | 50 |  |  |
+| 8 | Plastic Large Sandbag Wall | 55 |  |  |
+| 9 | Small Camouflage Net | 50 |  |  |
+| 10 | Medium Camouflage Net | 60 |  |  |
+||||||
+| 11 | Large Camouflage Net | 80 |  |  |
 
 *USSR*
 
