@@ -3,7 +3,7 @@
 Версия игры: **1.7.0.49**
 
 
-TO DO
+**TO DO**
 1. Писать, с какого ранга то или иное доступно
 2. Указать кол-во припасов на скрытых и не очень хранилищах
 3. Указать, кол-во прибываемых припасов на стартовых позициях и доках
@@ -37,107 +37,60 @@ TO DO
 
 | # | Type | US | USSR | FIA |
 | :-- | ----------- |----------- |----------- |----------- |
-| 1 | Radio Relay Station | 250 |  |  |
-| 2 | Fuel Supply Depot | 50 |  |  |
-| 3 | Floodlight | 125 |  |  |
+| 1 | Radio Relay Station | 250 | Same |  |
+| 2 | Fuel Supply Depot | 50 | Same |  |
+| 3 | Floodlight | 125 | Same |  |
 ||||||
 ||||||
-| 1 | Bunker | 100 |  |  |
-| 2 | Defensive Position | 100 |  |  |
-| 3 | Defensive Position | 140 |  |  |
-| 4 | Defensive Position | 40 |  |  |
-| 5 | Defensive Position | 60 |  |  |
+| 1 | Bunker | 100 | Same |  |
+| 2 | Defensive Position | 100 | Same |  |
+| 3 | Defensive Position | 140 | Same |  |
+| 4 | Defensive Position | 40 | Same |  |
+| 5 | Defensive Position | 60 | Same |  |
 ||||||
-| 6 | Machine-Gun Nest | 85 |  |  |
-| 7 | Machine-Gun Nest | 250 |  |  |
-| 8 | Roadblock | 100 |  |  |
-| 9 | Roadblock | 40 |  |  |
-| 10 | Roadblock | 20 |  |  |
+| 6 | Machine-Gun Nest | 85 | Same |  |
+| 7 | Machine-Gun Nest | 250 | 200 |  |
+| 7 | Machine-Gun Nest | - | 350 |  |
+| 8 | Roadblock | 100 | Same |  |
+| 9 | Roadblock | 40 | Same |  |
+| 10 | Roadblock | 20 | Same |  |
 ||||||
-| 11 | Checkpoint | 350 |  |  |
-| 12 | Checkpoint | 225 |  |  |
-| 13 | Checkpoint | 75 |  |  |
+| 11 | Checkpoint | 350 | Same |  |
+| 12 | Checkpoint | 225 | Same |  |
+| 13 | Checkpoint | 75 | Same |  |
 | 14 | M252 mortar emplacement | 400 | - |  |
-| 15 | AA HMG Emplacement | 200 |  |  |
+| 14 | 2B14 mortar emplacement | - | 400 |  |
+| 15 | AA HMG Emplacement | 200 | - |  |
+| 15 | AA HMG Emplacement | - |  |  |
 ||||||
 | 16 | MG M60 Emplacement | 80 | - |  |
+| 16 | MG NSV Emplacement | - | 150 |  |
 | 17 | MG M2HB Emplacement | 150 | - |  |
-| 18 | Guard Tower | 240 |  |  |
+| 17 | MG NSV SPP Emplacement | - | 300 |  |
+| 17 | MG PKM Emplacement | - | 80 |  |
+| 18 | Guard Tower | 240 | Same |  |
 ||||||
 ||||||
-| 1 | Dragon's Tooth | 10 |  |  |
+| 1 | Dragon's Tooth | 10 | - |  |
+| 1 | Czech Hedgehog - Painted | - | 10 |  |
 | 2 | Razor Wire Barrier | 10 |  |  |
-| 3 | Small Plastic Sandbag Wall | 20 |  |  |
-| 4 | Medium Plastic Sandbag Wall | 35 |  |  |
-| 5 | Small Plastic Sandbag Wall | 15 |  |  |
+| 3 | Small Plastic Sandbag Wall | 20 | - |  |
+| 3 | Small Burlap Sandbag Wall | - | 20 |  |
+| 4 | Medium Plastic Sandbag Wall | 35 | - |  |
+| 4 | Medium Burlap Sandbag Wall | - | 35 |  |
+| 5 | Small Plastic Sandbag Wall | 15 | - |  |
+| 5 | Small Burlap Sandbag Wall | - | 15 |  |
 ||||||
-| 6 | Medium Plastic Sandbag Wall | 30 |  |  |
-| 7 | Large Plastic Sandbag Wall | 50 |  |  |
-| 8 | Plastic Large Sandbag Wall | 55 |  |  |
-| 9 | Small Camouflage Net | 50 |  |  |
-| 10 | Medium Camouflage Net | 60 |  |  |
+| 6 | Medium Plastic Sandbag Wall | 30 | - |  |
+| 6 | Medium Burlap Sandbag Wall | - | 30 |  |
+| 7 | Large Plastic Sandbag Wall | 50 | - |  |
+| 7 | Large Burlap Sandbag Wall | - | 50 |  |
+| 8 | Plastic Large Sandbag Wall | 55 | - |  |
+| 8 | Large Burlap Sandbag Wall | - | 55 |  |
+| 9 | Small Camouflage Net | 50 | Same |  |
+| 10 | Medium Camouflage Net | 60 | Same |  |
 ||||||
-| 11 | Large Camouflage Net | 80 |  |  |
-
-*USSR*
-
-*Structures*
-
-Radio Relay Station 250
-Ammunition Supply Point 325
-Light Vehicle Maintenance Point 150
-Fuel Supply Depot 50
-Living Quarters 250
-
-Field Hospital 250
-Heavy Vehicle Maintenance Point 300
-Helipad 750
-Floodlight 125
-Supply Depot 175
-
-Living Quarters 475
-
-*Fortifications*
-
-Bunker 100
-Defensive Position 100
-Defensive Position 140
-Defensive Position 40
-Defensive Position 60
-
-Machine-Gun Nest 85
-Machine-Gun Nest 200
-Machine-Gun Nest 350
-Roadblock 100
-Roadblock 40
-
-Roadblock 20
-Checkpoint 350
-Checkpoint 225
-Checkpoint 75
-2B14 mortar emplacement 400
-
-AA HMG Emplacement 250
-MG NSV Emplacement 150
-MG NSV SPP Emplacement 300
-MG PKM Emplacement 80
-Guard Tower 240
-
-*Other*
-
-Czech Hedgehog - Painted 10
-Razor Wire Barrier 10
-Small Burlap Sandbag Wall 20
-Medium Burlap Sandbag Wall 35
-Small Burlap Sandbag Wall 15
-
-Medium Burlap Sandbag Wall 30
-Large Burlap Sandbag Wall 50
-Large Burlap Sandbag Wall 55
-Small Camouflage Net 50
-Medium Camouflage Net 60
-
-Large Camouflage Net 80
+| 11 | Large Camouflage Net | 80 | Same |  |
 
 
 *FIA*
