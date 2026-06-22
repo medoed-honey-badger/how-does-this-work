@@ -109,7 +109,7 @@
 
 Итого: **12**
 
-### Island_Saules
+### Island Saules
 
 | # | Group type | Group Count | Probability of presence, % | Coords |
 | :-- | ----------- |----------- |----------- |----------- |
@@ -148,7 +148,7 @@
 
 Итого: **5**
 
-### Le_Moule
+### Le Moule
 
 | # | Group type | Group Count | Probability of presence, % | Coords |
 | :-- | ----------- |----------- |----------- |----------- |
