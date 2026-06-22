@@ -2,30 +2,34 @@
 
 **1.7.0.41**
 
-
-Радиорелейная станция
-Пункт боепитания
-Пункт техобслуживания лёгкой техники
-
-
-#	US	USSR	FIA
-#	Holds / Cost		
-Command post	1000 / 500    Same	Not necessary
-Supply depot	3000 / 175	Same
-Ammunition supply depot	2100 / 325	Same
-Light vehicle maintenance point	300 / 150	Same
-Heavy vehicle maintenance point	600 / 300	1000 / 300
-Small Living quarters	200 / 250	Same
-Large Living quarters	500 / 475	900 / 475
-Hospital	300 / 250	600 / 250
-Helipad 300 / 750	200 / 750
-
-
+## Данные по основным композициям
+### Сколько вмещает / сколько стоит
+| # | Type | US | USSR | FIA |
+| :-- | ----------- |----------- |----------- |----------- |
+| 1 | Command post | 1000 / 500 | Same | 1000 / Not necessary |
+| 2 | Supply depot | 3000 / 175 | Same | TO-DO |
+| 3 | Ammunition supply depot | 2100 / 325 | Same | TO-DO |
+| 4 | Light vehicle maintenance point | 300 / 150 | Same | TO-DO |
+| 5 | Heavy vehicle maintenance point | 600 / 300 | 1000 / 300 | TO-DO |
+| 6 | Small Living quarters | 200 / 250 | Same | TO-DO |
+| 7 | Large Living quarters | 500 / 475 | 900 / 475 | TO-DO |
+| 8 | Hospital | 300 / 250 | 600 / 250 | TO-DO |
+| 9 | Helipad | 300 / 750 | 200 / 750 | Not necessary |
 
 TO DO
 1. Писать, с какого ранга то или иное доступно
 2. Указать кол-во припасов на скрытых и не очень хранилищах
 
+
+## Стоимость остальных композиций
+### Сколько вмещает / сколько стоит
+| # | Type | US | USSR | FIA |
+| :-- | ----------- |----------- |----------- |----------- |
+| x |  |  |  |  |
+| x |  |  |  |  |
+| x |  |  |  |  |
+| x |  |  |  |  |
+| x |  |  |  |  |
 
 *US*
 
