@@ -299,7 +299,7 @@
 
 Итого: **14**
 
-### St Phillipe
+### Saint-Phillipe
 
 | # | Group type | Group Count | Probability of presence, % | Coords |
 | :-- | ----------- |----------- |----------- |----------- |
@@ -308,7 +308,7 @@
 
 Итого: **5**
 
-### St Pierre
+### Saint-Pierre
 
 | # | Group type | Group Count | Probability of presence, % | Coords |
 | :-- | ----------- |----------- |----------- |----------- |
