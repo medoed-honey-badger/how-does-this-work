@@ -18,8 +18,8 @@
 | 6 | Provins | 36 | 4000/7300 |
 | 7 | Regina | 39 | 400/5300 |
 |  |  |  |  |
-| 1 | Entre - Deux. Radio Tower | 8 | x |
-| 2 | Regina - Radio Tower | 6 | x |
+| 1 | Entre - Deux. Radio Tower | 8 | Not necessary |
+| 2 | Regina - Radio Tower | 6 | Not necessary |
 |  |  |  |  |
 | 1 | Le Bosc Dock | x | 4500(+1000 - x min) |
 | 2 | Saint-Pierre Harbor | x | 11000(+3000 - x min) |
@@ -69,7 +69,7 @@
 | 1 | Legacy | 92 | x |
 | 2 | Broken | 36 | x |
 |  |  |  |  |
-| 1 | Montfort Castle | x | x |
+| 1 | Montfort Castle | x | Not necessary |
 
 
 ### Суммарно
