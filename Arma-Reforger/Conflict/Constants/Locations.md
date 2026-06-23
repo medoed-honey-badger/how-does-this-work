@@ -6,6 +6,10 @@
 1. Указывать кол-во припасов на старте миссии. Чтобы понимать, видит ли база их все
 2. Указать, откуда берутся данные. Из какого конфига
 
+> [!NOTE] 
+> Данные по времени доставки припасов берутся из переменной "Supplies Arrival Interval" (*m_iSuppliesArrivalInterval*) в компоненте *SCR_CampaignSourceBaseComponent* композиции ConflictSourceBase_...
+> По кол-ву прироста из Regular Supplies Income Base (*m_iRegularSuppliesIncomeBase*) того же компонента
+
 ## Everon
 
 | #   | Location            | AIs | Supplies(initial/max) |
@@ -40,7 +44,7 @@
 | 17 | Saint-Phillipe Harbor | x | 12000(+3000 - x min) |
 | 18 | Airport Base | x | 8000(+2000 - x min) |
 |  |  |  |  |
-| 1 | Airport | 33 | x |
+| 1 | Airport | 33 | 8000(500 + 500 + 1000 + 1000 + 1000 + 1000 + 500 + 500 + 500 + 1000 + 1000 + 1000 + 1000 + 500) |
 | 2 | Chotain - Military Base | 8 | x |
 | 3 | Entre - Deux | 7 | x |
 | 4 | Etoupe | 9 | x |
