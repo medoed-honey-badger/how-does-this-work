@@ -26,7 +26,7 @@
 | 2 | Regina - Radio Tower | 6 | Not necessary |
 |  |  |  |  |
 | 1 | Le Bosc Dock | x | 4500(+1000 - x min) |
-| 2 | Saint-Pierre Harbor | x | 11000(+3000 - x min) |
+| 2 | Saint-Pierre Harbor | x | 11 000(+3000 - x min) |
 | 3 | Lancre Dock | x | 2500(+1000 - x min) |
 | 4 | Goat Bay Harbor | x | 4000(+1000 - x min) |
 | 5 | Perelle Pier | x | 5000(+1000 - x min) |
@@ -41,14 +41,14 @@
 | 14 | M. Hospital Harbor | x | 7500(+2000 - x min) |
 | 15 | Meaux Harbor | x | 9000(+2000 - x min) |
 | 16 | Kermovan Pier | x | 4000(+1000 - x min) |
-| 17 | Saint-Phillipe Harbor | x | 12000(+3000 - x min) |
+| 17 | Saint-Phillipe Harbor | x | 12 000(+3000 - x min) |
 | 18 | Airport Base | x | 8000(+2000 - x min) |
 |  |  |  |  |
 | 1 | Airport | 33 | 8000(500 + 500 + 1000 + 1000 + 1000 + 1000 + 500 + 500 + 500 + 1000 + 1000 + 1000 + 1000 + 500) |
 | 2 | Chotain - Military Base | 8 | x |
 | 3 | Entre - Deux | 7 | x |
 | 4 | Etoupe | 9 | x |
-| 5 | Farm | 16 | x |
+| 5 | Farm | 16 | 10 000 (900 + 1500 + 1000 + 800 + 1000 + 800 + 3000 + 1000) |
 | 6 | Figari | 14 | x |
 | 7 | Gravette | 12 | x |
 | 8 | Lamentin | 12 | x |
@@ -74,6 +74,23 @@
 | 2 | Broken | 36 | x |
 |  |  |  |  |
 | 1 | Montfort Castle | x | Not necessary |
+
+### Стартовые локации
+
+US/USSR
+
+1. Два грузовика с припасами - 3000 припасов
+2. Один строительный грузовик - 800
+
+| #   | Location            | Supplies - initial + income |
+| :-- | ------------------- | :------: |
+| 1 | East from Saint-Phillipe | 1000 + 300(раз в 5 минут) |
+| 1 |  | x |
+| 1 |  | x |
+| 1 |  | x |
+
+
+
 
 
 ### Суммарно
