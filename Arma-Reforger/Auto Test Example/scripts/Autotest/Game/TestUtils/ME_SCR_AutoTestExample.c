@@ -1,5 +1,5 @@
 [BaseContainerProps(category: "Autotest")]
-class ME_SCR_TEST_CharacterWeaponShootingSuite : SCR_AutotestSuiteBase
+class SCR_TEST_CharacterWeaponShootingSuite : SCR_AutotestSuiteBase
 {
 	override ResourceName GetWorldFile()
 	{
@@ -9,8 +9,8 @@ class ME_SCR_TEST_CharacterWeaponShootingSuite : SCR_AutotestSuiteBase
 	// you can remove these overrides if you intend to use default values
 }
 
-/*
-[Test(suite: "SCR_TEST_CharacterWeaponShootingSuite", timeoutS: 5)]
+
+[Test(suite: SCR_TEST_CharacterWeaponShootingSuite, timeoutS: 5)]
 class SCR_TEST_CharacterWeaponShooting_MyTestCase_MyExpectedResult : SCR_AutotestCaseBase
 {
 	[Step(EStage.Setup)]
@@ -55,17 +55,17 @@ class SCR_TEST_CharacterWeaponShooting_MyTestCase_MyExpectedResult : SCR_Autotes
 
 		SetResult(SCR_AutotestResult.AsSuccess());
 	}
-}*/
+}
 
 
 
-class ME_SCR_TEST_CharacterWeaponShootingCase : SCR_AutotestCaseBase
+class SCR_TEST_CharacterWeaponShootingCase : SCR_AutotestCaseBase
 {
 	static string CHARACTER_PREFAB = "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et";
 }
 
-[Test(suite: ME_SCR_TEST_CharacterWeaponShootingSuite, timeoutS: 5)]
-class SCR_TEST_CharacterWeaponShooting_PlayerShoots_AiDies : ME_SCR_TEST_CharacterWeaponShootingCase
+[Test(suite: SCR_TEST_CharacterWeaponShootingSuite, timeoutS: 5)]
+class SCR_TEST_CharacterWeaponShooting_PlayerShoots_AiDies : SCR_TEST_CharacterWeaponShootingCase
 {
 	SCR_ChimeraCharacter m_PlayerCharacter;
 	SCR_ChimeraCharacter m_TargetCharacter;
