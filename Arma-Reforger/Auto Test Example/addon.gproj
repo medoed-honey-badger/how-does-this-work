@@ -1,0 +1,8 @@
+GameProject {
+ ID "AutoTestExample"
+ GUID "6A151BD20EB6BB62"
+ TITLE "Auto Test Example"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
