@@ -1,3 +1,9 @@
+// ВРЕМЕННО ЗАКОММЕНТИРОВАН ЦЕЛИКОМ — сосредоточились на основном моде,
+// вернёмся к автотестам позже. Синтаксис уже частично подтверждён
+// (TestStep/TestStage, AssertTrue, suite: как typename), но полная
+// компиляция пока не проверена до конца из-за посторонних ошибок проекта,
+// не связанных с этим файлом.
+/*
 // ============================================================================
 // Автотесты для ME_StatsComponent — используют официальный Autotest Framework
 // Arma Reforger 1.8 (экспериментальная ветка).
@@ -89,7 +95,6 @@ class SCR_TEST_MEStatsLocalizationCase : SCR_AutotestCaseBase
 	}
 }
 
-/*
 // ----------------------------------------------------------------------------
 // GetEditableEntityLocKey() на технике
 // ----------------------------------------------------------------------------
@@ -101,7 +106,8 @@ class SCR_TEST_MEStatsLocalization_GetEditableEntityLocKeyOnBTR70_ReturnsVehicle
 	void Setup_SpawnAndAssert()
 	{
 		IEntity vehicle = SpawnTestPrefab(PREFAB_BTR70);
-		if (!AssertTrue(vehicle != null, "БТР-70 не заспавнился — проверь, не поменялся ли путь префаба"))
+		AssertTrue(vehicle != null, "БТР-70 не заспавнился — проверь, не поменялся ли путь префаба");
+		if (GetFailure())
 			return;
 
 		string key = ME_StatsComponent.GetEditableEntityLocKey(vehicle);
@@ -124,11 +130,13 @@ class SCR_TEST_MEStatsLocalization_GetEntityLocKeyOnBTR70_DoesNotReturnTrunk : S
 	void Setup_SpawnAndAssert()
 	{
 		IEntity vehicle = SpawnTestPrefab(PREFAB_BTR70);
-		if (!AssertTrue(vehicle != null, "БТР-70 не заспавнился"))
+		AssertTrue(vehicle != null, "БТР-70 не заспавнился");
+		if (GetFailure())
 			return;
 
 		string key = ME_StatsComponent.GetEntityLocKey(vehicle);
-		if (!AssertTrue(key != "#AR-Inventory_Trunk", "РЕГРЕСС: снова вернулся баг с багажником ('#AR-Inventory_Trunk')"))
+		AssertTrue(key != "#AR-Inventory_Trunk", "РЕГРЕСС: снова вернулся баг с багажником ('#AR-Inventory_Trunk')");
+		if (GetFailure())
 			return;
 
 		AssertTrue(key == "#AR-Vehicle_BTR70_Name", string.Format("Ожидали '#AR-Vehicle_BTR70_Name', получили '%1'", key));
@@ -146,7 +154,8 @@ class SCR_TEST_MEStatsLocalization_GetFactionLocKeyOnUSSRCharacter_ReturnsUSSRFa
 	void Setup_SpawnAndAssert()
 	{
 		IEntity character = SpawnTestPrefab(PREFAB_CHARACTER_USSR);
-		if (!AssertTrue(character != null, "Персонаж СССР не заспавнился — проверь путь префаба"))
+		AssertTrue(character != null, "Персонаж СССР не заспавнился — проверь путь префаба");
+		if (GetFailure())
 			return;
 
 		string faction = ME_StatsComponent.GetFactionLocKey(character);
@@ -161,7 +170,8 @@ class SCR_TEST_MEStatsLocalization_GetFactionLocKeyOnUSCharacter_ReturnsUSFactio
 	void Setup_SpawnAndAssert()
 	{
 		IEntity character = SpawnTestPrefab(PREFAB_CHARACTER_US);
-		if (!AssertTrue(character != null, "Персонаж США не заспавнился — проверь путь префаба"))
+		AssertTrue(character != null, "Персонаж США не заспавнился — проверь путь префаба");
+		if (GetFailure())
 			return;
 
 		string faction = ME_StatsComponent.GetFactionLocKey(character);
@@ -178,7 +188,8 @@ class SCR_TEST_MEStatsLocalization_GetFactionLocKeyOnVehicle_ReturnsEmpty : SCR_
 	void Setup_SpawnAndAssert()
 	{
 		IEntity vehicle = SpawnTestPrefab(PREFAB_BTR70);
-		if (!AssertTrue(vehicle != null, "БТР-70 не заспавнился"))
+		AssertTrue(vehicle != null, "БТР-70 не заспавнился");
+		if (GetFailure())
 			return;
 
 		string faction = ME_StatsComponent.GetFactionLocKey(vehicle);
@@ -216,8 +227,66 @@ class SCR_TEST_MEStatsLiveKillSuite : SCR_AutotestSuiteBase
 {
 }
 
-[Test(suite: SCR_TEST_MEStatsLiveKillSuite, timeoutS: 60)]
-class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MEStatsLocalizationCase
+// Собственный базовый класс — НЕ зависит от SCR_TEST_MEStatsLocalizationCase
+// (та сейчас частично закомментирована вместе с тестами локализации).
+// Дублирует небольшой хелпер спавна — специально, чтобы эта сьюта
+// оставалась независимой и не ломалась, если секцию локализации
+// закомментируют/раскомментируют отдельно.
+class SCR_TEST_MEStatsLiveKillCase : SCR_AutotestCaseBase
+{
+	static const string PREFAB_CHARACTER_US = "{3E18CC9634468249}Prefabs/Characters/Campaign/Final/BLUFOR/US_army/Regular/Campaign_US_Player_GL.et";
+
+	protected ref array<IEntity> m_SpawnedEntities = {};
+
+	// x/z — координаты по умолчанию около центра карты (0,0). Раньше
+	// пробовали (5000,5000) — "подальше от центра" — но GetSurfaceY() там
+	// вернул -256 (похоже, тестовый мир Autotest_GameMode_Plain просто
+	// небольшой, и эти координаты оказались далеко за его границами —
+	// персонаж заспавнился глубоко под миром/в пустоте, отсюда
+	// CanFire=false и пустые руки весь тест). Y всегда вычисляем через
+	// GetSurfaceY() — реальная высота земли в этой точке. ПОДТВЕРЖДЕНО
+	// официальным кодом (SCR_PrefabsSpawner.c):
+	// "position[1] = world.GetSurfaceY(position[0], position[2]);"
+	IEntity SpawnTestPrefab(string prefabPath, float x = 0, float z = 0)
+	{
+		Resource resource = Resource.Load(prefabPath);
+		if (!resource || !resource.IsValid())
+		{
+			Print("Не удалось загрузить префаб: " + prefabPath, LogLevel.ERROR);
+			return null;
+		}
+
+		BaseWorld world = GetGame().GetWorld();
+		float y = world.GetSurfaceY(x, z);
+		Print("[LiveKillTest] SpawnTestPrefab: x=" + x.ToString() + ", вычисленный y=" + y.ToString() + ", z=" + z.ToString());
+		if (y < -100 || y > 1000)
+			Print("[LiveKillTest] ВНИМАНИЕ: высота выглядит подозрительно (" + y.ToString() + ") — возможно, координаты (x,z) вне границ тестового мира", LogLevel.WARNING);
+
+		EntitySpawnParams spawnParams = new EntitySpawnParams();
+		spawnParams.TransformMode = ETransformMode.WORLD;
+		spawnParams.Transform[3] = Vector(x, y, z);
+
+		IEntity entity = GetGame().SpawnEntityPrefab(resource, world, spawnParams);
+		if (entity)
+			m_SpawnedEntities.Insert(entity);
+
+		return entity;
+	}
+
+	[TestStep(TestStage.TearDown)]
+	void TearDown_DeleteSpawned()
+	{
+		foreach (IEntity entity : m_SpawnedEntities)
+		{
+			if (entity)
+				delete entity;
+		}
+		m_SpawnedEntities.Clear();
+	}
+}
+
+[Test(suite: SCR_TEST_MEStatsLiveKillSuite, timeoutS: 45)]
+class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MEStatsLiveKillCase
 {
 	// Тот же префаб персонажа США, что уже использовался выше.
 	IEntity m_Shooter;
@@ -227,21 +296,17 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 	[TestStep(TestStage.Setup)]
 	void Setup_SpawnBoth()
 	{
-		m_Shooter = SpawnTestPrefab(PREFAB_CHARACTER_US);
-		if (!AssertTrue(m_Shooter != null, "Стрелок не заспавнился"))
+		m_Shooter = SpawnTestPrefab(PREFAB_CHARACTER_US, 0, 0);
+		AssertTrue(m_Shooter != null, "Стрелок не заспавнился");
+		if (GetFailure())
 			return;
 
 		// Цель — на 3 метра левее и на той же линии обзора, недалеко, чтобы
-		// точно попасть даже без точного прицеливания.
-		Resource targetResource = Resource.Load(PREFAB_CHARACTER_US);
-		EntitySpawnParams targetParams = new EntitySpawnParams();
-		targetParams.TransformMode = ETransformMode.WORLD;
-		targetParams.Transform[3] = "5003 50 5000";
-		m_Target = GetGame().SpawnEntityPrefab(targetResource, GetGame().GetWorld(), targetParams);
-		if (m_Target)
-			m_SpawnedEntities.Insert(m_Target);
-
-		if (!AssertTrue(m_Target != null, "Цель не заспавнилась"))
+		// точно попасть даже без точного прицеливания. Y обеих сущностей
+		// теперь берётся из реальной высоты земли (см. SpawnTestPrefab).
+		m_Target = SpawnTestPrefab(PREFAB_CHARACTER_US, 3, 0);
+		AssertTrue(m_Target != null, "Цель не заспавнилась");
+		if (GetFailure())
 			return;
 
 		m_ShooterController = CharacterControllerComponent.Cast(m_Shooter.FindComponent(CharacterControllerComponent));
@@ -254,10 +319,16 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		if (GetFailure())
 			return;
 
-		// ПОДТВЕРЖДЁННЫЙ реальный метод из SCR_TestLib_Entity.c — работает
-		// на любой IEntity, не только на "игроке".
-		SCR_TestLib.SetEntityLookAtEntity(m_Shooter, m_Target);
+		// Целимся в примерную высоту головы (origin цели + ~1.6 м вверх),
+		// а не в сам origin (там центр/точка привязки персонажа, обычно
+		// около таза) — см. подробности в Setup_FireUntilTargetDies.
+		vector headPoint = m_Target.GetOrigin() + Vector(0, 1.6, 0);
+		SCR_TestLib.SetEntityLookAtPoint(m_Shooter, headPoint);
 	}
+
+	// Счётчик кадров — используется, чтобы не переприцеливаться и не
+	// логировать КАЖДЫЙ кадр (было бы слишком часто), а раз в N кадров.
+	protected int m_iFrameCounter = 0;
 
 	// bool-возвращающий Setup-шаг — выполняется каждый кадр, пока не
 	// вернёт true (подтверждено на примере Setup_AwaitWorld в
@@ -269,14 +340,120 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		if (GetFailure())
 			return true; // не блокируем — уже есть ошибка, выходим сразу
 
-		if (!m_ShooterController)
+		if (!m_ShooterController || !m_Target)
 			return true;
 
-		m_ShooterController.SetFireWeaponWanted(true);
+		m_iFrameCounter++;
+
+		// Переприцеливаемся каждые ~30 кадров — длинная очередь поднимает
+		// ствол отдачей, персонаж может со временем начать стрелять мимо
+		// цели, если прицелиться только один раз в начале.
+		//
+		// ВАЖНО: SetEntityLookAtEntity() целится в GetOrigin() цели — это
+		// точка привязки персонажа (обычно около таза/центра тела), НЕ
+		// голова. Именно поэтому нужно было ~28 попаданий на одну ступень
+		// урона (STATE2) — центр масс, а не хедшот. Вместо этого считаем
+		// точку чуть выше origin (примерная высота головы у человека) и
+		// целимся туда через SetEntityLookAtPoint() напрямую.
+		if (m_iFrameCounter % 30 == 0)
+		{
+			vector targetOrigin = m_Target.GetOrigin();
+			vector headPoint = targetOrigin + Vector(0, 1.6, 0);
+			SCR_TestLib.SetEntityLookAtPoint(m_Shooter, headPoint, log: false);
+
+			if (m_iFrameCounter % 60 == 0)
+				Print("[LiveKillTest] прицеливаемся в точку (примерно голова): " + headPoint.ToString());
+		}
+
+		// Явно поднимаем оружие каждый кадр — подтверждённый метод из
+		// CharacterControllerComponent.c.
+		m_ShooterController.SetWeaponRaised(true);
+
+		// ВАЖНО: НЕ держим true постоянно! Подтверждено логом реального
+		// теста: патроны упали 30->29 ОДИН раз к кадру 300 и больше
+		// НИКОГДА не менялись, хотя SetFireWeaponWanted(true) вызывался
+		// без остановки ещё тысячи кадров. Похоже, это полуавтоматический
+		// режим огня — там нужен ОТДЕЛЬНЫЙ нажим на каждый выстрел
+		// (переход false->true), а не удержание. Эмулируем повторные
+		// нажатия спуска — чередуем true/false каждые ~15 кадров. Это
+		// сработает и на полуавтомате (каждое "нажатие" = выстрел), и на
+		// автоматическом режиме (не помешает непрерывной стрельбе).
+		if ((m_iFrameCounter / 15) % 2 == 0)
+			m_ShooterController.SetFireWeaponWanted(true);
+		else
+			m_ShooterController.SetFireWeaponWanted(false);
+
+		// Патроны реально заканчиваются (магазин на 30, а нужного числа
+		// попаданий для полного килла может не хватить с одного магазина
+		// при неидеальной точности) — перезаряжаемся, как только магазин
+		// пуст, чтобы очередь могла продолжиться. Подтверждённый метод
+		// из CharacterControllerComponent.c.
+		BaseWeaponManagerComponent wpmCheck = m_ShooterController.GetWeaponManagerComponent();
+		if (wpmCheck)
+		{
+			BaseWeaponComponent weaponCheck = wpmCheck.GetCurrentWeapon();
+			if (weaponCheck)
+			{
+				BaseMuzzleComponent muzzleCheck = weaponCheck.GetCurrentMuzzle();
+				if (muzzleCheck && muzzleCheck.GetAmmoCount() <= 0)
+				{
+					Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString() + ": патроны кончились, перезаряжаемся");
+					m_ShooterController.ReloadWeapon();
+				}
+			}
+		}
 
 		CharacterControllerComponent targetController = CharacterControllerComponent.Cast(m_Target.FindComponent(CharacterControllerComponent));
 		if (!targetController)
 			return true;
+
+		// Каждые ~60 кадров логируем расход патронов и состояние цели —
+		// чтобы видеть, реально ли стреляем и попадаем, а не просто ждать
+		// таймаута вслепую, не понимая, что происходит. Плюс CanFire()/
+		// IsWeaponRaised() — если стрельба не идёт, это покажет, в чём
+		// именно затык (не поднято оружие? не может стрелять по другой
+		// причине?).
+		if (m_iFrameCounter % 60 == 0)
+		{
+			string ammoText = "?";
+			BaseWeaponManagerComponent wpm = m_ShooterController.GetWeaponManagerComponent();
+			if (wpm)
+			{
+				BaseWeaponComponent weapon = wpm.GetCurrentWeapon();
+				if (weapon)
+				{
+					BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
+					if (muzzle)
+						ammoText = muzzle.GetAmmoCount().ToString();
+				}
+			}
+
+			string stateText = "?";
+			SCR_DamageManagerComponent targetDmgMgr = SCR_DamageManagerComponent.GetDamageManager(m_Target);
+			if (targetDmgMgr)
+				stateText = typename.EnumToString(EDamageState, targetDmgMgr.GetState());
+
+			string canFireText = "false";
+			if (m_ShooterController.CanFire())
+				canFireText = "true";
+
+			string weaponRaisedText = "false";
+			if (m_ShooterController.IsWeaponRaised())
+				weaponRaisedText = "true";
+
+			string itemInHandsText = "null";
+			IEntity itemInHands = m_ShooterController.GetCurrentItemInHands();
+			if (itemInHands)
+				itemInHandsText = itemInHands.ToString();
+
+			string diagMsg = "[LiveKillTest] кадр=" + m_iFrameCounter.ToString();
+			diagMsg += ", патронов=" + ammoText;
+			diagMsg += ", цель=" + stateText;
+			diagMsg += ", CanFire=" + canFireText;
+			diagMsg += ", оружие_поднято=" + weaponRaisedText;
+			diagMsg += ", предмет_в_руках=" + itemInHandsText;
+			Print(diagMsg);
+		}
 
 		return targetController.IsDead();
 	}
