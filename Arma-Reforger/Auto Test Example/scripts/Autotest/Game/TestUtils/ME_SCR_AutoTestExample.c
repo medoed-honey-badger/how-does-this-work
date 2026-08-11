@@ -311,6 +311,16 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 
 		m_ShooterController = CharacterControllerComponent.Cast(m_Shooter.FindComponent(CharacterControllerComponent));
 		AssertTrue(m_ShooterController != null, "У стрелка не нашёлся CharacterControllerComponent");
+		if (GetFailure())
+			return;
+
+		// Подписываемся на событие попадания ДО начала стрельбы
+		m_TargetDmgMgr = SCR_DamageManagerComponent.GetDamageManager(m_Target);
+		AssertTrue(m_TargetDmgMgr != null, "У цели не нашёлся SCR_DamageManagerComponent");
+		if (GetFailure())
+			return;
+
+		m_TargetDmgMgr.GetOnDamage().Insert(OnTargetDamaged);
 	}
 
 	[TestStep(TestStage.Setup)]
@@ -330,6 +340,61 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 	// логировать КАЖДЫЙ кадр (было бы слишком часто), а раз в N кадров.
 	protected int m_iFrameCounter = 0;
 
+	// Сколько кадров ждать после выстрела, чтобы проверить попадание.
+	// Пуля успевает долететь и обработаться за это время.
+	static const int HIT_WAIT_FRAMES = 30;
+
+	// Флаг: зафиксировано ли попадание с последнего выстрела
+	protected bool m_bHitRegistered = false;
+	// Кол-во патронов в предыдущем кадре — отслеживаем выстрел через убыль патронов
+	protected int m_iLastKnownAmmo = -1;
+	// Кадр последнего зафиксированного выстрела (-1 = ещё не стреляли)
+	protected int m_iLastShotFrame = -1;
+	// Ссылка на DamageManager цели — для подписки на событие попадания
+	protected SCR_DamageManagerComponent m_TargetDmgMgr;
+
+	// Возвращает текущее кол-во патронов в стволе стрелка.
+	protected int GetCurrentAmmo()
+	{
+		if (!m_ShooterController)
+			return 0;
+		BaseWeaponManagerComponent wpm = m_ShooterController.GetWeaponManagerComponent();
+		if (!wpm)
+			return 0;
+		BaseWeaponComponent weapon = wpm.GetCurrentWeapon();
+		if (!weapon)
+			return 0;
+		BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
+		if (!muzzle)
+			return 0;
+		return muzzle.GetAmmoCount();
+	}
+
+	// Callback на событие GetOnDamage() цели — вызывается движком каждый раз,
+	// когда цель получает урон. Логируем место попадания и здоровье.
+	protected void OnTargetDamaged(BaseDamageContext damageContext)
+	{
+		m_bHitRegistered = true;
+
+		string hitZoneName = "?";
+		float hitZoneHealth = -1;
+		if (damageContext.struckHitZone)
+		{
+			hitZoneName = typename.EnumToString(EHitZoneGroup, damageContext.struckHitZone.GetHitZoneGroup());
+			hitZoneHealth = damageContext.struckHitZone.GetHealth();
+		}
+
+		float totalHealth = -1;
+		if (m_TargetDmgMgr)
+			totalHealth = m_TargetDmgMgr.GetHealth();
+
+		Print("[LiveKillTest] ХИТ! зона=" + hitZoneName
+			+ ", позиция=" + damageContext.hitPosition.ToString()
+			+ ", урон=" + damageContext.damageValue.ToString()
+			+ ", здоровье_зоны=" + hitZoneHealth.ToString()
+			+ ", здоровье_цели=" + totalHealth.ToString());
+	}
+
 	// bool-возвращающий Setup-шаг — выполняется каждый кадр, пока не
 	// вернёт true (подтверждено на примере Setup_AwaitWorld в
 	// SCR_AutotestSuiteBase.c). Удерживаем "хочу стрелять" каждый кадр и
@@ -338,7 +403,7 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 	bool Setup_FireUntilTargetDies()
 	{
 		if (GetFailure())
-			return true; // не блокируем — уже есть ошибка, выходим сразу
+			return true;
 
 		if (!m_ShooterController || !m_Target)
 			return true;
@@ -346,114 +411,80 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		m_iFrameCounter++;
 
 		// Переприцеливаемся каждые ~30 кадров — длинная очередь поднимает
-		// ствол отдачей, персонаж может со временем начать стрелять мимо
-		// цели, если прицелиться только один раз в начале.
-		//
-		// ВАЖНО: SetEntityLookAtEntity() целится в GetOrigin() цели — это
-		// точка привязки персонажа (обычно около таза/центра тела), НЕ
-		// голова. Именно поэтому нужно было ~28 попаданий на одну ступень
-		// урона (STATE2) — центр масс, а не хедшот. Вместо этого считаем
-		// точку чуть выше origin (примерная высота головы у человека) и
-		// целимся туда через SetEntityLookAtPoint() напрямую.
+		// ствол отдачей, персонаж может со временем начать стрелять мимо.
 		if (m_iFrameCounter % 30 == 0)
 		{
-			vector targetOrigin = m_Target.GetOrigin();
-			vector headPoint = targetOrigin + Vector(0, 1.6, 0);
+			vector headPoint = m_Target.GetOrigin() + Vector(0, 1.6, 0);
 			SCR_TestLib.SetEntityLookAtPoint(m_Shooter, headPoint, log: false);
-
 			if (m_iFrameCounter % 60 == 0)
 				Print("[LiveKillTest] прицеливаемся в точку (примерно голова): " + headPoint.ToString());
 		}
 
-		// Явно поднимаем оружие каждый кадр — подтверждённый метод из
-		// CharacterControllerComponent.c.
 		m_ShooterController.SetWeaponRaised(true);
 
-		// ВАЖНО: НЕ держим true постоянно! Подтверждено логом реального
-		// теста: патроны упали 30->29 ОДИН раз к кадру 300 и больше
-		// НИКОГДА не менялись, хотя SetFireWeaponWanted(true) вызывался
-		// без остановки ещё тысячи кадров. Похоже, это полуавтоматический
-		// режим огня — там нужен ОТДЕЛЬНЫЙ нажим на каждый выстрел
-		// (переход false->true), а не удержание. Эмулируем повторные
-		// нажатия спуска — чередуем true/false каждые ~15 кадров. Это
-		// сработает и на полуавтомате (каждое "нажатие" = выстрел), и на
-		// автоматическом режиме (не помешает непрерывной стрельбе).
+		int currentAmmo = GetCurrentAmmo();
+
+		// Инициализация при первом вызове
+		if (m_iLastKnownAmmo < 0)
+			m_iLastKnownAmmo = currentAmmo;
+
+		// Патронов стало меньше — выстрел произошёл
+		if (currentAmmo < m_iLastKnownAmmo)
+		{
+			Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString()
+				+ ": выстрел! патронов " + m_iLastKnownAmmo.ToString() + " -> " + currentAmmo.ToString());
+			m_bHitRegistered = false;
+			m_iLastShotFrame = m_iFrameCounter;
+			m_iLastKnownAmmo = currentAmmo;
+		}
+		else if (currentAmmo > m_iLastKnownAmmo)
+		{
+			// Перезарядка — просто обновляем счётчик, не сбрасываем флаг
+			m_iLastKnownAmmo = currentAmmo;
+		}
+
+		// Прошло достаточно кадров после выстрела — проверяем попадание
+		if (m_iLastShotFrame >= 0 && !m_bHitRegistered
+			&& (m_iFrameCounter - m_iLastShotFrame) >= HIT_WAIT_FRAMES)
+		{
+			string msg = "Мисс: выстрел в кадр=" + m_iLastShotFrame.ToString()
+				+ " не нанёс урона за " + HIT_WAIT_FRAMES.ToString() + " кадров";
+			Print("[LiveKillTest] " + msg, LogLevel.ERROR);
+			SetFailure(msg);
+			return true;
+		}
+
+		// Эмулируем нажатие спуска: true/false каждые ~15 кадров.
 		if ((m_iFrameCounter / 15) % 2 == 0)
 			m_ShooterController.SetFireWeaponWanted(true);
 		else
 			m_ShooterController.SetFireWeaponWanted(false);
 
-		// Патроны реально заканчиваются (магазин на 30, а нужного числа
-		// попаданий для полного килла может не хватить с одного магазина
-		// при неидеальной точности) — перезаряжаемся, как только магазин
-		// пуст, чтобы очередь могла продолжиться. Подтверждённый метод
-		// из CharacterControllerComponent.c.
-		BaseWeaponManagerComponent wpmCheck = m_ShooterController.GetWeaponManagerComponent();
-		if (wpmCheck)
+		// Перезарядка — вызываем только ОДИН РАЗ при обнаружении пустого магазина,
+		// а не каждый кадр, чтобы не спамить ReloadWeapon().
+		if (currentAmmo == 0 && m_iLastKnownAmmo == 0 && m_iFrameCounter % 30 == 0)
 		{
-			BaseWeaponComponent weaponCheck = wpmCheck.GetCurrentWeapon();
-			if (weaponCheck)
-			{
-				BaseMuzzleComponent muzzleCheck = weaponCheck.GetCurrentMuzzle();
-				if (muzzleCheck && muzzleCheck.GetAmmoCount() <= 0)
-				{
-					Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString() + ": патроны кончились, перезаряжаемся");
-					m_ShooterController.ReloadWeapon();
-				}
-			}
+			Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString() + ": патроны кончились, перезаряжаемся");
+			m_ShooterController.ReloadWeapon();
+		}
+
+		// Диагностика каждые 60 кадров
+		if (m_iFrameCounter % 60 == 0)
+		{
+			string stateText = "?";
+			if (m_TargetDmgMgr)
+				stateText = typename.EnumToString(EDamageState, m_TargetDmgMgr.GetState());
+
+			Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString()
+				+ ", патронов=" + currentAmmo.ToString()
+				+ ", цель=" + stateText
+				+ ", CanFire=" + m_ShooterController.CanFire().ToString()
+				+ ", оружие_поднято=" + m_ShooterController.IsWeaponRaised().ToString());
 		}
 
 		CharacterControllerComponent targetController = CharacterControllerComponent.Cast(m_Target.FindComponent(CharacterControllerComponent));
 		if (!targetController)
 			return true;
-
-		// Каждые ~60 кадров логируем расход патронов и состояние цели —
-		// чтобы видеть, реально ли стреляем и попадаем, а не просто ждать
-		// таймаута вслепую, не понимая, что происходит. Плюс CanFire()/
-		// IsWeaponRaised() — если стрельба не идёт, это покажет, в чём
-		// именно затык (не поднято оружие? не может стрелять по другой
-		// причине?).
-		if (m_iFrameCounter % 60 == 0)
-		{
-			string ammoText = "?";
-			BaseWeaponManagerComponent wpm = m_ShooterController.GetWeaponManagerComponent();
-			if (wpm)
-			{
-				BaseWeaponComponent weapon = wpm.GetCurrentWeapon();
-				if (weapon)
-				{
-					BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
-					if (muzzle)
-						ammoText = muzzle.GetAmmoCount().ToString();
-				}
-			}
-
-			string stateText = "?";
-			SCR_DamageManagerComponent targetDmgMgr = SCR_DamageManagerComponent.GetDamageManager(m_Target);
-			if (targetDmgMgr)
-				stateText = typename.EnumToString(EDamageState, targetDmgMgr.GetState());
-
-			string canFireText = "false";
-			if (m_ShooterController.CanFire())
-				canFireText = "true";
-
-			string weaponRaisedText = "false";
-			if (m_ShooterController.IsWeaponRaised())
-				weaponRaisedText = "true";
-
-			string itemInHandsText = "null";
-			IEntity itemInHands = m_ShooterController.GetCurrentItemInHands();
-			if (itemInHands)
-				itemInHandsText = itemInHands.ToString();
-
-			string diagMsg = "[LiveKillTest] кадр=" + m_iFrameCounter.ToString();
-			diagMsg += ", патронов=" + ammoText;
-			diagMsg += ", цель=" + stateText;
-			diagMsg += ", CanFire=" + canFireText;
-			diagMsg += ", оружие_поднято=" + weaponRaisedText;
-			diagMsg += ", предмет_в_руках=" + itemInHandsText;
-			Print(diagMsg);
-		}
 
 		return targetController.IsDead();
 	}
@@ -463,6 +494,10 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 	{
 		if (m_ShooterController)
 			m_ShooterController.SetFireWeaponWanted(false);
+
+		// Отписываемся от событий урона — больше не нужны
+		if (m_TargetDmgMgr)
+			m_TargetDmgMgr.GetOnDamage().Remove(OnTargetDamaged);
 
 		if (GetFailure())
 			return;
