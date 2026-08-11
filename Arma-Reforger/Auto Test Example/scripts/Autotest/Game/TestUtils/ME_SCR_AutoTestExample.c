@@ -273,6 +273,87 @@ class SCR_TEST_MEStatsLiveKillCase : SCR_AutotestCaseBase
 		return entity;
 	}
 
+	// Возвращает мировую позицию хитзоны головы через GetHitZoneByName("Head")
+	// + первый коллайдер + GetBoneMatrix. При любой ошибке логирует причину
+	// и возвращает entity.GetOrigin() как запасной вариант.
+	vector GetHeadHitZoneWorldPosition(notnull IEntity entity)
+	{
+		HitZoneContainerComponent hzContainer = HitZoneContainerComponent.Cast(
+			entity.FindComponent(HitZoneContainerComponent));
+		if (!hzContainer)
+		{
+			Print("[LiveKillTest] GetHeadHitZoneWorldPosition: нет HitZoneContainerComponent — возвращаем GetOrigin()", LogLevel.WARNING);
+			return entity.GetOrigin();
+		}
+
+		HitZone hz = hzContainer.GetHitZoneByName("Head");
+		if (!hz)
+		{
+			Print("[LiveKillTest] GetHeadHitZoneWorldPosition: GetHitZoneByName(\"Head\") вернул null — возвращаем GetOrigin()", LogLevel.WARNING);
+			return entity.GetOrigin();
+		}
+
+		array<string> colliderNames = {};
+		if (hz.GetAllColliderNames(colliderNames) == 0)
+		{
+			Print("[LiveKillTest] GetHeadHitZoneWorldPosition: у хитзоны Head нет коллайдеров — возвращаем GetOrigin()", LogLevel.WARNING);
+			return entity.GetOrigin();
+		}
+
+		vector transformLS[4];
+		int boneIndex;
+		int nodeID;
+		if (!hz.TryGetColliderDescriptionFromName(entity, colliderNames[0], transformLS, boneIndex, nodeID))
+		{
+			Print("[LiveKillTest] GetHeadHitZoneWorldPosition: TryGetColliderDescriptionFromName провалился — возвращаем GetOrigin()", LogLevel.WARNING);
+			return entity.GetOrigin();
+		}
+
+		vector boneMat[4];
+		if (!entity.GetBoneMatrix(boneIndex, boneMat))
+		{
+			Print("[LiveKillTest] GetHeadHitZoneWorldPosition: GetBoneMatrix провалился (boneIndex=" + boneIndex.ToString() + ") — возвращаем GetOrigin()", LogLevel.WARNING);
+			return entity.GetOrigin();
+		}
+
+		return boneMat[3];
+	}
+
+	// Поворачивает стрелка телом (yaw) и прицелом (pitch) на targetPos.
+	// SetEntityLookAtPoint — только yaw тела; вертикальный прицел оружия
+	// управляется отдельно через CharacterHeadAimingComponent.
+	static void AimAtWorldPosition(notnull IEntity shooter, vector targetPos)
+	{
+		// Горизонтальный поворот тела
+		SCR_TestLib.SetEntityLookAtPoint(shooter, targetPos, log: false);
+
+		// Вертикальный прицел оружия
+		CharacterHeadAimingComponent aimComp = CharacterHeadAimingComponent.Cast(
+			shooter.FindComponent(CharacterHeadAimingComponent));
+		if (!aimComp)
+			return;
+
+		// Строим вектор направления от глаз стрелка до цели
+		ChimeraCharacter chimeraChar = ChimeraCharacter.Cast(shooter);
+		vector eyePos;
+		if (chimeraChar)
+			eyePos = chimeraChar.EyePosition();
+		else
+			eyePos = shooter.GetOrigin();
+
+		vector dir = targetPos - eyePos;
+		dir.Normalize();
+
+		// MatrixFromForwardVec строит rot-матрицу 3x3 из вектора направления —
+		// именно такой формат ожидает MatrixToAngles (vector[3], не vector[4]).
+		vector rotMat[3];
+		Math3D.MatrixFromForwardVec(dir, rotMat);
+		vector angles = Math3D.MatrixToAngles(rotMat);
+
+		// SetAimingRotation принимает vector(yaw, pitch, roll) в градусах
+		aimComp.SetAimingRotation(angles);
+	}
+
 	[TestStep(TestStage.TearDown)]
 	void TearDown_DeleteSpawned()
 	{
@@ -329,11 +410,9 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		if (GetFailure())
 			return;
 
-		// Целимся в примерную высоту головы (origin цели + ~1.6 м вверх),
-		// а не в сам origin (там центр/точка привязки персонажа, обычно
-		// около таза) — см. подробности в Setup_FireUntilTargetDies.
-		vector headPoint = m_Target.GetOrigin() + Vector(0, 1.6, 0);
-		SCR_TestLib.SetEntityLookAtPoint(m_Shooter, headPoint);
+		vector headPoint = GetHeadHitZoneWorldPosition(m_Target);
+		Print("[LiveKillTest] Setup_AimAtTarget: прицеливаемся в " + headPoint.ToString());
+		AimAtWorldPosition(m_Shooter, headPoint);
 	}
 
 	// Счётчик кадров — используется, чтобы не переприцеливаться и не
@@ -413,15 +492,14 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 
 		m_iFrameCounter++;
 
-		// Переприцеливаемся каждые ~30 кадров — длинная очередь поднимает
-		// ствол отдачей, персонаж может со временем начать стрелять мимо.
-		if (m_iFrameCounter % 30 == 0)
-		{
-			vector headPoint = m_Target.GetOrigin() + Vector(0, 1.6, 0);
-			SCR_TestLib.SetEntityLookAtPoint(m_Shooter, headPoint, log: false);
-			if (m_iFrameCounter % 60 == 0)
-				Print("[LiveKillTest] прицеливаемся в точку (примерно голова): " + headPoint.ToString());
-		}
+		// Переприцеливаемся каждый кадр — отдача поднимает ствол, нужно
+		// постоянно корректировать и yaw тела, и pitch прицела.
+		vector headPoint = GetHeadHitZoneWorldPosition(m_Target);
+		AimAtWorldPosition(m_Shooter, headPoint);
+
+		// Логируем позицию головы раз в 60 кадров (не каждый кадр — слишком много)
+		if (m_iFrameCounter % 60 == 0)
+			Print("[LiveKillTest] прицеливаемся в хитзону головы: " + headPoint.ToString());
 
 		m_ShooterController.SetWeaponRaised(true);
 
@@ -457,11 +535,10 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 			return true;
 		}
 
-		// Эмулируем нажатие спуска: true/false каждые ~15 кадров.
-		if ((m_iFrameCounter / 15) % 2 == 0)
-			m_ShooterController.SetFireWeaponWanted(true);
-		else
-			m_ShooterController.SetFireWeaponWanted(false);
+		// Стреляем непрерывно каждый кадр — убираем toggle (15-кадровые паузы
+		// задерживали первый выстрел до кадра ~302 и создавали окна промаха).
+		// Движок сам обрабатывает скорострельность оружия.
+		m_ShooterController.SetFireWeaponWanted(true);
 
 		// Перезарядка — вызываем только ОДИН РАЗ при обнаружении пустого магазина,
 		// а не каждый кадр, чтобы не спамить ReloadWeapon().
@@ -486,9 +563,24 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 			if (m_ShooterController.IsWeaponRaised())
 				weaponRaisedText = "true";
 
+			// Сознание и стойка цели
+			CharacterControllerComponent targetCtrl = CharacterControllerComponent.Cast(m_Target.FindComponent(CharacterControllerComponent));
+			string unconsciousText = "?";
+			string stanceText = "?";
+			if (targetCtrl)
+			{
+				if (targetCtrl.IsUnconscious())
+				unconsciousText = "true";
+			else
+				unconsciousText = "false";
+				stanceText = typename.EnumToString(ECharacterStance, targetCtrl.GetStance());
+			}
+
 			Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString()
 				+ ", патронов=" + currentAmmo.ToString()
 				+ ", цель=" + stateText
+				+ ", без_сознания=" + unconsciousText
+				+ ", стойка=" + stanceText
 				+ ", CanFire=" + canFireText
 				+ ", оружие_поднято=" + weaponRaisedText);
 		}
