@@ -380,8 +380,11 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		float hitZoneHealth = -1;
 		if (damageContext.struckHitZone)
 		{
-			hitZoneName = typename.EnumToString(EHitZoneGroup, damageContext.struckHitZone.GetHitZoneGroup());
+			// GetHealth() есть у базового HitZone, GetHitZoneGroup() — только у SCR_HitZone
 			hitZoneHealth = damageContext.struckHitZone.GetHealth();
+			SCR_HitZone scrHitZone = SCR_HitZone.Cast(damageContext.struckHitZone);
+			if (scrHitZone)
+				hitZoneName = typename.EnumToString(EHitZoneGroup, scrHitZone.GetHitZoneGroup());
 		}
 
 		float totalHealth = -1;
@@ -475,11 +478,19 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 			if (m_TargetDmgMgr)
 				stateText = typename.EnumToString(EDamageState, m_TargetDmgMgr.GetState());
 
+			string canFireText = "false";
+			if (m_ShooterController.CanFire())
+				canFireText = "true";
+
+			string weaponRaisedText = "false";
+			if (m_ShooterController.IsWeaponRaised())
+				weaponRaisedText = "true";
+
 			Print("[LiveKillTest] кадр=" + m_iFrameCounter.ToString()
 				+ ", патронов=" + currentAmmo.ToString()
 				+ ", цель=" + stateText
-				+ ", CanFire=" + m_ShooterController.CanFire().ToString()
-				+ ", оружие_поднято=" + m_ShooterController.IsWeaponRaised().ToString());
+				+ ", CanFire=" + canFireText
+				+ ", оружие_поднято=" + weaponRaisedText);
 		}
 
 		CharacterControllerComponent targetController = CharacterControllerComponent.Cast(m_Target.FindComponent(CharacterControllerComponent));
