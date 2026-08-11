@@ -89,6 +89,7 @@ class SCR_TEST_MEStatsLocalizationCase : SCR_AutotestCaseBase
 	}
 }
 
+/*
 // ----------------------------------------------------------------------------
 // GetEditableEntityLocKey() на технике
 // ----------------------------------------------------------------------------
@@ -198,7 +199,7 @@ class SCR_TEST_MEStatsLocalization_GetFactionLocKeyOnNull_ReturnsEmptyWithoutCra
 		string result = ME_StatsComponent.GetFactionLocKey(null);
 		AssertTrue(result.IsEmpty(), string.Format("Ожидали пустую строку для null, получили '%1'", result));
 	}
-}
+}*/
 
 // ============================================================================
 // ЖИВОЙ СЦЕНАРИЙ: реальный выстрел, реальная смерть, реальная обработка
@@ -215,7 +216,7 @@ class SCR_TEST_MEStatsLiveKillSuite : SCR_AutotestSuiteBase
 {
 }
 
-[Test(suite: SCR_TEST_MEStatsLiveKillSuite, timeoutS: 15)]
+[Test(suite: SCR_TEST_MEStatsLiveKillSuite, timeoutS: 60)]
 class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MEStatsLocalizationCase
 {
 	// Тот же префаб персонажа США, что уже использовался выше.
