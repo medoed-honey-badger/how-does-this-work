@@ -95,13 +95,9 @@ class ME_DebugShootComp : ScriptComponent
 
 	protected void DoShootLoop()
 	{
-		if (m_iLastShotFrame < 0)
-			FaceToward(m_Shooter, m_Target.GetOrigin());
-		else if (!m_bAimedAfterShot && (m_iFrame - m_iLastShotFrame) == 5)
-		{
-			FaceToward(m_Shooter, m_Target.GetOrigin());
-			m_bAimedAfterShot = true;
-		}
+		// Физика персонажа сбрасывает SetTransform каждый тик —
+		// поворачиваем каждый кадр, иначе персонаж разворачивается обратно.
+		FaceToward(m_Shooter, m_Target.GetOrigin());
 
 		m_ShooterCtrl.SetWeaponRaised(true);
 
