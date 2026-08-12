@@ -1,0 +1,6 @@
+GenericEntity : {
+ components {
+  ME_DebugShootComp "{00A3173F794B3AB1}" {
+  }
+ }
+}
