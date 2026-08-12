@@ -136,7 +136,9 @@ class ME_DebugShootComp : ScriptComponent
 			CharacterControllerComponent tgtCtrl = CharacterControllerComponent.Cast(m_Target.FindComponent(CharacterControllerComponent));
 			if (tgtCtrl && tgtCtrl.IsDead())
 				dead = "YES";
-			string canFire = m_ShooterCtrl.CanFire() ? "true" : "false";
+			string canFire = "false";
+			if (m_ShooterCtrl.CanFire())
+				canFire = "true";
 			vector fwdMat[4];
 			m_Shooter.GetTransform(fwdMat);
 			Print("[DebugShoot] frame=" + m_iFrame.ToString()
