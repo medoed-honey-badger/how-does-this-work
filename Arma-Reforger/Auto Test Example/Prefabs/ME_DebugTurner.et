@@ -1,0 +1,6 @@
+GenericEntity : {
+ components {
+  ME_DebugTurnComp "{5FA2B1C3D4E6F789}" {
+  }
+ }
+}

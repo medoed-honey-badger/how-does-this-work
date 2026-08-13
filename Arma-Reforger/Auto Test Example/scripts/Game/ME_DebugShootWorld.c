@@ -16,7 +16,6 @@ class ME_DebugShootComp : ScriptComponent
 	protected int m_iLastShotFrame = -1;
 	protected int m_iLastKnownAmmo = -1;
 	protected bool m_bSetupDone = false;
-	protected bool m_bAimedAfterShot = false;
 
 	override protected void OnPostInit(IEntity owner)
 	{
@@ -51,14 +50,14 @@ class ME_DebugShootComp : ScriptComponent
 	protected void DoSetup()
 	{
 		BaseWorld world = GetGame().GetWorld();
-		float yShooter = world.GetSurfaceY(0, 0);
-		float yTarget  = world.GetSurfaceY(3, 0);
+		float yShooter = world.GetSurfaceY(5, 5);
+		float yTarget  = world.GetSurfaceY(8, 5);
 		Print("[DebugShoot] surface y: shooter=" + yShooter.ToString() + " target=" + yTarget.ToString());
 
-		m_Shooter = SpawnChar(PREFAB_US, 0, 0, yShooter, world);
+		m_Shooter = SpawnChar(PREFAB_US, 5, 5, yShooter, world);
 		if (!m_Shooter) { Print("[DebugShoot] FAIL: shooter not spawned", LogLevel.ERROR); return; }
 
-		m_Target = SpawnChar(PREFAB_US, 3, 0, yTarget, world);
+		m_Target = SpawnChar(PREFAB_US, 8, 5, yTarget, world);
 		if (!m_Target) { Print("[DebugShoot] FAIL: target not spawned", LogLevel.ERROR); return; }
 
 		m_ShooterCtrl = CharacterControllerComponent.Cast(m_Shooter.FindComponent(CharacterControllerComponent));
@@ -108,7 +107,6 @@ class ME_DebugShootComp : ScriptComponent
 		{
 			Print("[DebugShoot] frame=" + m_iFrame.ToString() + " SHOT ammo " + m_iLastKnownAmmo.ToString() + "->" + ammo.ToString());
 			m_iLastShotFrame = m_iFrame;
-			m_bAimedAfterShot = false;
 			m_iLastKnownAmmo = ammo;
 		}
 		else if (ammo > m_iLastKnownAmmo)

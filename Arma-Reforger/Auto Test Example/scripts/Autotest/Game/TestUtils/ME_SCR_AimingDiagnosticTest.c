@@ -222,23 +222,14 @@ class SCR_TEST_MEAimingDiagnostic_CharacterTurnsToFaceTarget : SCR_TEST_MEAiming
 
 		m_iFrameCounter++;
 
+		// Поворачиваем каждый кадр — проверяем, удерживается ли трансформация
+		// при непрерывных вызовах (или физика всё равно побеждает).
+		FaceToward(m_Shooter, m_Target.GetOrigin());
+
 		// Логируем каждые 30 кадров
 		if (m_iFrameCounter % 30 == 0)
 		{
 			LogDetailedAimingInfo("КАДР " + m_iFrameCounter.ToString());
-		}
-
-		// Проверяем, поворачивается ли персонаж со временем
-		if (m_iFrameCounter == 60)
-		{
-			Print("[AimDiag] Пробуем повторный поворот на кадре 60");
-			FaceToward(m_Shooter, m_Target.GetOrigin());
-		}
-
-		if (m_iFrameCounter == 120)
-		{
-			Print("[AimDiag] Пробуем повторный поворот на кадре 120");
-			FaceToward(m_Shooter, m_Target.GetOrigin());
 		}
 
 		// Завершаем через 180 кадров (~3 секунды при 60 FPS)

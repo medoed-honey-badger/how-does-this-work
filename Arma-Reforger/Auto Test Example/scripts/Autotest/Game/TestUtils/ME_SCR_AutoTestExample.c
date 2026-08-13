@@ -429,23 +429,9 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 
 		m_iFrameCounter++;
 
-		// Прицеливание по двухрежимной стратегии:
-		// 1) До первого выстрела — каждые 30 кадров: физика тела медленно
-		//    разворачивает персонажа за ~300 кадров разогрева, без коррекции
-		//    первый выстрел уходит мимо (проверено: все 30 патронов — промах).
-		// 2) После каждого выстрела — один раз через 5 кадров: сбрасываем
-		//    накопленную отдачу до следующего выстрела (~23 кадра цикл).
-		//    Прицеливание В момент выстрела (кадр m_iLastShotFrame ± 0..4)
-		//    мешает физике — отсюда условие == 5.
-		if (m_iLastShotFrame < 0)
-		{
-			if (m_iFrameCounter % 30 == 0)
-				AimAtWorldPosition(m_Shooter, GetHeadHitZoneWorldPosition(m_Target));
-		}
-		else if ((m_iFrameCounter - m_iLastShotFrame) == 5)
-		{
-			AimAtWorldPosition(m_Shooter, GetHeadHitZoneWorldPosition(m_Target));
-		}
+		// Прицеливаем каждый кадр — физика персонажа сбрасывает SetTransform
+		// каждый тик, поэтому одиночный вызов не держится.
+		AimAtWorldPosition(m_Shooter, GetHeadHitZoneWorldPosition(m_Target));
 
 		m_ShooterController.SetWeaponRaised(true);
 
