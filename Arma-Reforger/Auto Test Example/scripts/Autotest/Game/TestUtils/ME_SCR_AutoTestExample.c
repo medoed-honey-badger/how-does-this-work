@@ -235,6 +235,7 @@ class SCR_TEST_MEStatsLiveKillSuite : SCR_AutotestSuiteBase
 class SCR_TEST_MEStatsLiveKillCase : SCR_AutotestCaseBase
 {
 	static const string PREFAB_CHARACTER_US = "{3E18CC9634468249}Prefabs/Characters/Campaign/Final/BLUFOR/US_army/Regular/Campaign_US_Player_GL.et";
+	static const string PREFAB_CHARACTER_USSR = "{F3C4020CA491A6E1}Prefabs/Characters/Campaign/Final/OPFOR/USSR_Army/Regular/Campaign_USSR_Player_GL.et";
 
 	protected ref array<IEntity> m_SpawnedEntities = {};
 
@@ -273,22 +274,32 @@ class SCR_TEST_MEStatsLiveKillCase : SCR_AutotestCaseBase
 		return entity;
 	}
 
-	// Возвращает горизонтальную прицельную точку: GetOrigin() цели.
-	// +0.7 offset ломает прицел — SetEntityLookAtPoint наклоняет тело назад,
-	// и пуля перелетает цель. Без offset тело горизонтально, и естественный
-	// подъём оружия сам выводит пулю на уровень головы (проверено: y=2.45).
+	// Возвращает мировую позицию кости Spine3 персонажа.
+	// Если скелет недоступен или кость не найдена — возвращает GetOrigin().
 	vector GetHeadHitZoneWorldPosition(notnull IEntity entity)
 	{
-		return entity.GetOrigin();
+		Animation anim = entity.GetAnimation();
+		if (!anim)
+			return entity.GetOrigin();
+		TNodeId bone = anim.GetBoneIndex("Spine3");
+		if (bone < 0)
+			return entity.GetOrigin();
+		vector boneMat[4];
+		if (!anim.GetBoneMatrix(bone, boneMat))
+			return entity.GetOrigin();
+		return entity.GetOrigin() + boneMat[3];
 	}
 
-	// Поворачивает стрелка телом (yaw) на targetPos через SetEntityLookAtPoint.
-	// CharacterHeadAimingComponent не трогаем — его углы в локальном пространстве
-	// тела, передача мировых углов ломает прицел. При дистанции 3м и горизонтальном
-	// прицеле по умолчанию попадания и так стабильные.
-	static void AimAtWorldPosition(notnull IEntity shooter, vector targetPos)
+	// Поворачивает стрелка через SetHeadingAngle — штатный игровой способ,
+	// удерживает ориентацию стабильно без повторных вызовов каждый кадр.
+	static void AimAtWorldPosition(notnull CharacterControllerComponent ctrl, vector shooterPos, vector targetPos)
 	{
-		SCR_TestLib.SetEntityLookAtPoint(shooter, targetPos, log: false);
+		vector dir = targetPos - shooterPos;
+		dir[1] = 0;
+		if (dir.LengthSq() < 0.0001)
+			return;
+		dir = dir.Normalized();
+		ctrl.SetHeadingAngle(Math.Atan2(dir[0], dir[2]), true);
 	}
 
 	[TestStep(TestStage.TearDown)]
@@ -310,6 +321,8 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 	IEntity m_Shooter;
 	IEntity m_Target;
 	CharacterControllerComponent m_ShooterController;
+	// Индекс кости Spine3 цели — кэшируется в Setup_SpawnBoth
+	protected TNodeId m_iSpineBone = -1;
 
 	[TestStep(TestStage.Setup)]
 	void Setup_SpawnBoth()
@@ -319,10 +332,9 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		if (GetFailure())
 			return;
 
-		// Цель — на 3 метра левее и на той же линии обзора, недалеко, чтобы
-		// точно попасть даже без точного прицеливания. Y обеих сущностей
-		// теперь берётся из реальной высоты земли (см. SpawnTestPrefab).
-		m_Target = SpawnTestPrefab(PREFAB_CHARACTER_US, 3, 0);
+		// Цель — СССР, на 3 метра по Z от стрелка. Разные фракции исключают
+		// дружественный огонь. Y берётся из реальной высоты земли.
+		m_Target = SpawnTestPrefab(PREFAB_CHARACTER_USSR, 3, 0);
 		AssertTrue(m_Target != null, "Цель не заспавнилась");
 		if (GetFailure())
 			return;
@@ -331,6 +343,19 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 		AssertTrue(m_ShooterController != null, "У стрелка не нашёлся CharacterControllerComponent");
 		if (GetFailure())
 			return;
+
+		// Кэшируем Spine3 цели для точного прицеливания
+		Animation anim = m_Target.GetAnimation();
+		if (anim)
+		{
+			m_iSpineBone = anim.GetBoneIndex("Spine3");
+			if (m_iSpineBone < 0)
+				Print("[LiveKillTest] WARN: Spine3 не найдена у цели", LogLevel.WARNING);
+			else
+				Print(string.Format("[LiveKillTest] Spine3 закэширована, bone=%1", m_iSpineBone));
+		}
+		else
+			Print("[LiveKillTest] WARN: у цели нет Animation", LogLevel.WARNING);
 
 		// Подписываемся на событие попадания ДО начала стрельбы
 		m_TargetDmgMgr = SCR_DamageManagerComponent.GetDamageManager(m_Target);
@@ -349,7 +374,7 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 
 		vector headPoint = GetHeadHitZoneWorldPosition(m_Target);
 		Print("[LiveKillTest] Setup_AimAtTarget: прицеливаемся в " + headPoint.ToString());
-		AimAtWorldPosition(m_Shooter, headPoint);
+		AimAtWorldPosition(m_ShooterController, m_Shooter.GetOrigin(), headPoint);
 	}
 
 	// Счётчик кадров — используется, чтобы не переприцеливаться и не
@@ -429,11 +454,42 @@ class SCR_TEST_MEStatsLiveKill_PlayerShootsCharacter_TargetDies : SCR_TEST_MESta
 
 		m_iFrameCounter++;
 
-		// Прицеливаем каждый кадр — физика персонажа сбрасывает SetTransform
-		// каждый тик, поэтому одиночный вызов не держится.
-		AimAtWorldPosition(m_Shooter, GetHeadHitZoneWorldPosition(m_Target));
-
 		m_ShooterController.SetWeaponRaised(true);
+
+		// Компенсируем горизонтальное смещение ствола через SetAimingAngles
+		if (m_iSpineBone >= 0)
+		{
+			Animation aimAnim = m_Target.GetAnimation();
+			if (aimAnim)
+			{
+				vector boneMat[4];
+				if (aimAnim.GetBoneMatrix(m_iSpineBone, boneMat))
+				{
+					vector torsoWorld = m_Target.GetOrigin() + boneMat[3];
+					vector shooterMat[4];
+					m_Shooter.GetTransform(shooterMat);
+					vector right = shooterMat[0];
+
+					// Позиция ствола: смещение +0.21 вправо, +1.47 вверх
+					vector muzzlePos = m_Shooter.GetOrigin();
+					muzzlePos[0] = muzzlePos[0] + right[0] * 0.21;
+					muzzlePos[1] = muzzlePos[1] + 1.47;
+					muzzlePos[2] = muzzlePos[2] + right[2] * 0.21;
+
+					vector toTorso = torsoWorld - muzzlePos;
+					float horizDist = Math.Sqrt(toTorso[0] * toTorso[0] + toTorso[2] * toTorso[2]);
+					if (horizDist >= 0.01)
+					{
+						float yawRad = Math.Atan2(toTorso[0], toTorso[2]);
+						float pitchRad = Math.Atan2(toTorso[1], horizDist);
+
+						CharacterInputContext inputCtx = m_ShooterController.GetInputContext();
+						if (inputCtx)
+							inputCtx.SetAimingAngles(Vector(yawRad, pitchRad, 0));
+					}
+				}
+			}
+		}
 
 		int currentAmmo = GetCurrentAmmo();
 

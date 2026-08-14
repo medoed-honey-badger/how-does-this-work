@@ -151,38 +151,32 @@ class SCR_TEST_MEAimingDiagnostic_CharacterTurnsToFaceTarget : SCR_TEST_MEAiming
 		Print("[AimDiag] Прицелен: " + isAimed.ToString());
 	}
 
-	// Поворачивает стрелка лицом к цели (метод из ME_DebugShootComp)
-	void FaceToward(notnull IEntity entity, vector targetPos)
+	// Поворачивает стрелка лицом к цели через SetHeadingAngle (ПОДТВЕРЖДЁННЫЙ МЕТОД)
+	void TurnTowardTarget(notnull CharacterControllerComponent ctrl, vector shooterPos, vector targetPos)
 	{
-		Print("[AimDiag] FaceToward: начинаем поворот");
-		vector from = entity.GetOrigin();
-		vector dir = targetPos - from;
+		Print("[AimDiag] TurnTowardTarget: начинаем поворот через SetHeadingAngle");
+
+		vector dir = targetPos - shooterPos;
 		dir[1] = 0;
 
-		Print("[AimDiag] FaceToward: from=" + from.ToString() + ", to=" + targetPos.ToString());
-		Print("[AimDiag] FaceToward: вектор направления (до нормализации)=" + dir.ToString());
+		Print("[AimDiag] TurnTowardTarget: from=" + shooterPos.ToString() + ", to=" + targetPos.ToString());
+		Print("[AimDiag] TurnTowardTarget: вектор направления (до нормализации)=" + dir.ToString());
 
 		if (dir.LengthSq() < 0.0001)
 		{
-			Print("[AimDiag] FaceToward: вектор слишком короткий, поворот отменён");
+			Print("[AimDiag] TurnTowardTarget: вектор слишком короткий, поворот отменён");
 			return;
 		}
 
 		dir = dir.Normalized();
-		Print("[AimDiag] FaceToward: нормализованный вектор=" + dir.ToString());
+		Print("[AimDiag] TurnTowardTarget: нормализованный вектор=" + dir.ToString());
 
-		vector mat[4];
-		Math3D.DirectionAndUpMatrix(dir, "0 1 0", mat);
-		mat[3] = from;
+		// Math.Atan2 принимает (x, z) и возвращает угол в радианах
+		float headingRad = Math.Atan2(dir[0], dir[2]);
+		Print("[AimDiag] TurnTowardTarget: вычисленный угол=" + headingRad.ToString() + " рад (" + (headingRad * Math.RAD2DEG).ToString() + "°)");
 
-		Print("[AimDiag] FaceToward: новая трансформация:");
-		Print("[AimDiag]   Right:   " + mat[0].ToString());
-		Print("[AimDiag]   Up:      " + mat[1].ToString());
-		Print("[AimDiag]   Forward: " + mat[2].ToString());
-		Print("[AimDiag]   Pos:     " + mat[3].ToString());
-
-		entity.SetTransform(mat);
-		Print("[AimDiag] FaceToward: SetTransform вызван");
+		ctrl.SetHeadingAngle(headingRad, true);
+		Print("[AimDiag] TurnTowardTarget: SetHeadingAngle вызван с adjustAimingYaw=true");
 	}
 
 	[TestStep(TestStage.Setup)]
@@ -201,7 +195,7 @@ class SCR_TEST_MEAimingDiagnostic_CharacterTurnsToFaceTarget : SCR_TEST_MEAiming
 			return;
 
 		Print("[AimDiag] ------ Выполняем поворот к цели ------");
-		FaceToward(m_Shooter, m_Target.GetOrigin());
+		TurnTowardTarget(m_ShooterController, m_Shooter.GetOrigin(), m_Target.GetOrigin());
 	}
 
 	[TestStep(TestStage.Setup)]
@@ -221,10 +215,6 @@ class SCR_TEST_MEAimingDiagnostic_CharacterTurnsToFaceTarget : SCR_TEST_MEAiming
 			return true;
 
 		m_iFrameCounter++;
-
-		// Поворачиваем каждый кадр — проверяем, удерживается ли трансформация
-		// при непрерывных вызовах (или физика всё равно побеждает).
-		FaceToward(m_Shooter, m_Target.GetOrigin());
 
 		// Логируем каждые 30 кадров
 		if (m_iFrameCounter % 30 == 0)
@@ -250,10 +240,9 @@ class SCR_TEST_MEAimingDiagnostic_CharacterTurnsToFaceTarget : SCR_TEST_MEAiming
 
 		Print("[AimDiag] ====== ТЕСТ ЗАВЕРШЁН ======");
 		Print("[AimDiag] Проверь логи выше:");
-		Print("[AimDiag]   1. Изменяется ли Forward вектор после SetTransform?");
-		Print("[AimDiag]   2. Совпадает ли Forward с вектором К цели?");
-		Print("[AimDiag]   3. Dot product близко к 1.0?");
-		Print("[AimDiag]   4. Угол отклонения близко к 0°?");
+		Print("[AimDiag]   1. Forward вектор должен совпадать с направлением к цели после SetHeadingAngle");
+		Print("[AimDiag]   2. Dot product должен оставаться близким к 1.0 без дополнительных вызовов");
+		Print("[AimDiag]   3. Угол отклонения должен быть близок к 0° на всём протяжении теста");
+		Print("[AimDiag]   4. Персонаж не должен визуально дёргаться или возвращаться обратно");
 	}
 }
-
