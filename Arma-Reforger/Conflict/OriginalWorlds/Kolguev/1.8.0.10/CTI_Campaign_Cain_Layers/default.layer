@@ -1,0 +1,5919 @@
+SCR_AIWorld : "{672531FAC0834C06}Prefabs/AI/SCR_AIWorld_Cain.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F9E52831}" : "{A8BF06F28121542F}Configs/Navmesh/Navmesh_CTI_Cain_Soldier.conf" {
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F3B4EE8A}" : "{5DE5D92BD2231C41}Configs/Navmesh/Navmesh_CTI_Cain_Vehicle.conf" {
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}
+RadioManagerEntity {
+ coords 12635.195 4.435 10669.189
+}
+SCR_GameModeCampaign GameMode_CampaignHQC : "{2AFDAA8D7947F559}Prefabs/MP/Modes/Conflict/GameMode_CampaignHQC.et" {
+ components {
+  SCR_CacheManagerComponent "{691E6E472CBA6978}" {
+   m_iAmount 3
+   m_sTerrainConfig "{D5469AF52A1ECCB6}Configs/Campaign/CampaignCachePool/CampaignCachePool_Cain.conf"
+  }
+  SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
+   m_sHeaderTitle "AR-Campaign_HQC_ScenarioName_Cain"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5D349E3023E18896}" {
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5D349E305DB53338}" {
+     m_iMaxNumberOfObjectives 5
+    }
+   }
+  }
+  SCR_RandomSpawnManagerComponent "{691E6E47C8A2B7AE}" {
+   m_aBlacklistZones {
+    SCR_SpawnPointBlacklistZone "{691E6E23D83D1172}" {
+     m_vCenter 11392.4 35 2089
+     m_fRadius 2000
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D85C28B6}" {
+     m_vCenter 2147.781 11.286 942.941
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D8666C12}" {
+     m_vCenter 9427.771 26.48 12469.094
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9885598}" {
+     m_vCenter 5055.518 26.48 10181.168
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9AFF16F}" {
+     m_vCenter 1936.707 26.48 6421.833
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9B087C3}" {
+     m_vCenter 2036.425 26.48 5594.042
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9D586F5}" {
+     m_vCenter 3036.258 26.48 4113.604
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9FEFE13}" {
+     m_vCenter 5295.306 26.48 2291.592
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9076D09}" {
+     m_vCenter 5785.847 26.48 2545.789
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D92BE300}" {
+     m_vCenter 6973.869 26.48 2763.181
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D94C005A}" {
+     m_vCenter 7854.981 26.48 3770.345
+     m_fRadius 600
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D9515273}" {
+     m_vCenter 8148.577 26.48 4123.817
+     m_fRadius 600
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23D971B7B8}" {
+     m_vCenter 8544.983 26.48 4837.643
+     m_fRadius 600
+    }
+    SCR_SpawnPointBlacklistZone "{691E6E23DA9FC8F2}" {
+     m_vCenter 8710.919 26.48 5758.916
+     m_fRadius 600
+    }
+   }
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_sHeaderTitle "Conflict - Kolgujev"
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E3E90D4315E}" {
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E3E89289BE9}" {
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5D349E3F6FF705DE}" {
+       m_sContentImage "{744DEEECF650BF7C}UI/Textures/FieldManual/MPModes/Conflict/Images/Conflict_CaptureHold.edds"
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 9219.751 1.734 7888.372
+ m_iControlPointsThreshold 5
+ m_fAcceptableDistanceBetweenFactionHQs 3000
+ m_fPreferredDistanceBetweenFactionHQs 4000
+}
+ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+ coords 9220.82 1.674 7883.699
+}
+SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 9217.333 1.769 7891.63
+ Factions {
+  SCR_CampaignFaction "{56F0C3A6336375DC}" {
+   m_bIsPlayable 1
+  }
+ }
+}
+ItemPreviewManagerEntity ItemPreviewManagerEntity1 {
+ coords 9215.633 1.917 7887.168
+ PreviewWorld "{4391FE7994EE6FE2}Prefabs/World/Game/InventoryPreviewWorld.et"
+ DefaultRenderAttributes PreviewRenderAttributes "{6244DC984DF5E2FC}" {
+ }
+}
+SCR_MapLocator {
+ coords 9220.104 1.756 7882.396
+ m_WorldDirections SCR_MapLocationQuadHint "{6646763DCAA0E1E3}" : "{D88D1AE761D521FB}Configs/Map/MapLocatorHints/LocationHintsKolguyev.conf" {
+ }
+}
+$grp GenericEntity : "{0226331FB6A8249A}Prefabs/Systems/MilitaryBase/ConflictSourceBase_T3Harbor.et" {
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Pier_Michurino"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Michurino-UC"
+   }
+  }
+  coords 3743.4 2.278 3726.342
+  angles 0 43.751 0
+  {
+   GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+    coords 12.537 1.558 22.999
+    angles 0 -81.972 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_SosnovyMys"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_SosnovyMys-UC"
+   }
+  }
+  coords 4355.792 2.555 8144.114
+  angles 0 -40.118 0
+  {
+   GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+    coords 19.218 -0.975 -7.259
+    angles 0 -175.036 0
+    {
+     GenericEntity {
+      ID "5E330D6C348F7D49"
+      coords -2.678 0.191 1.551
+      angles 0 -7 0
+     }
+     GenericEntity {
+      ID "5E330D6CA3AAA53F"
+      coords -3.305 0.308 2.236
+      angles 0.672 5.24 -1.037
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AE43"
+      coords -1.627 0.258 1.509
+      angles 0 2.319 0
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AFC6"
+      coords -6.879 -0.105 0.095
+      angles 0 -87.649 0
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AFE6"
+      coords -6.527 0.017 0.959
+      angles 0 -60.109 0
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AFF8"
+      coords -6.147 -0.085 0.245
+      angles 0 -11.182 0
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AE02"
+      coords -6.402 -0.356 -1.967
+      angles 0 -87.961 0
+     }
+     GenericEntity {
+      ID "5D1ED92C4DD6AE2E"
+      coords -6.418 -0.226 -0.808
+      angles 0 -2.806 0
+     }
+     GenericEntity {
+      ID "5D45393876460D01"
+      {
+       GenericEntity {
+        ID "5D453938619FC380"
+        coords 2.508 -0.371 -2.179
+        angles 1.056 91.688 4.605
+       }
+       GenericEntity {
+        ID "5D453938619FC381"
+        coords -1.957 -0.326 0.232
+        angles 4.171 0 0
+       }
+       GenericEntity {
+        ID "5D453938619FC383"
+        coords 2.712 -0.088 0.48
+        angles 0 92.564 6.002
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_MusselCove"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_MusselCove-UC"
+   }
+  }
+  coords 6045.544 2.242 8443.501
+  angles 0 32.617 0
+  {
+   GenericEntity : "{962EB289CF844AA2}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_06.et" {
+    coords -24.153 -0.077 -12.649
+    angles 0 -113.617 0
+    {
+     GenericEntity {
+      ID "5D1ED92199D182AF"
+      coords 0.695 -0.108 4.464
+      angles 0 -4.819 0
+     }
+     GenericEntity {
+      ID "5D1ED92199D1824C"
+      coords 1.665 -0.124 3.786
+      angles 0 51.904 0
+     }
+     GenericEntity {
+      ID "5D1ED92199D1825C"
+      coords 1.561 -0.14 5.114
+      angles 0 -59.899 0
+     }
+     GenericEntity {
+      ID "5D1ED92199D1827B"
+      coords 2.494 -0.18 5.424
+     }
+     GenericEntity {
+      ID "5D1ED92199D18226"
+      coords 2.237 -0.167 4.532
+      angles 0 39.053 0
+     }
+     GenericEntity {
+      ID "5D1ED92199D183D2"
+      coords 3.258 -0.206 3.731
+      angles 0 -4.275 0
+     }
+     GenericEntity {
+      ID "5D1ED92199D182C3"
+      coords -2.585 -0.016 4.523
+     }
+     GenericEntity {
+      ID "5D1ED92199D182D3"
+      coords -4.063 0.165 4.504
+      angles 0 -4.021 0
+     }
+     StaticModelEntity {
+      ID "5D1ED92199D18213"
+      coords -6.523 0.693 3.823
+      angles 8.238 -81.334 0
+     }
+     StaticModelEntity {
+      ID "5D1ED92199D1823E"
+      coords 3.62 -0.24 4.883
+      angles 0 14.646 0
+     }
+    }
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords -12.993 -0.024 -7.598
+    angles 0 154.668 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Pier_Komsomolsk"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Komsomolsk-UC"
+   }
+  }
+  coords 8582.869 3.906 10185.977
+  angles 0 -7.508 0
+  {
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    coords -11.938 0.087 8.101
+    angles 0 -89.697 0
+    {
+     GenericEntity {
+      ID "5E330D6C9FDD1551"
+      coords -3.651 -0.117 -5.675
+      angles -1.539 -167.748 0.005
+     }
+    }
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords 25.236 -0.074 -3.774
+    angles 0 -177.167 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Pier_Twin"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Pier_Twin-UC"
+   }
+  }
+  coords 10053.58 7.97 10859.773
+  angles 0 -56.797 0
+  {
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    coords 3.084 -1.158 -7.388
+    angles 0 3.799 0
+    {
+     GenericEntity {
+      ID "5D1ED92353BB9FF4"
+      coords -11.942 0.066 -2.725
+      angles 0 0.819 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F82"
+      coords -12.256 0.181 1.851
+      angles 0 -90 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F95"
+      coords -12.157 0.168 0.354
+      angles 0 -88.159 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FE3"
+      coords -12.097 0.114 -1.563
+      angles 0 176.173 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9E3E"
+      coords 0.36 0.014 -1.038
+      angles 0 4.513 0
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{07D58C64654F71A3}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_USSR_03.et" {
+ {
+  coords 6523.429 493.399 6619.77
+  angles -0.895 -119.976 -1.55
+ }
+ {
+  coords 11873.43 6.94 10685.142
+  angles 0 74.805 0
+ }
+ {
+  coords 6654.521 26.375 3934.52
+  angles 0 46.873 0
+ }
+}
+GenericEntity : "{0C923757B8B8306B}Prefabs/Compositions/Misc/FreeRoamBuilding/BarbedTapeTriple_S_USSR_01.et" {
+ coords 6084.338 419.568 6198.877
+}
+GenericEntity : "{0D5F3D3C5246BEE8}Prefabs/Compositions/Misc/FreeRoamBuilding/SandbagLongBurlap_S_USSR_01.et" {
+ coords 6666.595 26.118 3898.734
+ angles 0 -44.085 0
+}
+GenericEntity : "{0D77C4A6D4704C2A}Prefabs/Structures/Military/CamoNets/FIA/CamoNet_Small_FIA_01_V1.et" {
+ coords 5056.579 698.759 6329.551
+ angles 0 156.226 0
+}
+$grp GenericEntity : "{0DDAFCA92FF4451C}Prefabs/Systems/AmbientVehicles/AmbientVehicleSpawnpoint_CIV.et" {
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 7666.112 5.181 4522.556
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 7556.83 2.187 4184.416
+  angles 0 -49.187 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6709.253 27.719 4000.324
+  angles 0 137.108 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6066.152 418.607 6236.999
+  angles 0 115.689 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 7466.663 309.421 6757.07
+  angles 0 -165 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6038.799 6.569 3091.804
+  angles 0 60 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 11217.001 94.762 10261.114
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 11929.143 4.541 10710.589
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 2022.832 129.834 7327.672
+  angles 0 -46.694 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 12009.234 6.609 10463.459
+  angles 0 88.905 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 12054.612 2.156 10336.925
+  angles 0 179.289 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 11797.962 7.219 10961.617
+  angles 0 -176.24 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 11729.555 44.384 10373.146
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 9644.254 87.285 9704.428
+  angles 0 133.661 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 8539.748 15.051 6565.144
+  angles 0 -77.442 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 8274.667 49.685 6766.559
+  angles 0 -171.32 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6750.165 2.913 3496.342
+  angles 0 -42.482 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6066.954 182.31 4560.095
+  angles 0 47.646 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 3365.813 267.584 6860.028
+  angles 0 88.905 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 5366.728 403.419 5324.163
+  angles 0 -93.129 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 4327.444 39.691 3554.394
+  angles 0 -15.912 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 3784.044 5.181 3762.226
+  angles 0 -120.83 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 3255.84 269.355 6840.555
+  angles 0 88.905 0
+ }
+}
+$grp GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et" {
+ {
+  coords 5102.118 51.562 3293.473
+  angles 0 -165.38 0
+ }
+ {
+  coords 1940.534 124.581 7512.802
+  angles 0 50.754 0
+ }
+}
+$grp GenericEntity : "{144F1136AB4DB0E8}Prefabs/Compositions/Slotted/SlotFlatSmall/LivingArea_S_FIA_01.et" {
+ {
+  coords 8562.211 96.317 9388.747
+  angles 0 174.54 0
+  {
+   GenericEntity {
+    ID "5D1ED910D3E74997"
+    coords -3.363 -0.153 4.579
+    angles 0 43.759 0
+   }
+   GenericEntity {
+    ID "5D1ED910D3E74911"
+    {
+     GenericEntity {
+      ID "5D1EB44AE18A3A42"
+      coords -0.949 -0.056 -5.059
+      angles -5.37 -74.226 -7.008
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A3A77"
+      coords -4.172 -0.231 -1.17
+      angles 0 175.968 0
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A3A61"
+      coords 1.748 0.042 -3.462
+      angles 0 -177.731 0
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A39E3"
+      coords 6.779 0.014 0.954
+      angles 8.27 91.412 0.203
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A39FC"
+      coords -2.425 0.105 -6.052
+      angles 0 -65.12 0
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A39BB"
+      coords -2.059 -0.521 3.326
+      scale 0.81
+     }
+     GenericEntity {
+      ID "5D1EB44AE18A39DA"
+      coords 3.874 0.141 -2.127
+      angles 0 11.147 0
+     }
+    }
+   }
+   StaticModelEntity {
+    ID "5D1ED910D3E74808"
+    coords -5.92 0.023 -0.684
+    angles 0 -131.804 0
+   }
+   StaticModelEntity {
+    ID "5D1ED910D3E7483B"
+    coords 6.877 0.047 -0.39
+    angles 0 54.389 0
+   }
+  }
+ }
+ {
+  coords 8421.001 22.718 6571.99
+  angles 0 14.611 0
+ }
+ {
+  coords 3674.426 178.828 5262.286
+  angles 0 -109.716 0
+  {
+   StaticModelEntity {
+    ID "5D1ED910D3E74808"
+    coords -5.972 0.35 -0.629
+    angles 0 -133.091 0
+   }
+   StaticModelEntity {
+    ID "5D1ED910D3E7483B"
+    coords -8.833 -0.152 8.455
+    angles 0 -176.337 0
+   }
+  }
+ }
+ {
+  coords 6650.169 25.576 3894.236
+  angles 0 -40.396 0
+ }
+}
+$grp GenericEntity : "{16148BF23770F1D3}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_02.et" {
+ {
+  coords 3922.857 369.304 6420.875
+  angles 0.131 21.638 1.805
+ }
+ {
+  coords 6916.781 93.502 4801.938
+  angles 8.691 6.694 3.684
+ }
+ {
+  coords 4993.338 38.161 3256.028
+  angles 0 138.887 0
+ }
+ {
+  coords 4500.881 126.519 7619.523
+  angles 0 -36.274 0
+ }
+ {
+  coords 8672.642 96.955 9289.366
+  angles 0 110.253 0
+ }
+}
+$grp GenericEntity : "{172D03072FE6ECAB}Prefabs/Compositions/Slotted/SlotRoadMedium/Barricade_M_US_01.et" {
+ {
+  coords 8963.617 101.119 8684.585
+  angles -3.915 -128.234 0.808
+ }
+ {
+  coords 11334.812 89.339 10508.683
+  angles 0 -90 0
+  {
+   StaticModelEntity {
+    ID "5CC6B49A31F9DD1D"
+    coords -5.298 0.191 1.869
+    angles 0 -38.491 0
+   }
+   StaticModelEntity {
+    ID "5CC6B49A31F9DDA1"
+    coords 4.169 0.005 -2.491
+    angles 0 -89.228 0
+   }
+  }
+ }
+ {
+  coords 11068.857 2.784 9909.524
+  angles 0 -120 0
+  {
+   StaticModelEntity {
+    ID "5CC6B49A31F9DDA1"
+    coords 4.219 -0.197 1.189
+    angles 0 -89.228 5.86
+   }
+  }
+ }
+}
+GenericEntity : "{1739B43A3702BB84}Prefabs/Systems/MilitaryBase/ConflictSourceBase_Airfield.et" {
+ components {
+  SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+   m_sBaseNameUpper "#AR-Campaign_Arland_MapLocation_Airport-UC"
+  }
+ }
+ coords 2645.922 24.218 5366.674
+ {
+  GenericEntity {
+   ID "62388D8F13AD0811"
+   coords 0 0.001 12.966
+  }
+  GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+   coords -9.033 0.001 -12.571
+  }
+  GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+   coords 0.111 0.001 -14.395
+  }
+ }
+}
+$grp GenericEntity : "{1804DADC1C7C9893}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_01_Campaign_HQC.et" {
+ {
+  coords 5088.132 688.627 6346.958
+  angles 0 -118.709 0
+ }
+ {
+  coords 6921.785 435.674 6836.666
+  angles 0 135.99 0
+ }
+ {
+  coords 2758.247 110.906 7457.146
+ }
+ {
+  coords 6057.055 182.299 4575
+  angles 0 137.864 0
+ }
+ {
+  coords 9866.817 57.498 9475.185
+ }
+}
+GenericEntity : "{1DE88E6E3B4FEC8D}Prefabs/Props/Military/AmmoBoxes/EquipmentBoxStack/USSR/EquipmentBoxStack_USSR_01_V3_covered.et" {
+ coords 2005.693 129.773 7327.792
+}
+GenericEntity : "{1DF9835399B603EB}PrefabsEditable/Auto/Compositions/Slotted/SlotRoadMedium/E_Checkpoint_M_USSR_01.et" {
+ coords 3055.311 26.586 4931.362
+ angles 1.251 143.162 0
+}
+GenericEntity : "{1EB5949DF6738E38}Prefabs/Compositions/Slotted/SlotFlatSmall/VehicleMaintenance_S_USSR_01.et" {
+ coords 8607.732 96.125 9278.484
+ angles 0 -47.415 0
+}
+GenericEntity : "{1EB5949DF6738E39}Prefabs/Compositions/Slotted/SlotFlatSmall/VehicleMaintenance_S_Conflict_USSR_01.et" {
+ coords 6296.157 37.25 8050.269
+ angles 0 -177.226 0
+}
+GenericEntity : "{1ED8F6D056701E7E}Prefabs/Compositions/Misc/SubCompositions/Furniture/Table_RadioStation_FIA_01.et" {
+ coords 5055.907 698.848 6328.133
+ angles 0 36.226 0
+}
+$grp GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+ {
+  coords 8615.573 96.082 9286.021
+  angles 0 -43.326 0
+ }
+ {
+  coords 6336.781 37.856 8011.961
+  angles 0 1.654 0
+ }
+}
+GenericEntity : "{21D83950DF36F250}Prefabs/Props/Military/Sandbags/Sandbag_01_long_burlap.et" {
+ coords 6067.964 424.598 6538.073
+ angles 0 -14.969 0
+}
+$grp GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+ {
+  coords 6233.976 36.75 8057.878
+  angles 0 -56.126 0
+ }
+ {
+  coords 6653.139 26.312 3926.446
+  angles 0 134.144 0
+ }
+}
+$grp GenericEntity : "{27941CDF3E7E1A5F}Prefabs/MP/Campaign/CampaignRemnantsSupplyDepot.et" {
+ {
+  coords 6862.212 438.422 6734.334
+ }
+ {
+  coords 5665.453 421.573 6846.958
+ }
+ {
+  coords 9620.853 11.562 8665.408
+ }
+ {
+  coords 7096.844 313.958 6013.782
+ }
+ {
+  coords 2758.748 110.906 7446.163
+ }
+ {
+  coords 5414.747 64.126 3378.158
+ }
+ {
+  coords 6057.426 182.339 4577.451
+ }
+ {
+  coords 5098.243 688.43 6353.583
+  angles 0 -24.316 0
+ }
+}
+$grp GenericEntity : "{27F6A0815E6FF6EF}Prefabs/Compositions/Slotted/SlotRoadMedium/Barricade_M_USSR_01.et" {
+ {
+  coords 5112.112 4.284 2856.115
+  angles 0 90 0
+ }
+ {
+  coords 7687.563 316.614 8076.02
+  angles 0 -90 0
+ }
+ {
+  coords 5774.779 419.352 6903.2
+  angles 0 109.814 0
+ }
+ {
+  coords 6080.693 418.75 6216.814
+  angles 0 -66.518 0
+ }
+ {
+  coords 6120.966 416.995 6233.324
+  angles 0 -178.833 0
+ }
+ {
+  coords 4415.218 20.148 2928.181
+  angles 0 103.685 0
+ }
+ {
+  coords 6067.542 418.656 6235.186
+  angles 0 -67.277 0
+ }
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+  }
+  coords 8405.243 28.879 6662.354
+  angles 0 -47.783 0
+  {
+   GenericEntity {
+    ID "5CC6B499BAC8A7E5"
+    {
+     GenericEntity {
+      ID "5DB68EF62AC701CB"
+      coords 0.674 0.508 -1.027
+      angles 15.034 -87.268 -1.978
+     }
+     GenericEntity {
+      ID "5CB0D990A16A1126"
+      coords -2.909 0.981 0.125
+      angles 35.537 -62.791 4.716
+     }
+     StaticModelEntity {
+      ID "5CB0D990A16A5AAF"
+      coords -3.932 0.748 0.363
+      angles 0 30.193 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 6636.436 26.158 3925.905
+  angles 0 -24.774 0
+ }
+}
+$grp GenericEntity : "{2A27606856B8A914}Prefabs/Compositions/Slotted/SlotRoadLarge/Barricade_L_USSR_01.et" {
+ {
+  coords 6033.457 7.123 3097.753
+  angles 0 -30 0
+ }
+ {
+  coords 6645.843 26.338 3932.804
+  angles 0 -43.493 0
+ }
+}
+$grp GenericEntity : "{2E4F096844CDC14B}Prefabs/Systems/MilitaryBase/ConflictControlPoint.et" {
+ CP_Crossroad {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_NorthernCrossroad_Base"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_NorthernCrossroad_Base-UC"
+   }
+  }
+  coords 8558.84 96.042 9375.523
+  angles 0 137.162 0
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords -0.486 -0.136 17.145
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 34.508 0.116 0.06
+   }
+  }
+ }
+ CP_Gorshkovo {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_Gorshkovo"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_Gorshkovo-UC"
+   }
+  }
+  coords 8422.396 22.727 6591.912
+  angles 0 13.99 0
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords 12.026 0 10.779
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 16.132 1.049 -17.214
+   }
+  }
+ }
+ CP_Kamensk {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_Kamensk"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_Kamensk-UC"
+   }
+  }
+  coords 11866.496 8.292 10679.665
+  angles -2.121 -15.205 2.43
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords -1.47 -0.386 7.776
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 14.95 2.272 49.554
+   }
+  }
+ }
+ CP_Mine {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_KrasnyyOktyabrMine"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_KrasnyyOktyabrMine-UC"
+   }
+  }
+  coords 3673.705 179.84 5223.48
+  angles 0 -22.276 0
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords 3.745 -0.171 2.973
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 12.131 -0.628 24.466
+   }
+  }
+ }
+ CP_Mineraly {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_Mineraly"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_Mineraly-UC"
+   }
+  }
+  coords 6321.753 37.374 8011.786
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords -11.035 0.126 26.671
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords -1.686 -0.146 3.003
+   }
+  }
+ }
+ CP_Ugoldar {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 200
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_iRadius 200
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_Ugoldar"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_Ugoldar-UC"
+   }
+  }
+  coords 6641.521 25.849 3906.74
+  angles 0 140.263 0
+  {
+   GenericEntity {
+    ID "622086ACB9D1E3B2"
+    coords -23.377 0.469 6.371
+   }
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 1.366 -0.133 3.003
+   }
+  }
+ }
+ CP_Villa {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Cain_Villa"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Cain_Villa-UC"
+   }
+  }
+  coords 1950.652 132.837 7401.3
+  angles 0 -89.557 0
+  {
+   GenericEntity {
+    ID "622086ACBB849B49"
+    coords 26.914 1.365 8.287
+   }
+  }
+ }
+}
+$grp GenericEntity : "{2EA9E10F2E9C0A36}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign_HQC.et" {
+ {
+  coords 5093.512 688.317 6362.414
+  angles 0 75.238 0
+  {
+   GenericEntity {
+    ID "5D1ED92353BB9FF4"
+    coords -1.931 0.79 -1.123
+    angles 0 0.819 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9F82"
+    coords -3.24 -0.14 5.252
+    angles 0 -175.569 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9F95"
+    coords -1.74 -0.238 5.236
+    angles 0 -173.728 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9FE3"
+    coords 0.177 -0.109 5.148
+    angles 0 90.604 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9E3E"
+    coords -10.502 -2.664 -2.523
+    angles 0 4.513 0
+   }
+  }
+ }
+ {
+  coords 9634.033 11.636 8707.537
+  angles 0 132.86 0
+  {
+   GenericEntity {
+    ID "5D1ED92353BB9FF4"
+    coords -13.434 0 1.778
+    angles 0 92.205 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9F82"
+    coords -8.854 0 1.979
+    angles 0 1.386 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9F95"
+    coords -10.354 0 1.916
+    angles 0 3.227 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9FE3"
+    coords -12.271 0 1.901
+    angles 0 -92.441 0
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9E3E"
+    coords -10.381 0 0.182
+    angles 0 95.899 0
+   }
+  }
+ }
+ {
+  coords 6759.018 441.812 6801.709
+  angles 0 -136.156 0
+ }
+ {
+  coords 2748.567 110.952 7430.085
+  angles 0 95.009 0
+  {
+   GenericEntity {
+    ID "5D1ED92353BB9FA0"
+    coords -4.302 0 0.913
+   }
+   GenericEntity {
+    ID "5D1ED92353BB9F49"
+    coords -7.266 0.025 -0.163
+   }
+  }
+ }
+ {
+  coords 5634.136 421.615 6867.048
+  angles 0 -1.132 0
+ }
+}
+$grp GenericEntity : "{2F0CCC459889B8EE}PrefabsEditable/EffectsModules/Mine/EffectModule_MineField_AP_Small_USSR.et" {
+ {
+  coords 4838.344 307.448 6983.088
+  angles 0 25.654 0
+ }
+ {
+  coords 6074.872 418.749 6198.066
+  angles 0 8.931 0
+ }
+ {
+  components {
+   SCR_EffectsModuleComponent "{5CA2DE492D8BBCF5}" {
+    m_EffectConfig SCR_BarrageEffectsModule "{5D22CCE8F9AEE06D}" {
+     m_iMinProjectilesEachBarrage 29
+     m_iMaxProjectilesEachBarrage 33
+    }
+   }
+  }
+  coords 6083.671 418.562 6238.916
+  angles 0 59.977 0
+ }
+ {
+  coords 6057.469 420.213 6227.229
+  angles 0 20.696 0
+ }
+ {
+  coords 9193.233 11.281 8309.867
+  angles 0 -78.831 0
+ }
+ {
+  components {
+   SCR_EffectsModuleComponent "{5CA2DE492D8BBCF5}" {
+    m_EffectConfig SCR_BarrageEffectsModule "{5D22CCE8F9AEE06D}" {
+     m_ModuleZoneData SCR_EffectsModulePositionData_Rectangle "{5D22CCE8D39ECEDA}" {
+      m_fWidth 10
+      m_fLength 26
+     }
+    }
+   }
+  }
+  coords 3787.341 218.252 5276.133
+  angles 0 -23.444 0
+  {
+   GenericEntity {
+    ID "616C96D8967A1736"
+    components {
+     SCR_EffectsModuleAreaMeshComponent "{616C96D8B05B3D1F}" {
+      m_fWidth 10
+      m_fLenght 26
+     }
+    }
+   }
+  }
+ }
+}
+BasePreloadManager PreloadManager_Campaign1 : "{32BFDCDE99092FCE}Prefabs/World/Game/PreloadManager_Campaign.et" {
+ coords 9219.24 1.745 7884.434
+}
+GenericEntity : "{344ABEB98BB96721}Prefabs/Props/Military/AmmoBoxes/EquipmentBoxStack/USSR/EquipmentBoxStack_USSR_01_V4_covered.et" {
+ coords 2006.97 129.71 7327.687
+}
+$grp GenericEntity : "{3772B47BCF3C62FB}Prefabs/Systems/MilitaryBase/ConflictBase_MOB.et" {
+ Base_MilitaryHQ {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_iRegularSuppliesIncomeBase 200
+   }
+  }
+  coords 7618.116 20.828 4916.684
+  angles 0 8.375 0
+ }
+ HQ_EastCoast {
+  coords 10542.092 22.406 9707.582
+  angles 0 19.915 0
+ }
+ HQ_NE {
+  coords 7924.505 7.836 9594.968
+  angles 0 45 0
+ }
+ HQ_SW {
+  coords 4365.178 55.187 3220.192
+  angles 0 91.587 0
+ }
+ HQ_W {
+  coords 3661.574 1.809 7931.243
+  angles 4.009 171.252 -3.324
+ }
+}
+$grp GenericEntity : "{3AE1A95C1023F894}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_USSR_04.et" {
+ {
+  coords 5131.635 419.667 5460.389
+  angles 0 66.151 0
+ }
+ {
+  coords 6541.833 493.453 6629.055
+  angles 0 60 0
+ }
+ {
+  coords 5151.427 21.898 3097.068
+  angles 0 -17.46 0
+ }
+ {
+  coords 11858.71 8.38 10680.293
+  angles 0 -108.033 0
+ }
+ {
+  coords 11862.047 8.615 10673.359
+  angles 0 160.819 0
+  {
+   GenericEntity {
+    ID "5CCCBEF208CBD5D5"
+    coords 2.259 0 -2.07
+   }
+   GenericEntity {
+    ID "5CCCBEF208CBD561"
+    coords 1.402 -0.091 -3.61
+    angles 0 85.801 0
+   }
+   GenericEntity {
+    ID "5CCCBEF208CBD4B7"
+    coords 2.17 -0.005 -2.991
+    angles 0 -12.135 0
+   }
+  }
+ }
+ {
+  coords 6675.477 26.343 3910.834
+  angles 0 47.648 0
+ }
+ {
+  coords 6661.449 25.866 3897.041
+  angles 0 135.221 0
+ }
+}
+$grp GenericEntity : "{3D72BF835223B352}Prefabs/Compositions/Slotted/SlotFlatSmall/VehicleMaintenance_S_FIA_01.et" {
+ {
+  coords 8529.646 15.118 6533.559
+  angles 0 15.725 0
+  {
+   GameEntity {
+    ID "5D22B96A3EA1AC01"
+    coords 5.332 -0.056 -3.017
+    angles 0 156.07 0
+   }
+  }
+ }
+ {
+  coords 3661.22 177.394 5271.104
+  angles 0 -43.186 0
+ }
+ {
+  coords 1938.699 126.445 7294.254
+  angles 0 -78.932 0
+ }
+}
+Turret : "{3EA26CFD7A202636}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV_SPP.et" {
+ coords 8302.408 69.311 6731.397
+ angles -2.005 118.196 0
+}
+$grp GenericEntity : "{4510C273B794F3AA}Prefabs/Compositions/Slotted/SlotFlatMedium/VehicleMaintenance_M_Conflict_USSR_01.et" {
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+  }
+  coords 3701.438 180.164 5268.926
+  angles 0 -136.217 0
+  {
+   GameEntity {
+    ID "630682596911A891"
+    coords -5.599 0.023 9.581
+    angles 0 136.286 0
+   }
+   GenericEntity {
+    ID "63068259692F70D4"
+    coords -4.49 0.512 -3.643
+    angles 0 110.618 0
+   }
+   GenericEntity {
+    ID "63068259692F70AA"
+    coords -12.214 0.557 -2.277
+    angles 0 -75.571 0
+   }
+   GenericEntity {
+    ID "63068259692F70D5"
+    coords -12.32 0.715 -3.382
+    angles 0 -84.579 0
+   }
+   GenericEntity {
+    ID "63068259692FEC9D"
+    coords -11.052 0.579 -3.137
+    angles 0 -179.42 0
+   }
+   GenericEntity {
+    ID "63068259692F8B06"
+    coords -5.382 0.347 -1.714
+    angles 0 15.222 0
+    {
+     DecalEntity {
+      ID "56E0B29FEE2AF11A"
+      coords 0 0 -0.001
+      angles -90 180 -180
+     }
+    }
+   }
+   GenericEntity {
+    ID "6306825969117504"
+    coords -7.276 0.56 -2.477
+    angles 0 -113.957 0
+   }
+   GenericEntity {
+    ID "6306825969110082"
+    coords -1.991 0.998 -8.064
+    angles -75 0 -48.536
+   }
+   GenericEntity {
+    ID "6306825969110083"
+    coords 4.502 0.757 -6.454
+    angles 0 92.726 0
+   }
+   GenericEntity {
+    ID "630682596911E636"
+    coords 4.642 1.096 -7.238
+    angles 0 51.03 0
+   }
+   GenericEntity {
+    ID "630682596911E60B"
+    coords -9.537 0.163 1.506
+    angles 1.658 -21.555 -0.853
+   }
+   GenericEntity {
+    ID "630682596911E600"
+    coords -2.197 0.603 -3.896
+    angles 0 66.458 0
+    {
+     GenericEntity {
+      ID "51B2C5F338EBEDA6"
+      coords 0.034 0.223 -0.021
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDC1"
+      coords 0.013 0.421 0.002
+      angles 0 49.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDCE"
+      coords 0.013 0.627 0.001
+      angles 0 -29.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDD5"
+      coords 0.022 -0.189 -0.014
+      angles 0 -13 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDF9"
+      coords 0.026 0.006 0.017
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596911E607"
+    coords -3.171 0.837 -7.777
+    angles 0 5.435 0
+    {
+     GenericEntity {
+      ID "51B2C5F338EBEDA6"
+      coords 0.034 0.209 -0.021
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDC1"
+      coords 0.012 0.418 0.002
+      angles 0 49.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDCE"
+      coords 0.013 0.604 0.001
+      angles 0 -29.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDD5"
+      coords 0.022 0.79 -0.014
+      angles 0 -13 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDF9"
+      coords 0.026 -0.183 0.017
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596911E60A"
+    coords -0.975 1.831 -7.884
+    angles 0 5.435 0
+    {
+     GenericEntity {
+      ID "51B2C5F338EBEDA6"
+      coords 0.034 0.221 -0.021
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDC1"
+      coords 0.013 -0.001 0.002
+      angles 0 49.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDCE"
+      coords 0.013 0 0.001
+      angles 0 -29.5 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDD5"
+      coords 0.022 0.011 -0.014
+      angles 0 -13 0
+     }
+     GenericEntity {
+      ID "51B2C5F338EBEDF9"
+      coords 0.026 -0.01 0.017
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596910622F"
+    coords 0.186 1.105 -7.821
+    angles 0 -9.835 0
+   }
+   GenericEntity {
+    ID "6306825682D50102"
+    coords 2.142 1.646 -8.16
+    angles 0 -3.443 0
+    {
+     GenericEntity {
+      ID "5D45393F27DCE948"
+      coords -1.47 0.115 -0.525
+      {
+       GenericEntity {
+        ID "5D30E783900D2819"
+        coords 0 0 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D45393F27DCE95C"
+      coords 1.428 -0.658 1.213
+      angles 0 -90.118 0
+     }
+     GenericEntity {
+      ID "5D45393F27DCE95D"
+      coords -1.432 -0.586 0.63
+      angles 0 2.192 0
+     }
+     GenericEntity {
+      ID "5D45393F27DCE94D"
+      coords -1.331 -1.259 1.769
+      angles 0 -178.045 0
+     }
+     GenericEntity {
+      ID "5D45393F27DCE950"
+      coords 1.565 -0.081 -0.027
+      {
+       GenericEntity {
+        ID "5D30E78396A9CE68"
+        coords 0 0 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D45393F27DCE954"
+      coords 1.202 0.458 -1.255
+      angles 0 180 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596910622E"
+    coords -7.057 0.555 -2.951
+    angles 0 -25.637 0
+   }
+   GenericEntity {
+    ID "6306825969101579"
+    coords 2.398 0.171 -3.52
+    angles 0 -178.902 0
+   }
+   GenericEntity {
+    ID "6306825969101577"
+    coords -7.706 0.555 -4.349
+    angles 0 -177.103 0
+    {
+     DecalEntity {
+      ID "56DEFDB4A9499F9B"
+      coords 0 0 0
+      angles -89.96 -180 180
+     }
+    }
+   }
+   GenericEntity {
+    ID "6306825969101578"
+    coords -7.409 0.317 -0.363
+    angles 0 -92.413 0
+   }
+   GenericEntity {
+    ID "6306825969101576"
+    coords -4.976 0.546 -4.309
+    angles 0 -47.351 0
+    {
+     DecalEntity {
+      ID "56DF0892948B1029"
+      coords 0 0 0
+      angles -89.96 -180 180
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596910F4C9"
+    coords -6.984 0.042 -4.18
+    angles 0 87.649 0
+   }
+   GenericEntity {
+    ID "63068259691363F3"
+    coords -7.118 0.037 -0.903
+    angles 0 87.649 0
+   }
+   GenericEntity {
+    ID "63068259691363F4"
+    coords -5.078 0.309 -1.597
+    angles 0 -60.925 0
+   }
+   GenericEntity {
+    ID "6306825969136309"
+    coords -0.937 0.93 -7.888
+    {
+     GenericEntity {
+      ID "5226D510DE121129"
+      coords 0.048 -0.01 0.017
+      angles 0.025 31.054 0.011
+     }
+     GenericEntity {
+      ID "5226D510DE12114D"
+      coords 0.017 0.279 0.01
+      angles -0.058 -29.511 0.055
+     }
+     GenericEntity {
+      ID "5226D510DE12115A"
+      coords 0.016 0.595 0.022
+      angles -0.181 21.639 -0.163
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596913630B"
+    coords -1.744 1.352 -8.602
+    angles 0 -91.854 0
+    {
+     GenericEntity {
+      ID "5226D510DE121129"
+      coords 0.047 -0.035 0.017
+      angles 0.025 31.054 0.011
+     }
+     GenericEntity {
+      ID "5226D510DE12114D"
+      coords 0.018 -0.013 0.007
+      angles -0.058 -29.511 0.055
+     }
+     GenericEntity {
+      ID "5226D510DE12115A"
+      coords 0.017 -0.013 0.02
+      angles -0.181 21.639 -0.163
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596913630D"
+    coords -4.349 0.164 -1.018
+    angles 0 -136.545 0
+    {
+     GenericEntity {
+      ID "5CB0D997DE277E18"
+      coords -0.248 0.174 0.873
+      angles 0 -178.835 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596913630F"
+    coords -1.334 0.817 -7.6
+    angles -75 -49.297 0
+   }
+   GenericEntity {
+    ID "6306825969138345"
+    coords 1.153 0.247 -3.704
+    {
+     GenericEntity {
+      ID "52F07DE9F3BBC081"
+      coords -0.044 0.003 -0.01
+      angles -0.099 4.381 0.072
+     }
+     GenericEntity {
+      ID "52F07DE9F3BBC170"
+      coords 0 0 0.006
+      angles 0.101 0.064 0.4
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596912274D"
+    coords 1.125 2.929 -11.771
+    angles 0 2.752 0
+   }
+   GenericEntity {
+    ID "6306825969138340"
+    coords -0.838 2.796 -11.772
+    angles 0 -179.325 0
+   }
+   GenericEntity {
+    ID "630682596912274C"
+    coords 4.087 0.101 -3.637
+    angles 0 132.096 0
+   }
+   GenericEntity {
+    ID "630682596912E3CE"
+    coords 3.773 0.09 -2.729
+    angles 0 -51.29 0
+   }
+   GenericEntity {
+    ID "630682596912F48C"
+    coords -5.922 0.555 -3.491
+    angles 0 -47.351 0
+    {
+     DecalEntity {
+      ID "56E0B29F4975B6A9"
+      coords 0 0 -0.001
+      angles -90 0 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596912F48D"
+    coords -5.919 0.39 -1.804
+    angles 0 -138.199 0
+    {
+     DecalEntity {
+      ID "56E0B29F4975B6A9"
+      coords 0 0 0
+      angles -90 0 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596912F492"
+    coords -7.191 0.558 -2.378
+    {
+     DecalEntity {
+      ID "56E0B29F835204D7"
+      coords 0 0 0
+      angles -90 180 -180
+     }
+    }
+   }
+   GenericEntity {
+    ID "630682596912F490"
+    coords -4.162 2.705 -11.877
+    angles 0 -4.589 0
+   }
+   GenericEntity {
+    ID "630682596912F491"
+    coords -2.262 2.789 -11.779
+    angles 0 177.205 0
+   }
+   GenericEntity {
+    ID "630682596912F493"
+    coords -5.935 2.632 -11.86
+    angles 0 -177.024 0
+   }
+   GenericEntity {
+    ID "63068259691460DD"
+    coords -6.618 0.297 -0.725
+    angles 0 2.416 0
+   }
+   GenericEntity {
+    ID "6306825969153390"
+    coords 0.215 0.32 -5.187
+    angles 0 -86.665 0
+   }
+   GenericEntity {
+    ID "6306825969153391"
+    coords -3.631 0.507 -4.898
+    angles 0 -83.275 0
+   }
+   GenericEntity {
+    ID "630682596915AE6A"
+    coords -6.563 0.555 -4.583
+    angles 0 174.761 0
+   }
+   GenericEntity {
+    ID "630682596914C170"
+    coords -6.621 0.651 -6.264
+    angles 0 89.697 0
+   }
+   GenericEntity {
+    ID "630682596914C171"
+    coords -4.16 0.514 -6.342
+    angles 0 -83.647 0
+   }
+   GenericEntity {
+    ID "6306825969176A1B"
+    coords -1.945 0.468 -6.697
+    angles 0 -84.385 0
+   }
+   GenericEntity {
+    ID "6306825969176A1C"
+    coords -6.459 1.681 -8.494
+    angles 0 -175.63 0
+   }
+   GenericEntity {
+    ID "6306825969172D3D"
+    coords 4.532 1.449 -7.936
+    angles 0.101 100.798 -0.713
+   }
+   GenericEntity {
+    ID "6306825969171246"
+    coords -5.431 0.502 -2.603
+    angles 0 -92.351 0
+   }
+   GenericEntity {
+    ID "6306825969178F74"
+    coords -3.071 0.678 -7.329
+    angles 0 -40.965 0
+   }
+   GenericEntity {
+    ID "6306825969178F75"
+    coords -3.686 0.501 -4.18
+    angles 0 -3.152 0
+    {
+     DecalEntity {
+      ID "56DF08929A14FB98"
+      coords 0 0 0
+      angles -90 0 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "6306825969178F7A"
+    coords -3.732 0.512 -5.052
+    angles 0 13.808 0
+    {
+     DecalEntity {
+      ID "56DF08929A14FB98"
+      coords 0 0 0
+      angles -90 0 0
+     }
+    }
+   }
+   GenericEntity {
+    ID "6306825969178F79"
+    coords -6.184 0.478 -2.183
+    angles 0 -41.611 0
+    {
+     DecalEntity {
+      ID "56E0B29FA123C2A9"
+      coords -0.001 0 -0.001
+      angles -90 180 -180
+     }
+    }
+   }
+   GenericEntity {
+    ID "63068259691637FF"
+    coords -9.254 1.822 -8.13
+    angles 0 -171.577 0
+   }
+   GenericEntity {
+    ID "630682596916F559"
+    coords -8.813 0.221 0.923
+    angles 0 -4.346 0
+   }
+   GenericEntity {
+    ID "630682596916F55A"
+    coords 0 0.778 -7.417
+    angles 0 -90 0
+   }
+   $grp StaticModelEntity {
+    {
+     coords -1.956 3.103 -12.833
+     angles 0 -85.888 0
+    }
+    {
+     coords -5.175 2.923 -12.831
+     angles 0 -88.865 0
+    }
+   }
+   StaticModelEntity {
+    ID "63068259692EDE13"
+    coords -5.718 0.367 -1.733
+    angles 0 -68.434 0
+    {
+     GameEntity {
+      ID "59D87A53D6211045"
+      coords 0.107 -0.02 -0.06
+      angles 0 -5.53 0
+     }
+    }
+   }
+   StaticModelEntity {
+    ID "6306825969138344"
+    coords -5.266 2.624 -11.9
+   }
+   StaticModelEntity {
+    ID "630682596913EE79"
+    coords -2.486 2.813 -11.851
+    angles 0 1.93 0
+   }
+  }
+ }
+ {
+  coords 6247.492 36.652 8071.299
+  angles 0 125.521 0
+  {
+   GenericEntity {
+    ID "63068259692ECC3B"
+    coords 8.063 0 8.615
+   }
+   GenericEntity {
+    ID "6306825969106228"
+    coords 6.61 0 7.703
+   }
+   GenericEntity {
+    ID "630682596913630D"
+    {
+     GenericEntity {
+      ID "5CB0D997DE277E14"
+      coords -3.953 -0.1 -14.898
+     }
+    }
+   }
+   GenericEntity {
+    ID "63068259691460DC"
+    {
+     GenericEntity {
+      ID "5CB0D997D91A2DAF"
+      coords 12.363 0 3.364
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1920.06 132.5 7405.87
+  angles 0 36.946 0
+ }
+}
+$grp GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ {
+  components {
+   SCR_CoverageRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName "#AR-MapLocation_BARSRelayTower"
+    m_sBaseNameUpper "#AR-MapLocation_BARSRelayTower-UC"
+   }
+  }
+  coords 6860.168 435.587 6781.308
+  angles 0 -94.075 0
+ }
+ {
+  components {
+   SCR_CoverageRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 8500
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName "#AR-MapLocation_PeakRelayTower"
+    m_sBaseNameUpper "#AR-MapLocation_PeakRelayTower-UC"
+    m_bIsResupplyTaskCreationEnabled 0
+   }
+  }
+  coords 5056.424 699.747 6327.998
+  angles 0 -12.284 0
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    coords 0 0 0
+    {
+     GenericEntity {
+      ID "6282C0828CE8416F"
+      coords 0 0 0
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{53D74CD446A87F13}Prefabs/Compositions/Misc/FreeRoamBuilding/SandbagLongHighBurlap_S_USSR_01.et" {
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+  }
+  coords 6128.133 416.892 6231.205
+  {
+   GenericEntity {
+    ID "5D6CFDF279517B23"
+    coords -1.228 -0.258 -0.534
+    angles 0 -83.157 0
+   }
+  }
+ }
+ {
+  coords 6085.895 419.41 6198.33
+  angles 0 -92.892 0
+ }
+ {
+  coords 7797.219 30.125 5559.592
+  angles 0 23.985 0
+ }
+ {
+  coords 8392.553 29.875 6660.676
+  angles 0 6.909 0
+ }
+ {
+  coords 3689.522 180.278 5199.146
+  angles 0 -73.354 0
+  {
+   GenericEntity {
+    ID "5D6CFDF279517B23"
+    coords -0.355 -0.185 0.1
+    angles 0 -7.586 0
+   }
+  }
+ }
+ {
+  coords 6649.491 26.375 3934.252
+  angles 0 -41.109 0
+ }
+ {
+  coords 6673.478 26.375 3916.374
+  angles 0 47.988 0
+ }
+ {
+  coords 5060.106 693.705 6293.856
+  angles 0 27.087 0
+ }
+ {
+  coords 5118.674 667.179 6417.172
+  angles -4.249 -20.688 0
+ }
+ {
+  coords 5096.632 688.286 6334.902
+  angles 0 -37.696 0
+ }
+}
+$grp GenericEntity : "{55D508179EF5E64A}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_US_01.et" {
+ {
+  coords 8977.638 102.34 8693.386
+  angles 0 53.026 0
+ }
+ {
+  coords 11068.017 2.625 9918.759
+  angles 0 -116.028 0
+  {
+   GenericEntity {
+    ID "5CC6B4B11E89361A"
+    coords -13.048 0.419 0.417
+   }
+   StaticModelEntity {
+    ID "5CC6B4B11E8934B4"
+    coords -12.974 0.512 -0.345
+    angles 0 -105.036 0
+   }
+   StaticModelEntity {
+    ID "5CC6B4B11E89377E"
+    coords -12.765 0.407 0.858
+    angles 0 -21.255 0
+   }
+   StaticModelEntity {
+    ID "5CC6B4B11E8934E8"
+    coords 4.694 -0.066 4.503
+    angles 0 41.405 0
+   }
+  }
+ }
+}
+SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+ coords 9219.886 1.707 7883.652
+}
+GenericEntity : "{5F76887813B86AD4}Prefabs/Props/Military/AmmoBoxes/EquipmentBoxStack/USSR/EquipmentBoxStack_USSR_01_V6_covered.et" {
+ coords 2007.128 129.68 7328.734
+ angles 0 178.972 0
+}
+$grp GenericEntity : "{6010D9A8FCCB7E38}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign_HQC.et" {
+ {
+  coords 5321.902 65.468 3359.857
+  angles 0 -24.7 0
+ }
+ {
+  coords 9648.803 11.636 8709.078
+  angles 0 -126.091 0
+ }
+}
+$grp GenericEntity : "{644AEC5C537E03F0}Prefabs/Systems/AmbientVehicles/AmbientVehicleSpawnpoint_USSR.et" {
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_MEDICAL
+    }
+   }
+  }
+  coords 6667.115 26.375 3923.413
+  angles 0 10.709 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
+  coords 6260.414 37.08 8033.291
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 1940.724 132.523 7404.561
+  angles 0 41.425 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 7732.44 313.044 8141.823
+  angles 0 7.049 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels {
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 10521.203 22.407 9725.952
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 6936.747 78.674 4715.143
+  angles 0 -77.747 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels {
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 7123.799 314.488 6047.735
+  angles 0 -22.757 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_APC
+    }
+   }
+  }
+  coords 7113.651 314.462 6043.777
+  angles 0 -17.864 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels {
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 7132.749 314.456 6051.483
+  angles 0 -23.501 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_HELICOPTER
+     TRAIT_ARMED
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 2635.637 24.218 5467.067
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+     VEHICLE_TRUCK
+    }
+   }
+  }
+  coords 5368.482 65 3403.092
+  angles 0 -2.34 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+     VEHICLE_TRUCK
+    }
+   }
+  }
+  coords 2994.965 24.151 5094.048
+  angles 0 -129.353 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 2695.956 24.187 5576.483
+  angles 0 -92.308 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+     VEHICLE_TRUCK
+    }
+   }
+  }
+  coords 8729.358 9.343 7441.438
+  angles 0 -2.34 0
+ }
+}
+SCR_CampaignSpawnPointGroup : "{666BC730F10EE097}Prefabs/MP/Campaign/CampaignSpawnpoint_FIA.et" {
+ coords 9216.219 1.605 7892.29
+}
+$grp GenericEntity : "{6691C384066A2B1C}Prefabs/Compositions/Misc/FreeRoamBuilding/CamoNetSmall_S_USSR_01.et" {
+ {
+  coords 5635.083 14.753 8101.743
+  angles 0 96.835 0
+ }
+ {
+  coords 3687.624 180.455 5196.994
+  angles 0 -18.502 0
+ }
+}
+$grp GenericEntity : "{68ED84218EA1BDC3}Prefabs/Compositions/Slotted/SlotFlatSmall/Antenna_S_USSR_01.et" {
+ {
+  coords 11824.202 10.938 10676.124
+ }
+ {
+  coords 6304.83 37.197 8011.368
+ }
+}
+GenericEntity : "{6AE7F9D91B93CCAF}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_USSR_01_NSV.et" {
+ coords 3687.72 180.053 5195.972
+ angles 0 165.502 0
+}
+Turret : "{723870DBB19D30B0}Prefabs/Weapons/Tripods/Tripod_6T5_PKM.et" {
+ coords 6126.847 417.868 6231.113
+ angles 0 -85.568 0
+}
+$grp GenericEntity : "{7492BAA88AFCEDCE}Prefabs/Compositions/Slotted/SlotFlatSmall/Bunker_S_USSR_01.et" {
+ {
+  coords 5117.713 5.084 2844.637
+  angles 0 -21.661 0
+ }
+ {
+  coords 7007.438 4.632 3854.249
+  angles 0 -58.433 0
+ }
+ {
+  coords 9531.225 13.5 8582.732
+  angles 0 180 0
+ }
+ {
+  coords 5124.85 419.532 5456.114
+  angles 0 161.442 0
+ }
+ {
+  coords 3671.793 185.937 5302
+  angles 0 -51.136 0
+  {
+   GenericEntity {
+    ID "5CCCBED96B5A2281"
+    coords -5.479 -0.464 -1.018
+    angles -14.261 -99.686 0
+   }
+   GenericEntity {
+    ID "5CCCBED96B5A22B1"
+    coords 2.93 -0.056 -1.214
+    angles 4.15 -70.516 0
+   }
+  }
+ }
+}
+GenericEntity : "{760BD4105816358C}Prefabs/Compositions/Slotted/SlotFlatMedium/FieldHospital_M_FIA_01.et" {
+ coords 6660.353 26.229 3912.261
+ angles 0 -42.998 0
+}
+GenericEntity : "{76D4FE49EA6C57F4}Prefabs/Compositions/Slotted/SlotFlatLarge/LivingArea_L_Conflict_US_01.et" {
+ coords 11864.543 8.093 10731.199
+ angles 0 -83.341 0
+}
+GenericEntity : "{7A4078C035F198C1}Prefabs/Structures/Military/CamoNets/FIA/CamoNet_Medium_FIA_01_V1.et" {
+ coords 3134.796 4.457 7836.788
+ angles 0 174.738 0
+}
+$grp GenericEntity : "{7A40BF128BB47EFD}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01.et" {
+ {
+  coords 9824.989 57.164 9485.151
+  angles 0 45.679 0
+ }
+ {
+  coords 5634.956 14.749 8102.293
+  angles 0 -84.504 0
+  {
+   StaticModelEntity {
+    ID "5CCCBEDC9EB80306"
+    coords 2.482 -0.264 3.61
+    angles 0 92.267 0
+   }
+   StaticModelEntity {
+    ID "5CCCBEDC9EB80325"
+    coords -3.776 -0.1 2.823
+    angles 0 60.203 0
+   }
+   StaticModelEntity {
+    ID "5CCCBEDC9EB80334"
+    coords 0.561 -0.12 3.602
+    angles 0 92.267 0
+   }
+  }
+ }
+ {
+  coords 4927.867 323.568 6940.891
+  angles 0 -64.585 0
+ }
+}
+GenericEntity : "{7BDAD0F4A6195C01}PrefabsEditable/SupportStationSystems/E_SupportStationSystem_Repair_Helipad_BoundingBox.et" {
+ coords 2022.259 129.469 7327.398
+}
+$grp GenericEntity : "{7C20041DA3207191}Prefabs/Compositions/Slotted/SlotFlatSmall/AmmoStorage_S_USSR_01.et" {
+ {
+  coords 11896.96 6.458 10725.596
+  angles 0 -87.276 0
+ }
+ {
+  coords 6297.308 37.25 8065.159
+  angles 0 91.474 0
+ }
+}
+$grp GenericEntity : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_USSR_01.et" {
+ {
+  coords 3093.136 69.518 5290.375
+  angles 4.922 0 0
+ }
+ {
+  coords 3778.939 28.031 4082.8
+  angles 0 140.986 0
+ }
+ {
+  coords 7107.115 19.094 4313.308
+  angles 0 65.033 0
+ }
+ {
+  coords 7624.292 5.223 4454.855
+  angles 0 -73.646 0
+ }
+ {
+  coords 7454.259 2.619 4094.728
+  angles 0 -50.868 0
+ }
+ {
+  coords 6729.478 28.343 4049.475
+  angles 1.264 48.304 0.073
+ }
+ {
+  coords 3203.701 4.869 7819.545
+  angles 0 100.078 0
+ }
+ {
+  coords 7816.523 306.456 8245.965
+  angles -3.133 11.868 -2.483
+ }
+ {
+  coords 6132.403 3.34 8390.973
+  angles 0 92.43 0
+ }
+ {
+  coords 5855.651 413.937 5798.808
+  angles 0 -135 0
+ }
+ {
+  coords 8541.12 13.956 6605.277
+  angles 0 18.175 0
+ }
+ {
+  coords 6283.433 29.579 8150.856
+  angles 0 1.776 0
+ }
+}
+GenericEntity : "{7D924049158F953A}Prefabs/Props/Military/Compositions/USSR/FuelService_USSR_Large.et" {
+ coords 2015.764 129.776 7317.371
+ angles 0 122.725 0
+}
+$grp GenericEntity : "{83A10E8547281E58}Prefabs/Compositions/Slotted/SlotRoadSmall/Barricade_S_USSR_01.et" {
+ {
+  coords 11942.637 5.407 10332.036
+  angles 0 90 0
+ }
+ {
+  coords 11949.259 5.375 10325.02
+  angles 0 -80.866 0
+ }
+ {
+  coords 6205.966 413.326 6228.688
+  angles 0 -81.884 0
+ }
+ {
+  coords 3947.633 3.188 8058.044
+  angles 0 -90 0
+ }
+ {
+  coords 3961.266 3.219 8054.053
+  angles 0 -75 0
+ }
+ {
+  coords 7553.501 27.295 5120.729
+ }
+ {
+  coords 8647.331 95.38 9498.36
+  angles 0 -105 0
+ }
+ {
+  coords 5622.269 2.635 8208.104
+  angles 0 60 0
+ }
+ {
+  coords 8392.014 29.875 6662.776
+  angles 0 -174.801 0
+ }
+}
+$grp GenericEntity : "{8576AB93B8D2708F}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign_HQC.et" {
+ {
+  coords 5622.902 421.437 6868.842
+ }
+ {
+  coords 6959.42 436.687 6771.66
+  angles 0 -45.97 0
+ }
+ {
+  coords 7113.894 314.75 6054.563
+  angles 0 160.699 0
+ }
+ {
+  coords 5332.838 65.338 3365.459
+  angles 0 -24.987 0
+ }
+ {
+  coords 9862.969 53.702 9451.91
+ }
+}
+$grp GenericEntity : "{8BEE4B0606893CDF}Prefabs/Systems/MilitaryBase/ConflictSourceBase_T1Harbor.et" {
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Ugoldar"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Ugoldar-UC"
+   }
+  }
+  coords 6817.228 2.093 3491.48
+  angles 0 45.068 0
+  {
+   GenericEntity {
+    ID "62388D8FCFE45684"
+    coords -23.623 0.094 3.759
+   }
+   GenericEntity {
+    ID "62388D8F13AD0811"
+    coords -45.844 0.331 -17.825
+   }
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    coords -10.728 -0.062 -29.103
+    angles 0 -88.881 0
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords -7.316 -0.062 -17.736
+    angles 0 -88.518 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Harbour_RockyBay"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_RockyBay-UC"
+   }
+  }
+  coords 12121.476 2.156 10519.931
+  angles 0 -10.465 0
+  {
+   GenericEntity {
+    ID "62388D8FCFE45684"
+    coords -18.043 0.009 -15.073
+   }
+   GenericEntity : "{962EB289CF844AA2}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_06.et" {
+    coords -0.853 0 20.164
+    angles 0 -177.53 0
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords 6.874 -0.03 26.75
+    angles 0 90.894 0
+   }
+  }
+ }
+}
+SCR_CampaignSpawnPointGroup : "{8C4E2CD043831EF5}Prefabs/MP/Campaign/CampaignSpawnpoint_RNGD.et" {
+ coords 9215.906 1.624 7892.92
+}
+$grp GenericEntity : "{8E1DF47DD56E69E6}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_USSR_01.et" {
+ {
+  coords 6532.12 493.435 6617.869
+  angles 0 -165 0
+ }
+ {
+  coords 11873.25 8.419 10675.808
+  angles 0 166.861 0
+  {
+   GenericEntity {
+    ID "5CCCBEE868D6B36C"
+    coords -2.618 0.105 0.207
+    angles 0 -93.313 0
+   }
+  }
+ }
+ {
+  coords 3668.947 179.677 5216.298
+  angles 0 -127.687 0
+ }
+ {
+  coords 6670.235 26.217 3903.627
+  angles 0 137.445 0
+ }
+}
+GenericEntity : "{917158017F425567}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_US_01.et" {
+ coords 6487.764 24.25 3843.679
+ angles 0 -72.403 0
+}
+$grp GenericEntity : "{9273AB931008C271}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_FIA.et" {
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 8593.29 96.749 9417.267
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -34.461 1.282 7.214
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 550
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 8667.148 96.941 9287.159
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 550
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 8675.059 96.941 9302.943
+  angles 0 44.384 0
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -7.805 -0.347 -100.345
+    }
+    {
+     coords -110.376 -0.08 -124.796
+    }
+    {
+     coords -178.13 0.295 -107.017
+    }
+    {
+     coords -165.623 1.324 -14.432
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 8616.984 95.281 9334.648
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+   }
+  }
+  coords 8300.899 69.159 6732.253
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+   }
+  }
+  coords 8500.858 17.77 6523.855
+  angles 0 19.112 0
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 11.791 0 0
+    }
+    {
+     coords 11.166 -0.855 -62.151
+    }
+    {
+     coords -129.967 12.258 -76.872
+    }
+    {
+     coords -140.958 12.136 82.761
+    }
+    {
+     coords 6.143 -4.075 100.71
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 8541.731 13.711 6605.193
+ }
+ {
+  coords 8262.227 30.155 6237.961
+ }
+ {
+  coords 8397.125 29.875 6657.277
+ }
+ {
+  coords 11719.672 44.988 10361.811
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 12080.642 2.186 10437.7
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -26.346 -0.031 223.868
+    }
+    {
+     coords -103.257 1.436 245.003
+    }
+    {
+     coords -79.309 0.918 471.117
+    }
+    {
+     coords -284.085 4.64 498.412
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 11839.97 8.969 10700.139
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -48.49 3.405 2.484
+    }
+    {
+     coords 0 1.068 -120.216
+    }
+    {
+     coords 106.67 -3.021 -87.414
+    }
+    {
+     coords 137.86 -5.842 61.601
+    }
+    {
+     coords -20.527 1.401 78.139
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+   }
+  }
+  coords 12065.103 20.623 10616.049
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG_ELITE
+   }
+  }
+  coords 12057.158 14.432 10421.47
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 11950.16 17.128 10446.612
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 12082.082 2.216 10456.433
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -113.185 5.187 -9.529
+    }
+    {
+     coords -111.933 5.471 27.749
+    }
+    {
+     coords -203.421 12.323 -13.727
+    }
+    {
+     coords -305.057 32.798 -59.306
+    }
+    {
+     coords -348.428 32.477 -8.442
+    }
+   }
+  }
+ }
+ {
+  coords 12293.285 2.896 10903.078
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -255.619 -0.052 0
+    }
+    {
+     coords -292.43 -0.235 -221.912
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 3686.677 179.986 5201.131
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG_ELITE
+   }
+  }
+  coords 3677.231 185.837 5303.726
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 3731.472 186.466 5241.233
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -27.319 -6.06 -17.518
+    }
+    {
+     coords -40.778 -6.093 -57.88
+    }
+    {
+     coords -81.932 -8.483 0
+    }
+    {
+     coords -73.511 -9.403 30.842
+    }
+    {
+     coords -27.03 -6.264 17.864
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 300
+    m_iDespawnDistanceOverride 350
+   }
+  }
+  coords 3731.462 186.388 5267.805
+  angles 0 64.171 0
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+   }
+  }
+  coords 6230.676 31.569 8143.899
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 6217.128 37.207 7957.701
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 51.98 0.23 45.63
+    }
+    {
+     coords 27.164 -0.176 74.543
+    }
+    {
+     coords -12.157 0.152 79.251
+    }
+    {
+     coords -64.159 0.855 37.288
+    }
+    {
+     coords -133.825 2.398 16.736
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+   }
+  }
+  coords 6282.299 29.82 8150.256
+ }
+ {
+  coords 6271.376 37.234 8035.778
+ }
+ {
+  coords 6249.282 36.576 8068.139
+  angles 0 88.73 0
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -13.601 0 19.303
+    }
+    {
+     coords -105.013 -31.051 -175.26
+    }
+    {
+     coords -227.437 -33.597 -189.949
+    }
+    {
+     coords -308.733 -33.607 -149.458
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+   }
+  }
+  coords 6592.039 39.048 3872.212
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 6727.542 28.326 4049.301
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 6481.493 24.154 3828.374
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+   }
+  }
+  coords 6717.455 23.329 3832.789
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -18.15 5.901 28.4
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 6525.438 24.688 3750.756
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 35.797 -0.032 5.437
+    }
+    {
+     coords 118.391 -0.032 81.555
+    }
+    {
+     coords 173.102 -5.984 18.811
+    }
+    {
+     coords 252.477 -6.08 88.238
+    }
+    {
+     coords 194.83 1.657 151.409
+    }
+    {
+     coords 254.055 2.16 212.493
+    }
+    {
+     coords 188.488 3.405 281.739
+    }
+    {
+     coords 44.637 1.031 159.052
+    }
+   }
+  }
+ }
+ {
+  coords 6558.881 21.739 3680.202
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 102.469 -8.159 -2.755
+    }
+    {
+     coords 57.03 -18.552 -188.474
+    }
+   }
+  }
+ }
+ {
+  coords 6856.076 30.344 4142.13
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_sDefaultWaypointPrefab "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et"
+    m_eGroupType TEAM_SNIPER
+   }
+  }
+  coords 6703.277 39.704 4054.282
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 1939.064 125.276 7511.174
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 2001.558 129.937 7317.132
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 54.177 0.58 -9.988
+    }
+    {
+     coords 123.02 -5.667 82.901
+    }
+    {
+     coords 92.988 -10.561 107.17
+    }
+    {
+     coords 52.603 -10.656 83.382
+    }
+    {
+     coords 5.92 -3.452 93.123
+    }
+    {
+     coords -55.658 2.592 91.845
+    }
+    {
+     coords -13.015 2.671 49.754
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 1911.04 132.452 7434.881
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -40.552 -4.484 93.951
+    }
+    {
+     coords -8.402 -3.365 53.075
+    }
+    {
+     coords 39.504 -8.899 61.837
+    }
+    {
+     coords 109.92 -12.983 0
+    }
+    {
+     coords 164.312 -13.202 -37.495
+    }
+    {
+     coords 84.017 -14.073 35.915
+    }
+    {
+     coords -30.804 -3.564 56.854
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 1938.474 132.515 7402.461
+ }
+ {
+  coords 1693.837 112.995 7357.739
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 126.493 11.03 38.781
+    }
+    {
+     coords 293.56 15.674 -60.956
+    }
+    {
+     coords 456.001 20.636 -85.796
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+   }
+  }
+  coords 6532.51 527.52 6625.83
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 5057.061 691.424 6285.903
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_sDefaultWaypointPrefab "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et"
+   }
+  }
+  coords 5097.578 688.421 6338.331
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 5117.119 667.767 6413.843
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG_ELITE
+   }
+  }
+  coords 5007.588 682.987 6370.548
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_SNIPER
+   }
+  }
+  coords 5058.9 698.628 6323.335
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -0.393 0.105 2.278
+   }
+  }
+ }
+ {
+  coords 5061.716 694.183 6296.826
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 5173.071 662.965 6403.243
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 5021.048 684.677 6366.933
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 12.852 6.695 -42.922
+    }
+    {
+     coords 36.143 6.804 -80.204
+    }
+    {
+     coords 68.067 3.367 -40.075
+    }
+    {
+     coords 155.149 -13.709 2.26
+    }
+    {
+     coords 138.858 -18.283 54.429
+    }
+    {
+     coords 56.323 -9.832 32.833
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 6526.228 493.437 6633.69
+ }
+ {
+  coords 6447.294 486.01 6642.996
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0.457
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 6444.802 453.01 6444.387
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 6487.381 493.375 6657.349
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 7629.228 5.2 4507.584
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 8.461 0 2.288
+    }
+    {
+     coords 1.097 0 -57.169
+    }
+    {
+     coords 48.65 -1.842 -90.672
+    }
+    {
+     coords -22.948 -3.004 -290.652
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 5641.697 14.96 8100.839
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -4.518 -0.11 -3.896
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 600
+    m_iDespawnDistanceOverride 650
+   }
+  }
+  coords 6131.371 3.401 8391.694
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+    m_iSpawnDistanceOverride 450
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 5743.6 2.094 8300.985
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 450
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 7428.928 310.345 6465.502
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 3939.263 369.453 6414.391
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -13.767 0 0.736
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 600
+    m_iDespawnDistanceOverride 650
+   }
+  }
+  coords 6919.381 92.524 4797.354
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 200
+    m_iDespawnDistanceOverride 250
+   }
+  }
+  coords 6898.968 85.186 4719.291
+  angles 0 114.658 0
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 550
+   }
+  }
+  coords 4931.123 323.943 6940.12
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_SNIPER
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 4786.988 344.399 6906.916
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 4688.669 286.399 7019.083
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 6067.878 424.466 6540.019
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_SNIPER
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 6109.279 421.468 6253.817
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 1.275 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_sDefaultWaypointPrefab "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et"
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 6128.463 417.107 6229.968
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 -0.215 -2.855
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+    m_iSpawnDistanceOverride 300
+    m_iDespawnDistanceOverride 350
+   }
+  }
+  coords 6068.996 418.717 6247.038
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -5.546 0 1.559
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 6099.256 418.143 6216.928
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords -6.609 1.201 -18.208
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 4988.609 39.024 3256.112
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 450
+   }
+  }
+  coords 5102.755 52.589 3295.233
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_SNIPER
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 5151.278 22.13 3095.797
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 3778.84 28.031 4082.77
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 3823.626 37.729 4089.331
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+    m_iSpawnDistanceOverride 150
+    m_iDespawnDistanceOverride 200
+   }
+  }
+  coords 4413.17 20.281 2908.248
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 3437.903 26.655 4380.62
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 450
+   }
+  }
+  coords 3054.18 26.844 4931.287
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 2712.249 24.219 5509.095
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 300
+    m_iDespawnDistanceOverride 350
+   }
+  }
+  coords 4233.854 232.904 4674.071
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 650
+    m_iDespawnDistanceOverride 700
+   }
+  }
+  coords 3093.035 69.46 5289.904
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 4643.443 170.155 7458.041
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 3203.155 4.862 7818.96
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 600
+    m_iDespawnDistanceOverride 700
+   }
+  }
+  coords 3073.183 5.2 7821.414
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 450
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 3134.739 4.462 7836.742
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 150
+    m_iDespawnDistanceOverride 200
+   }
+  }
+  coords 3227.075 270.162 6820.753
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 7624.126 5.17 4453.146
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 550
+   }
+  }
+  coords 11338.344 89.239 10504.041
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 9642.527 87.281 9690.606
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 8674.68 181.65 8894.55
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+    m_iSpawnDistanceOverride 600
+    m_iDespawnDistanceOverride 650
+   }
+  }
+  coords 8971.22 101.735 8689.635
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 9536.014 13.738 8583.921
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 11073.55 2.594 9918.916
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 4677 410.388 5465.194
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 4504.003 126.782 7619.606
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 1.169 0.067 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 600
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 8263.088 30.219 6241.995
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 7817.023 306.242 8245.363
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 450
+    m_iDespawnDistanceOverride 500
+   }
+  }
+  coords 5856.072 413.906 5798.132
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 5122.338 6.35 2845.52
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG_ELITE
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 450
+   }
+  }
+  coords 5130.756 419.691 5460.494
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_SNIPER
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 5121.779 419.67 5455.883
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 350
+    m_iDespawnDistanceOverride 400
+   }
+  }
+  coords 9823.686 57.125 9484.187
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 9857.86 57.612 9468.765
+ }
+ {
+  coords 7106.497 19.031 4313.55
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 7454.58 2.287 4094.191
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 450
+   }
+  }
+  coords 7801.447 30.125 5560.436
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 150
+    m_iDespawnDistanceOverride 200
+   }
+  }
+  coords 9177.234 14.374 8334.939
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 250
+    m_iDespawnDistanceOverride 300
+   }
+  }
+  coords 11946.289 5.375 10327.104
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_iSpawnDistanceOverride 500
+    m_iDespawnDistanceOverride 600
+   }
+  }
+  coords 6798.385 195.646 5510.242
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+    m_iSpawnDistanceOverride 300
+    m_iDespawnDistanceOverride 350
+   }
+  }
+  coords 5061.894 410.248 5309.788
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+    m_iSpawnDistanceOverride 400
+    m_iDespawnDistanceOverride 450
+   }
+  }
+  coords 7788.081 32.894 5573.086
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+    m_iSpawnDistanceOverride 150
+    m_iDespawnDistanceOverride 200
+   }
+  }
+  coords 3260.656 271.329 6998.256
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+    m_iSpawnDistanceOverride 150
+    m_iDespawnDistanceOverride 200
+   }
+  }
+  coords 3304.391 269.104 6842.158
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 9628.642 11.562 8667.139
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 5636.735 421.437 6878.421
+ }
+ {
+  coords 7055.714 312.303 5989.724
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 86.603 0.634 -25.568
+    }
+    {
+     coords 93.342 2.257 68.208
+    }
+    {
+     coords 17.009 1.896 45.082
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+   }
+  }
+  coords 7133.769 314.213 6033.704
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+   }
+  }
+  coords 2741.25 111.563 7414.343
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0.394 1.895
+    }
+    {
+     coords -25.074 -0.474 23.112
+    }
+    {
+     coords -2.558 -0.657 44.396
+    }
+    {
+     coords 20.077 -0.657 30.054
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG
+   }
+  }
+  coords 2680.436 109.819 7504.384
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType SQUAD_RIFLE
+   }
+  }
+  coords 5434.391 64.244 3364.267
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 5352.526 65.022 3387.406
+  angles 0 109.932 0
+ }
+ {
+  coords 6006.006 180.771 4511.571
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords 9.668 0.17 32.318
+    }
+    {
+     coords 30.845 1.041 57.804
+    }
+    {
+     coords 83.179 2.126 96.593
+    }
+   }
+  }
+ }
+ {
+  coords 6060.65 182.458 4574.005
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType PARTISAN_TEAM
+   }
+  }
+  coords 6039.806 183.21 4554.691
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_MG_ELITE
+   }
+  }
+  coords 5885.378 225.092 4654.631
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 11.912 -2.97 -5.65
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType FIRETEAM
+   }
+  }
+  coords 6840.529 439.156 6757.227
+  angles 0 -77.696 0
+ }
+ {
+  coords 6832.295 437.214 6638.859
+  angles 0 -77.696 0
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  coords 6976.184 437.37 6829.903
+  angles 0 -130.666 0
+  {
+   $grp SCR_AIWaypoint : "{FBA8DC8FDA0E770D}Prefabs/AI/Waypoints/AIWaypoint_Patrol_Hierarchy.et" {
+    {
+     coords 0 0 0
+    }
+    {
+     coords -2.688 1.037 146.934
+    }
+    {
+     coords -45.893 0.062 225.977
+    }
+    {
+     coords 9.462 5.324 267.783
+    }
+    {
+     coords 82.833 4.443 219.332
+    }
+    {
+     coords 49.531 2.032 149.713
+    }
+    {
+     coords 177.733 0.412 156.303
+    }
+    {
+     coords 41.369 -2.39 -10.619
+    }
+   }
+  }
+ }
+ {
+  coords 6974.8 437.241 6842.11
+  angles 0 -77.696 0
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 4.819 0.254 2.797
+   }
+  }
+ }
+ {
+  coords 6725.146 438.407 6851.82
+  angles 0 -77.696 0
+  {
+   SCR_DefendWaypoint : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 0 0 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+    m_eGroupType TEAM_AT
+   }
+  }
+  coords 5718.552 421.747 6851.69
+ }
+}
+$grp GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+ {
+  coords 2468.359 200.895 7092.326
+  angles 0 -157.847 0
+ }
+ {
+  coords 6208.596 9.797 3247.553
+  angles 0 -45.665 0
+ }
+ {
+  coords 7800.626 30.129 5555.898
+  angles 0 -169.841 0
+  {
+   GenericEntity {
+    ID "5CC6B48B9C8C2A7C"
+    coords 1.741 0.282 -1.757
+   }
+   StaticModelEntity {
+    ID "5CC6B48B9C8C2A48"
+    coords -1.895 -0.036 2.015
+    angles 0 42.427 0
+   }
+   StaticModelEntity {
+    ID "5CC6B48B9C8C2B00"
+    coords 1.86 -0.004 -2.132
+    angles 0 103.572 0
+   }
+  }
+ }
+ {
+  coords 9192.821 11.281 8310.094
+  angles 0 39.695 0
+ }
+ {
+  coords 8154.078 105.482 7114.907
+  angles 4.891 -141.044 -1.785
+ }
+ {
+  coords 9177.279 97.943 9449.282
+  angles 6.885 -105 0
+ }
+ {
+  coords 5274.047 410 5385.161
+  angles 0 60 0
+ }
+ {
+  coords 7270.821 341.671 6493.184
+  angles -18.306 81.755 11.002
+ }
+ {
+  coords 5216.413 409.969 5355.888
+  angles 0 -120 0
+ }
+ {
+  coords 6551.688 468.929 6749.71
+  angles -11.426 50.312 1.437
+ }
+ {
+  coords 5778.464 419.216 6908.089
+  angles -4.776 104.952 0.573
+ }
+ {
+  coords 8645.666 95.283 9504.536
+  angles -1.898 44.979 0.633
+ }
+ {
+  coords 5623.201 2.594 8202.796
+  angles 1.239 -147.001 -0.263
+ }
+ {
+  coords 5631.005 14.641 8094.658
+  angles 0 -95.759 0
+  {
+   GenericEntity {
+    ID "5CC6B48B9C8C2BDB"
+    coords -2.507 -0.013 1.126
+    angles 0 -69.67 0
+   }
+   GenericEntity {
+    ID "5CC6B48B9C8C2A7C"
+    coords 1.753 0.488 -1.87
+    angles 0 -96.241 75
+   }
+   StaticModelEntity {
+    ID "5CC6B48B9C8C2A48"
+    coords -1.895 -0.054 2.014
+    angles 0 42.427 0
+   }
+   StaticModelEntity {
+    ID "5CC6B48B9C8C2B00"
+    coords 1.86 0.06 -2.132
+    angles 0 103.572 0
+   }
+  }
+ }
+ {
+  coords 6093.633 417.879 6273.739
+  angles 0 1.319 0
+ }
+ {
+  coords 8397.578 29.846 6660.361
+  angles 0 -4.049 0
+  {
+   GenericEntity {
+    ID "5CC6B48B9C8C2BDB"
+    coords -4.278 0.029 -0.658
+    angles 0 -69.67 0
+   }
+   GenericEntity {
+    ID "5CC6B4BF288B3FF4"
+    coords -5.313 0 -0.363
+   }
+  }
+ }
+}
+GenericEntity : "{9B7F08BF4C938AD2}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Soviet.et" {
+ coords 2005.499 129.882 7323.775
+ angles 0 -93.616 0
+}
+$grp GenericEntity : "{9F9924B626C5FA2C}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_USSR_01.et" {
+ {
+  coords 3435.943 26.617 4381.461
+  angles 0 -50.119 0
+ }
+ {
+  coords 5743.162 2.125 8299.754
+  angles 0 -111.59 0
+ }
+ {
+  coords 4675.543 410.302 5464.04
+  angles 0 -56.178 0
+ }
+ {
+  coords 6481.084 24.152 3826.614
+  angles -1.264 -131.587 -0.075
+ }
+ {
+  coords 8265.222 30.172 6243.033
+  angles -0.895 -179.942 -0.001
+ }
+ {
+  coords 3070.63 5.218 7821.639
+  angles 0 -93.02 0
+ }
+}
+$grp GenericEntity : "{A0A4E4587FEABF83}Prefabs/Compositions/Misc/FreeRoamBuilding/BarbedTapeKnifeRest_S_US_01.et" {
+ {
+  coords 7796.063 30.125 5558.593
+  angles 0 -64.358 0
+ }
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+  }
+  coords 8296.973 68.641 6736.243
+  angles 0 13.855 0
+ }
+}
+MusicManager : "{A867D3EE4A35D38F}Prefabs/Sounds/Music/MusicManager_Campaign_Kolguyev.et" {
+ coords 9214.145 1.864 7892.451
+}
+GenericEntity : "{AB1A97B1BAE8C395}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_01.et" {
+ coords 2001.19 130.036 7335.435
+ angles 5.192 -98.251 0
+}
+GenericEntity : "{AC6DC9D2E040268A}Prefabs/Compositions/Misc/FreeRoamBuilding/SandbagRoundHighBurlap_S_USSR_01.et" {
+ coords 7794.696 30.125 5561.163
+ angles 0 -121.788 0
+}
+GenericEntity : "{AF770C825EA592CF}Prefabs/Compositions/Slotted/SlotRoadLarge/Barricade_L_US_01.et" {
+ coords 10460.518 1.937 9578.974
+ angles 0 -41.63 0
+}
+$grp GenericEntity : "{B04F2A9C5356C02D}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_FIA_01.et" {
+ {
+  coords 7788.882 32.599 5569.618
+  angles -11.82 119.868 -0.677
+ }
+ {
+  coords 6480.686 486.467 6680.121
+  angles -16.226 -31.759 -6.24
+ }
+}
+$grp GenericEntity : "{B3DB90408A32E22A}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign_HQC.et" {
+ {
+  coords 6053.001 181.982 4566.27
+  angles 0 134.574 0
+  {
+   GenericEntity {
+    ID "5D1ED92199D182AF"
+    coords 1.783 0 -11.015
+   }
+   GenericEntity {
+    ID "5D1ED92199D1824C"
+    coords 2.753 0 -11.693
+   }
+   GenericEntity {
+    ID "5D1ED92199D1825C"
+    coords 2.648 0 -10.365
+   }
+   GenericEntity {
+    ID "5D1ED92199D1827B"
+    coords 3.581 0 -10.055
+   }
+   GenericEntity {
+    ID "5D1ED92199D18226"
+    coords 3.325 0 -10.947
+   }
+   GenericEntity {
+    ID "5D1ED92199D183D2"
+    coords 4.345 0 -11.749
+   }
+   GenericEntity {
+    ID "5D1ED92199D182C3"
+    coords -1.498 0 -10.957
+   }
+   GenericEntity {
+    ID "5D1ED92199D182D3"
+    coords -2.976 0 -10.975
+   }
+   GenericEntity {
+    ID "5E5CB30FE628C08D"
+    coords -4.577 0 -12.733
+   }
+   StaticModelEntity {
+    ID "5D1ED92199D18213"
+    coords -4.334 0 -11.824
+   }
+   StaticModelEntity {
+    ID "5D1ED92199D1823E"
+    coords 0.2 0 -10.323
+   }
+  }
+ }
+ {
+  coords 5604.751 421.437 6875.394
+  angles 0 90 0
+ }
+}
+GenericEntity : "{B547CF929FCC6BB7}Prefabs/Props/Military/Sandbags/Sandbag_01_end_high_burlap.et" {
+ coords 11877.394 8.288 10676.665
+ angles 0 -101.61 0
+}
+$grp GenericEntity : "{B6F0B7461EDFD186}Prefabs/Compositions/Misc/FreeRoamBuilding/FloodlightGenerator_S_USSR_01.et" {
+ {
+  coords 6079.552 418.34 6256.077
+  angles 0 146.212 0
+ }
+ {
+  coords 7798.014 30.125 5564.355
+  angles 0 -158.834 0
+ }
+ {
+  coords 3683.385 180.134 5195.02
+  angles 0 168.915 0
+  {
+   GenericEntity {
+    ID "5E6911EB352E7D82"
+    coords 0.32 -0.186 -2.452
+    angles 0 152.413 0
+   }
+  }
+ }
+ {
+  coords 6670.386 26.344 3918.731
+  angles 0 -130.58 0
+ }
+}
+$grp GenericEntity : "{B86FFB24E23D8055}PrefabsEditable/EffectsModules/Mine/EffectModule_MineField_Rect_Row_USSR.et" {
+ {
+  coords 6936.263 80.419 4728.293
+  angles 0 -73.497 0
+ }
+ {
+  components {
+   SCR_EffectsModuleComponent "{5CA2DE492D8BBCF5}" {
+    m_EffectConfig SCR_BarrageEffectsModule "{5D22CCE8F9AEE06D}" {
+     m_sModuleEntityPrefab "{CA61FDD71E40C749}Prefabs/Weapons/Explosives/Mine_PMN4/Mine_PMN4_EffectModuleEntity.et"
+     m_iMinProjectilesEachBarrage 7
+     m_iMaxProjectilesEachBarrage 8
+    }
+   }
+  }
+  coords 6931.266 77.928 4706.411
+ }
+ {
+  coords 4870.225 307.633 6983.32
+  angles 0 -16.913 0
+ }
+ {
+  coords 5062.966 24.975 3168.354
+  angles 0 21.944 0
+ }
+ {
+  components {
+   SCR_EffectsModuleComponent "{5CA2DE492D8BBCF5}" {
+    m_EffectConfig SCR_BarrageEffectsModule "{5D22CCE8F9AEE06D}" {
+     m_ModuleZoneData SCR_EffectsModulePositionData_Rectangle "{618EBC0A84615572}" {
+      m_fLength 14
+     }
+     m_iMinProjectilesEachBarrage 8
+     m_iMaxProjectilesEachBarrage 9
+    }
+   }
+  }
+  coords 8394.573 29.64 6710.486
+  angles 0 -7.069 0
+  {
+   GenericEntity {
+    ID "616C96D8967A1736"
+    components {
+     SCR_EffectsModuleAreaMeshComponent "{616C96D8B05B3D1F}" {
+      m_fLenght 14
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{BE16EE8FAA315FE2}Prefabs/Props/Military/Sandbags/Sandbag_01_long_high_burlap.et" {
+ {
+  coords 11876.429 6.889 10680.811
+  angles 0 79.132 0
+ }
+ {
+  coords 11876.918 7.549 10678.764
+  angles 0 -103.206 0
+ }
+}
+GenericEntity : "{BE2B14A482E169F7}Prefabs/Structures/Military/CamoNets/FIA/CamoNet_Large_Top_FIA_01_V1.et" {
+ coords 8487.738 19.747 6529.229
+ angles 0 94.156 0
+}
+$grp GenericEntity : "{C0D09A53EEA441D6}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_02.et" {
+ {
+  coords 8680.035 181.084 8897.96
+  angles 0 72.715 0
+ }
+ {
+  coords 11335.661 89.493 10498.72
+  angles 0 -107.322 0
+ }
+ {
+  coords 11715.339 45.256 10359.388
+  angles 0 -86.277 0
+ }
+}
+GenericEntity : "{C7A49C5B54C86903}Prefabs/Props/Military/Sandbags/Sandbag_01_single_burlap.et" {
+ coords 8302.984 69.213 6731.155
+ angles 0 -59.476 0
+}
+$grp GenericEntity : "{C7D38772154D45BB}Prefabs/Compositions/Slotted/SlotFlatSmall/Bunker_S_US_01.et" {
+ {
+  coords 11341.14 89.038 10490.901
+  angles 0 -97.309 0
+ }
+ {
+  coords 11064.763 2.67 9927.889
+  angles 0 -172.247 0
+  {
+   GenericEntity {
+    ID "5CCCBECA91C25D11"
+    coords -3.645 0.017 -0.851
+    angles 0 85.882 0
+   }
+  }
+ }
+}
+$grp GenericEntity : "{CBCF93346A850481}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_02_Campaign_HQC.et" {
+ {
+  coords 6064.502 182.585 4583.101
+  angles 0 129.959 0
+ }
+ {
+  coords 5628.273 421.437 6889.85
+  angles 0 153.019 0
+ }
+}
+GenericEntity : "{CC5453CCC311603B}Prefabs/Props/Military/Sandbags/Sandbag_01_end_burlap.et" {
+ coords 11876.379 7.913 10681.195
+ angles 0 -102.628 0
+}
+GenericEntity : "{CFFEB23FBEA00322}Prefabs/Props/Military/Sandbags/Sandbag_01_short_burlap.et" {
+ coords 8302.114 68.66 6731.224
+ angles 0 -79.158 0
+}
+$grp GenericEntity : "{D4A604DD154470CD}Prefabs/Systems/AmbientVehicles/AmbientVehicleSpawnpoint_FIA.et" {
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_REFUELING
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 5699.775 2.187 8256.607
+  angles 0 -104.494 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
+  coords 5925.168 42.41 7999.464
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_CAR
+    }
+   }
+  }
+  coords 2725.136 221.227 6985.77
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+     TRAIT_REFUELING
+     TRAIT_REARMING
+     TRAIT_RADIO
+    }
+   }
+  }
+  coords 7548.629 3.402 4261.224
+  angles 0 117.523 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_APC
+    }
+   }
+  }
+  coords 6497.592 24.486 3864.533
+  angles 0 180 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 11373.087 87.273 10508.144
+  angles 0 -90 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 7793.613 312.125 8016.576
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+    }
+    m_aExcludedEditableEntityLabels +{
+     TRAIT_RADIO
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 6905.346 436.854 6727.17
+  angles 0 51.316 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     VEHICLE_TRUCK
+     TRAIT_REFUELING
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 5717.921 421.437 6844.862
+  angles 0 -129.428 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 9717.844 129.223 10168.935
+  angles 0 164.115 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 11099.267 2.583 9939.843
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+   }
+  }
+  coords 7423.213 310.193 6459.458
+  angles 1.551 -94.773 -92.792
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     VEHICLE_CAR
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 3928.319 369.95 6389.025
+  angles 0 16.946 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_ARMED
+     TRAIT_PASSENGERS_SMALL
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 7013.271 4.636 3842.197
+  angles 0 -75 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_ARMED
+    }
+    m_aExcludedEditableEntityLabels {
+     VEHICLE_HELICOPTER
+    }
+    m_bRequireAllIncludedLabels 1
+   }
+  }
+  coords 8015.287 182.988 7726.675
+  angles 0 180 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 6215.258 12.593 8339.586
+  angles 0 138.079 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 5848.329 413.569 5782.604
+  angles 0 -45 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels {
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 9180.375 98.258 9445.767
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_LARGE
+     TRAIT_PASSENGERS_SMALL
+    }
+    m_aExcludedEditableEntityLabels {
+     VEHICLE_APC
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 6534.23 493.375 6641.068
+  angles 0 -125.123 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels {
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 4703.606 162.288 7468.867
+  angles 0 35.135 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_AMPHIBIOUS
+    }
+   }
+  }
+  coords 4652.533 169.362 7467.313
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 8623.341 95.732 9309.367
+  angles 0 -42.818 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 9610.298 11.562 8646.59
+  angles 0 -140.17 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+     TRAIT_PASSENGERS_LARGE
+    }
+    m_aExcludedEditableEntityLabels +{
+     VEHICLE_HELICOPTER
+    }
+   }
+  }
+  coords 2749.672 111.057 7469.447
+  angles 0 86.909 0
+ }
+ {
+  components {
+   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+    m_aIncludedEditableEntityLabels {
+     TRAIT_PASSENGERS_SMALL
+    }
+    m_aExcludedEditableEntityLabels +{
+    }
+   }
+  }
+  coords 6118.973 417.147 6219.079
+  angles 0 -88.876 0
+ }
+}
+$grp GenericEntity : "{D6EF54367CECE1D9}Prefabs/Weapons/Explosives/Mine_TM62M/Mine_TM62M.et" {
+ {
+  coords 3433.225 26.936 4371.951
+ }
+ {
+  coords 3425.729 26.681 4378.861
+ }
+}
+GenericEntity : "{D774D8C83D10DB68}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_USSR_01.et" {
+ coords 11924.678 5.207 10679.727
+ {
+  GenericEntity {
+   ID "62EACD0CC8BFF74E"
+   coords -6.441 -0.084 -3.188
+   angles 0 -7 0
+   {
+    GenericEntity {
+     ID "5D1ED92C8FCFAAB4"
+     coords 0 0 0
+     angles 0 180 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFF744"
+   coords -7.398 0.288 1.267
+   angles 0 2.319 0
+  }
+  GenericEntity {
+   ID "62F6990BC66B8E9E"
+   coords -7.44 0.289 1.273
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFF742"
+   coords -6.879 0.154 0.095
+   angles 0 -87.649 0
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFF743"
+   coords -6.528 0.243 0.959
+   angles 0 -60.109 0
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFE73D"
+   {
+    GenericEntity {
+     ID "62F4A41DAC20435A"
+     coords -1.957 0.054 0.223
+    }
+    GenericEntity {
+     ID "62F4A41DAC20AB94"
+     coords 0.815 0.006 0.485
+     angles 0 4.489 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFE73A"
+   coords -6.419 0.08 -0.808
+   angles 0 -2.806 0
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFF75F"
+   coords -6.403 -0.008 -1.967
+   angles 0 -87.961 0
+  }
+  GenericEntity {
+   ID "62EACD0CC8BFE73E"
+   coords -7.584 0.283 1.195
+   angles 0 -172.005 0
+  }
+ }
+}
+$grp GenericEntity : "{D97548C9D0454530}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_USSR_01_NSV_SPP.et" {
+ {
+  coords 5063.348 693.863 6294.302
+  angles 0 150.611 0
+ }
+ {
+  coords 5115.34 667.417 6417.219
+  angles -12.445 -28.595 0
+ }
+ {
+  coords 5099.977 688.178 6336.342
+  angles -12.535 127.215 0.073
+ }
+}
+$grp GenericEntity : "{DFBF655559915333}Prefabs/Compositions/Slotted/SlotFlatSmall/GuardTower_S_USSR_01.et" {
+ {
+  coords 3687.419 180.079 5233.16
+  angles 0 72.268 0
+ }
+ {
+  coords 6294.277 36.997 8017.304
+  angles 0 -90.288 0
+ }
+ {
+  coords 6217.159 36.681 8070.398
+  angles 0 -41.262 0
+ }
+ {
+  coords 5061.898 697.662 6319.997
+  angles 0 134.71 0
+ }
+}
+$grp GenericEntity : "{E105D2F87098E1D8}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_LoiterPoint.et" {
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_fLookDirectionRange 60
+    m_iCharacterStance PRONE
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 4789.619 344.593 6908.568
+  angles 0 -63.503 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_fLookDirectionRange 60
+    m_iCharacterStance CROUCH
+   }
+  }
+  coords 4786.884 343.114 6910.548
+  angles 0 -109.815 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 6066.309 424.595 6539.551
+  angles 0 -12.97 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_iCharacterStance CROUCH
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 6067.702 424.595 6539.049
+  angles 0 -103.961 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_fLookDirectionRange 60
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 6070.903 418.989 6246.178
+  angles 0 27.375 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_fLookDirectionRange 60
+   }
+  }
+  coords 6069.794 418.989 6244.038
+  angles 0 27.375 0
+ }
+ {
+  coords 6108.167 421.253 6255.125
+  angles 0 0 0
+ }
+ {
+  coords 6706.013 38.971 4053.029
+  angles 0 49.629 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_iCharacterStance CROUCH
+    m_bUseBinoculars 1
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 6709.321 39.305 4055.809
+  angles 0 0 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_bUseBinoculars 1
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 5174.647 662.564 6404.532
+  angles 0 0 0
+ }
+ {
+  coords 5174.043 662.971 6407.314
+  angles 0 170.484 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_eLoiterAnimation SMOKING
+   }
+  }
+  coords 5073.241 694.663 6331.645
+  angles 0 -56.167 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 5051.843 699.22 6322.006
+  angles 0 0 0
+ }
+ {
+  coords 5006.458 682.869 6370.193
+  angles 0 0 0
+ }
+ {
+  coords 5905.4 222.426 4645.687
+  angles 0 0 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_bUseBinoculars 1
+    m_eLoiterAnimation NONE
+   }
+  }
+  coords 5901.512 222.426 4641.75
+  angles 0 40.731 0
+ }
+}
+$grp GenericEntity : "{E249C09D69AAE6C8}Prefabs/Compositions/Slotted/SlotFlatSmall/SandbagPosition_S_USSR_02.et" {
+ {
+  coords 6538.647 493.704 6620.345
+  angles 0 120 0
+ }
+ {
+  coords 3684.413 179.989 5228.598
+  angles 0 105.614 0
+  {
+   StaticModelEntity {
+    ID "5CCCBEEECFFEB8A4"
+    coords -6.041 -0.059 9.067
+    angles 0 -150.069 0
+   }
+   StaticModelEntity {
+    ID "5CCCBEEECFFEB9E3"
+    coords -6.035 -0.053 9.214
+    angles 0 -58.341 0
+   }
+  }
+ }
+}
+$grp GenericEntity : "{E660DE914A7211EB}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_US_01.et" {
+ {
+  coords 7555.725 27.126 5116.39
+  angles 0 -161.768 0
+ }
+ {
+  coords 7615.183 3.713 4276.237
+  angles 1.997 30.004 0.12
+ }
+ {
+  coords 7468.936 309.54 6742.997
+ }
+ {
+  coords 6842.963 233.773 5661.461
+  angles -8.82 -149.864 1.037
+ }
+ {
+  coords 7794.796 311.906 8041.302
+  angles 0 -165 0
+ }
+ {
+  coords 10151 7 9324.157
+  angles 0 -120 0
+ }
+ {
+  coords 11944.646 5.368 10325.587
+  angles 0.865 -164.997 0.232
+ }
+ {
+  coords 5616.058 419.969 6914.501
+  angles 0 -90 0
+ }
+}
+$grp GenericEntity : "{E74D2F51CD4F03D0}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_US_01.et" {
+ {
+  coords 6798.747 195.644 5508.429
+  angles 0.76 -121.894 -0.474
+ }
+ {
+  coords 8559.488 98.188 9423.688
+  angles 0 -135 0
+ }
+}
+$grp GenericEntity : "{E7BA7FE6BA4DB3F1}Prefabs/Systems/MilitaryBase/ConflictSourceBase_T2Harbor.et" {
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Coal"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Coal-UC"
+   }
+  }
+  coords 7554.032 2.212 4185.952
+  angles 0 128.686 0
+  {
+   GenericEntity {
+    ID "62388D8FFE98E06F"
+    coords 0.047 -0.024 -16.087
+    angles 0 89.812 0
+   }
+   GenericEntity {
+    ID "62388D8F13AD0811"
+    coords -0.816 -0.024 0
+   }
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    components {
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+    }
+    coords -2.415 0.066 7.834
+    angles 0 89.074 0
+    {
+     GenericEntity {
+      ID "5D1ED92353BB9FF4"
+      coords -8.326 -0.023 -1.265
+      angles 0 -176.426 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F82"
+      coords -8.232 -0.008 -5.849
+      angles 0 92.755 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F95"
+      coords -8.261 -0.008 -4.348
+      angles 0 94.596 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FE3"
+      coords -8.229 -0.017 -2.431
+      angles 0 -1.072 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9E3E"
+      coords -9.993 -0.008 -4.277
+      angles 0 -172.732 0
+     }
+    }
+   }
+   GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+    components {
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+    }
+    coords 20.81 0.012 9.617
+    angles 0 176.795 0
+    {
+     GenericEntity {
+      ID "5D45393876460D01"
+      {
+       GenericEntity {
+        ID "5D453938619FC380"
+        components {
+         SCR_ResourceComponent "{5D247A59598D71AE}" {
+          m_aContainers {
+           SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           }
+          }
+         }
+        }
+       }
+       GenericEntity {
+        ID "5D453938619FC381"
+        components {
+         SCR_ResourceComponent "{5D247A59598D71AE}" {
+          m_aContainers {
+           SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           }
+          }
+         }
+        }
+       }
+       GenericEntity {
+        ID "5D453938619FC383"
+        components {
+         SCR_ResourceComponent "{5D247A59598D71AE}" {
+          m_aContainers {
+           SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+            m_fResourceValueCurrent 0
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Dock_WestCape"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Dock_WestCape-UC"
+   }
+  }
+  coords 1641.877 110.688 7386.137
+  angles 0 6.515 0
+  {
+   GenericEntity {
+    ID "62388D8F13AD0811"
+    coords 45.026 2 -23.137
+   }
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    coords 1.193 0.015 17.109
+    angles 0 177.769 0
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords 12.794 0.063 17.637
+    angles 0 177.523 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Kamensk"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Kamensk-UC"
+   }
+  }
+  coords 11838.07 3.813 10974.495
+  angles 0 5.524 0
+  {
+   GenericEntity {
+    ID "62388D8FFE98E06F"
+    coords -47.578 4.02 -16.709
+   }
+   GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+    coords -12.517 -0.344 19.663
+    angles 0 178.408 0
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    components {
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+    }
+    coords -0.629 -0.321 21.024
+    angles 0 175.081 0
+   }
+  }
+ }
+ {
+  components {
+   SCR_CampaignSourceBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "#AR-Campaign_MapLocation_Harbour_Military"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_Harbour_Military-UC"
+   }
+  }
+  coords 8801.977 2.78 7394.523
+  angles 0 16.545 0
+  {
+   GenericEntity {
+    ID "62388D8FFE98E06F"
+    coords -18.366 0.444 -13.301
+   }
+   GenericEntity {
+    ID "62388D8F13AD0811"
+    coords -39.392 6.564 12.123
+   }
+   GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+    coords -1.021 -0.233 -26.617
+    angles 0 -87.18 0
+    {
+     GenericEntity {
+      ID "5D1ED92353BB9FB1"
+      coords -4.775 0.127 -2.393
+      angles 0 93.613 -2.116
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FF4"
+      coords 3.511 0.21 -2.945
+      angles -2.813 0.819 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FA0"
+      coords -4.341 0.144 -2.421
+      angles 0 -89.335 3.815
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9E28"
+      coords 0.21 0.268 -3.813
+      angles -1.398 -3.43 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FD2"
+      coords 0.229 0.331 -4.99
+      angles 0 -0.492 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F49"
+      coords -4.464 -0.043 0.549
+      angles -2.148 0 0
+     }
+     GenericEntity {
+      ID "5D453938FA2CE085"
+      {
+       GenericEntity {
+        ID "5D453938F45912F0"
+        coords -0.332 -0.027 0.73
+        angles -3.066 0 0
+       }
+       GenericEntity {
+        ID "5D453938F45912F6"
+        coords -0.139 0.29 -3.726
+        angles 0 -92.416 3.566
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F82"
+      coords 3.198 -0.018 1.629
+      angles 0 -90 2.103
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9F95"
+      coords 3.298 0.04 0.134
+      angles 0 -88.159 3.874
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9FE3"
+      coords 3.358 0.152 -1.785
+      angles 2.503 176.173 0
+     }
+     GenericEntity {
+      ID "5D1ED92353BB9E3E"
+      coords 5.031 0 0.147
+      angles -2.372 4.513 0
+     }
+    }
+   }
+   GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+    coords 1.902 -0.022 -14.912
+    angles 0 -89.688 0
+    {
+     GenericEntity {
+      ID "5E330D6CFA231272"
+      coords 2.082 -0.15 2.543
+      angles -1.031 9.495 0.175
+     }
+     GenericEntity {
+      ID "5D4539393E1536C3"
+      {
+       GenericEntity {
+        ID "5D45393936823FC0"
+        coords -1.421 -0.013 0.304
+        angles -2.281 0.022 0
+       }
+       GenericEntity {
+        ID "5D45393936823FC3"
+        coords 1.182 -0.016 0.213
+        angles 2.57 179.947 0
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1ED922875C41AD"
+      coords -4.148 0.044 -1.064
+      angles -1.399 -2.198 0
+     }
+     GenericEntity {
+      ID "5D1ED922875C415B"
+      coords -3.977 -0.055 1.363
+      angles -1.414 4.848 0
+     }
+     GenericEntity {
+      ID "5D1ED922875C418B"
+      coords 4.295 -0.096 1.205
+      angles 0 33.366 0
+     }
+     GenericEntity {
+      ID "5D1ED922875C41BB"
+      coords 4.295 -0.152 2.093
+      angles 0 -27.21 0
+     }
+     GenericEntity {
+      ID "5D1ED922875C4149"
+      coords -4.219 0 0.154
+      angles 0 -87.751 1.072
+     }
+     GenericEntity {
+      ID "5D1ED922875C4163"
+      coords 2.831 -0.048 0.412
+      angles -2.47 0.672 0
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{EDB539C08A95005B}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_USSR_01_PKM.et" {
+ {
+  coords 6267.455 37.181 8034.453
+  angles 0 -115.929 0
+ }
+ {
+  coords 5057.047 691.451 6282.772
+  angles 0 177.822 0
+ }
+}
+$grp GenericEntity : "{F56391ADF56E2604}Prefabs/Compositions/Slotted/SlotFlatSmall/FuelStorage_S_FIA_01.et" {
+ {
+  coords 3665.966 179.705 5200.962
+  angles 0 57.475 0
+ }
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+  }
+  coords 1943.919 130.976 7357.225
+  angles 0 44.769 0
+  {
+   GenericEntity {
+    ID "5E69068970870D09"
+    coords 0.194 -0.007 -0.139
+    angles 0 -1.398 0
+   }
+   GenericEntity {
+    ID "5D3706BDADB12F3B"
+    coords 0.005 -0.062 -1.795
+    angles 0 180 0
+   }
+   GenericEntity {
+    ID "5E69068970870D42"
+    coords 4.036 -0.183 -1.621
+    angles 0 -178.373 0
+   }
+   GenericEntity {
+    ID "5E69068970870DE5"
+    coords -4.215 0.006 -1.76
+    angles 0 -178.607 0
+   }
+   GenericEntity {
+    ID "5D1ED91D8B7CFF72"
+    coords -0.138 -0.038 0.782
+    angles 1.651 -89.1 0
+   }
+   GenericEntity {
+    ID "5D1ED91D8B7CFF2C"
+    coords 0.21 -0.09 -4.165
+    angles 0 81.649 0
+   }
+   StaticModelEntity {
+    ID "5D1ED91D8B7CFFC2"
+    coords -3.134 -0.021 -1.882
+    angles 0 -142.775 0
+   }
+   StaticModelEntity {
+    ID "5D1ED91D8B7CFF63"
+    coords 0.969 -0.032 -0.099
+    angles 0 106.281 0
+   }
+   StaticModelEntity {
+    ID "5D1ED91D8B7CFFBC"
+    coords 0.591 -0.056 -1.297
+    angles 0 180 0
+   }
+  }
+ }
+}
+$grp GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+ {
+  coords 6109.718 421.1 6252.56
+  angles 0 13.628 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_fLookDirectionRange 45
+    m_iCharacterStance PRONE
+   }
+  }
+  coords 6591.729 38.674 3873.197
+  angles 0 -41.655 0
+ }
+ {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    m_iCharacterStance CROUCH
+   }
+  }
+  coords 6707.609 38.864 4057.967
+  angles 0 -16.335 0
+ }
+}
+$grp GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+ {
+  coords 8623.739 95.689 9293.243
+  angles 0 -45.241 0
+ }
+ {
+  coords 8486.767 19.907 6527.498
+  angles 0 -74.852 0
+ }
+ {
+  coords 6358.462 39.733 8044.687
+  angles 0 -175.247 0
+  {
+   GenericEntity {
+    ID "5D1ED922875C41AD"
+    coords -2.049 -0.058 -8.702
+    angles 0 -2.198 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C415B"
+    coords -1.875 -0.046 -6.273
+    angles 0 4.848 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C4178"
+    coords -2.138 0 -4.183
+    angles 0 19.052 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C418B"
+    coords 1.28 -0.059 -4.707
+    angles 0 33.366 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C41BB"
+    coords 1.281 -0.092 -3.817
+    angles 0 -27.21 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C4149"
+    coords -2.118 -0.059 -7.483
+    angles 0 -87.751 0
+   }
+   GenericEntity {
+    ID "5D1ED922875C4163"
+    coords -0.184 -0.031 -5.497
+    angles 0 0.672 0
+   }
+  }
+ }
+ {
+  coords 6643.797 26.15 3921.593
+  angles 0 -134.441 0
+ }
+ {
+  coords 1922.897 132.539 7430.236
+  angles 0 -148.612 0
+ }
+}
+$grp GenericEntity : "{FB26A800AC01D85A}Prefabs/Compositions/Slotted/SlotFlatSmall/Antenna_S_FIA_01.et" {
+ {
+  coords 8453.081 22.022 6595.92
+  angles 0 -68.677 0
+ }
+ {
+  coords 3690.751 180.017 5208.938
+  angles 0 110.856 0
+ }
+ {
+  coords 6626.811 25.248 3904.949
+  angles 0 139.579 0
+ }
+}
+GenericEntity : "{FC8BFF421115C2D8}Prefabs/Props/Military/Arsenal/AmmoBoxes/USSR/AmmoBoxArsenal_VehicleGadget_USSR.et" {
+ coords 2006.652 129.851 7322.801
+ angles 0 -66.563 0
+}
+$grp GenericEntity : "{FD426896698B4615}Prefabs/Compositions/Misc/FreeRoamBuilding/Dragonsteeth_S_US_01.et" {
+ {
+  coords 6482.083 24.25 3836.852
+  angles 0 -60 0
+ }
+ {
+  coords 6483.905 24.283 3838.301
+  angles 0 45 0
+ }
+}
+GenericEntity : "{FD952CFF9CAD3F2A}Prefabs/Compositions/Slotted/SlotFlatSmall/LivingArea_S_Conflict_USSR_01.et" {
+ coords 6307.41 36.389 8091.714
+ angles 0 93.168 0
+}
